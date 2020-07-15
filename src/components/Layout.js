@@ -12,7 +12,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import BackgroundImage from "gatsby-background-image";
 
 import Header from "./Header";
-import "./Layout.css";
+import "./all.css";
 
 const Layout = ({ children }) => {
   const { bgImage } = useStaticQuery(graphql`
