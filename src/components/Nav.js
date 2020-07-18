@@ -1,6 +1,6 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import { Link } from "gatsby";
+import PropTypes from "prop-types";
+import React from "react";
 
 const Nav = () => (
   <nav
@@ -8,20 +8,22 @@ const Nav = () => (
       fontSize: 28,
       width: 400,
       color: "white",
+      fontSize: 20,
       display: "flex",
       justifyContent: "space-between",
     }}
   >
-    <Link to="/">Home</Link>
-    <Link to="/courses">Courses</Link>
-    <Link to="/team">Team</Link>
-    <Link to="/fees">Fees</Link>
-    <Link to="/contact">Contact</Link>
+    <Link to='/'>Home</Link>
+    <Link to='/blog'>Blog</Link>
+    <Link to='/courses'>Courses</Link>
+    <Link to='/team'>Team</Link>
+    <Link to='/fees'>Fees</Link>
+    <Link to='/contact'>Contact</Link>
   </nav>
-)
+);
 
-Nav.propTypes = {}
+Nav.propTypes = {};
 
-Nav.defaultProps = {}
+Nav.defaultProps = {};
 
-export default Nav
+export default Nav;

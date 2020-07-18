@@ -12,7 +12,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import BackgroundImage from "gatsby-background-image";
 
 import Header from "./Header";
-import "./all.css";
+import "../all.css";
 
 const Layout = ({ children }) => {
   const { bgImage } = useStaticQuery(graphql`
@@ -35,7 +35,7 @@ const Layout = ({ children }) => {
         backgroundPosition: "top center",
         backgroundSize: "cover",
         minWidth: 950,
-        minHeight: 550,
+        minHeight: 600,
         height: "100vh",
       }}
       fluid={bgImage.childImageSharp.fluid}

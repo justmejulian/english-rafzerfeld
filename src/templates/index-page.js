@@ -1,23 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
 
 import Content, { HTMLContent } from "../components/Content";
 
 import Layout from "../components/Layout";
+import BlogRoll from "../components/BlogRoll";
 
 export const IndexPageTemplate = ({ title, content, contentComponent }) => {
   const BodyComponent = contentComponent || Content;
   return (
     <div>
       <h1>{title}</h1>
-      <cite>
-        <i />
-        Well planned, varied and stimulating, using relevant themes and
-        supporting resource materials.
-        <i />
-        <footer>- Student of english in the rafzerfeld</footer>
-      </cite>
       <BodyComponent content={content} />
     </div>
   );
@@ -39,6 +33,15 @@ const IndexPage = ({ data }) => {
         content={markdownRemark.html}
         contentComponent={HTMLContent}
       />
+      <div
+        style={{
+          margin: "40px 0px",
+          height: 1,
+          backgroundColor: "grey",
+        }}
+      />
+      <h2>Latest Posts</h2>
+      <BlogRoll />
     </Layout>
   );
 };

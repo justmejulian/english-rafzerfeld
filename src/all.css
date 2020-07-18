@@ -1,0 +1,24 @@
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Helvetica";
+  margin: 0;
+}
+
+/* Todo: move to own style */
+a,
+a::selection,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  text-decoration: underline;
+  transform: scale(1.1);
+}
+
+section img {
+  max-width: 500px;
+}

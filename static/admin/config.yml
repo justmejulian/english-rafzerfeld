@@ -47,7 +47,7 @@ collections:
           - { label: Title, name: title, widget: string }
           - { label: "Body", name: "body", widget: "markdown" }
 
-      - file: "src/pages/contact.md"
+      - file: "src/pages/sub/contact.md"
         label: "Contact"
         name: "contact"
         fields:
@@ -60,7 +60,7 @@ collections:
           - { label: Title, name: title, widget: string }
           - { label: "Body", name: "body", widget: "markdown" }
 
-      - file: "src/pages/courses.md"
+      - file: "src/pages/sub/courses.md"
         label: "Courses"
         name: "courses"
         fields:
@@ -73,7 +73,7 @@ collections:
           - { label: Title, name: title, widget: string }
           - { label: "Body", name: "body", widget: "markdown" }
 
-      - file: "src/pages/team.md"
+      - file: "src/pages/sub/team.md"
         label: "Team"
         name: "team"
         fields:
@@ -86,7 +86,7 @@ collections:
           - { label: Title, name: title, widget: string }
           - { label: "Body", name: "body", widget: "markdown" }
 
-      - file: "src/pages/fees.md"
+      - file: "src/pages/sub/fees.md"
         label: "Fees"
         name: "fees"
         fields:
