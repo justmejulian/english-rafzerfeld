@@ -41,14 +41,10 @@ export const feesPageQuery = graphql`
       frontmatter {
         title
         groupLessons {
-          lessons {
-            name
-          }
+          name
         }
         privateLessons {
-          lessons {
-            name
-          }
+          name
         }
       }
     }

@@ -37,23 +37,35 @@ TeamPage.propTypes = {
 export default TeamPage;
 
 export const teamPageQuery = graphql`
-  query TeamPage($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      frontmatter {
-        title
-        bev {
-          image
-          description
-          nationality
-          certificates
-        }
-        angela {
-          image
-          description
-          nationality
-          certificates
-        }
-      }
-    }
-  }
-`;
+         query TeamPage($id: String!) {
+           markdownRemark(id: { eq: $id }) {
+             frontmatter {
+               title
+               bev {
+                 image {
+                   childImageSharp {
+                     fluid(maxWidth: 2048, quality: 100) {
+                       ...GatsbyImageSharpFluid
+                     }
+                   }
+                 }
+                 description
+                 nationality
+                 certificates
+               }
+               angela {
+                 image {
+                   childImageSharp {
+                     fluid(maxWidth: 2048, quality: 100) {
+                       ...GatsbyImageSharpFluid
+                     }
+                   }
+                 }
+                 description
+                 nationality
+                 certificates
+               }
+             }
+           }
+         }
+       `;

@@ -3,37 +3,20 @@ import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 
-export const ContactPageTemplate = ({
-  title,
-  bevTel,
-  bevEmail,
-  angelaTel,
-  angelaEmail,
-  info,
-  locations,
-}) => {
+export const ContactPageTemplate = ({ title, bev, angela }) => {
   return (
     <div>
       <h1>{title}</h1>
-      <h1>{bevTel}</h1>
-      <h1>{bevEmail}</h1>
-      <h1>{angelaTel}</h1>
-      <h1>{angelaEmail}</h1>
-      <h1>{info}</h1>
-      <h1>{title}</h1>
-      <h1>{locations}</h1>
+      <h1>{bev.tel}</h1>
+      <h1>{angela.tel}</h1>
     </div>
   );
 };
 
 ContactPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
-  bevTel: PropTypes.string.isRequired,
-  bevEmail: PropTypes.string.isRequired,
-  angelaTel: PropTypes.string.isRequired,
-  angelaEmail: PropTypes.string.isRequired,
-  info: PropTypes.string.isRequired,
-  locations: PropTypes.string.isRequired,
+  bev: PropTypes.object.isRequired,
+  angela: PropTypes.object.isRequired,
 };
 
 const ContactPage = ({ data }) => {
@@ -57,12 +40,14 @@ export const contactPageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
-        bevTel
-        bevEmail
-        angelaTel
-        angelaEmail
-        info
-        locations
+        bev {
+          tel
+          email
+        }
+        angela {
+          tel
+          email
+        }
       }
     }
   }

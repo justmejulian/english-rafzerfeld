@@ -44,5 +44,101 @@ collections:
               widget: "hidden",
               default: "index-page",
             }
-          - { label: "Title", name: "title", widget: "string" }`
-          - { label: "Body", name: "body", widget: "markdown" }
+          - { label: Title, name: title, widget: string }
+          - { label: Image, name: image, widget: image }
+          - { label: Heading, name: heading, widget: string }
+          - { label: Subheading, name: subheading, widget: string }
+
+      - file: "src/pages/team/index.md"
+        label: "Team"
+        name: "team"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "index-page",
+            }
+          - { label: Title, name: title, widget: string }
+          - label: "Bev"
+            name: "bev"
+            widget: "object"
+            fields:
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Description", name: "description", widget: "string" }
+              - { label: "Nationality", name: "nationality", widget: "string" }
+              - { label: "Certificates", name: "certificates", widget: "list" }
+          - label: "Angela"
+            name: "angela"
+            widget: "object"
+            fields:
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Description", name: "description", widget: "string" }
+              - { label: "Nationality", name: "nationality", widget: "string" }
+              - { label: "Certificates", name: "certificates", widget: "list" }
+
+      - file: "src/pages/fees/index.md"
+        label: "Fees"
+        name: "fees"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "index-page",
+            }
+          - { label: Title, name: title, widget: string }
+          - label: "Group Lessons"
+            name: "groupLessons"
+            widget: "list"
+            fields:
+              - { label: Name, name: name, widget: string }
+              - {
+                  label: Normal rate per Semester,
+                  name: normalRateSemester,
+                  widget: string,
+                }
+              - {
+                  label: Reduced rate per Semester,
+                  name: reducedRateSemester,
+                  widget: string,
+                }
+          - label: "Private Lessons"
+            name: "privateLessons"
+            widget: "list"
+            fields:
+              - { label: Name, name: name, widget: string }
+              - {
+                  label: Normal rate per Semester,
+                  name: normalRateSemester,
+                  widget: string,
+                }
+              - {
+                  label: Reduced rate per Semester,
+                  name: reducedRateSemester,
+                  widget: string,
+                }
+
+      - file: "src/pages/contact/index.md"
+        label: "Contact"
+        name: "contact"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "index-page",
+            }
+          - { label: Title, name: title, widget: string }
+          - label: "Bev"
+            name: "bev"
+            widget: "object"
+            fields:
+              - { label: "Telephone", name: "tel", widget: "string" }
+              - { label: "E-Mail", name: "email", widget: "string" }
+          - label: "Angela"
+            name: "angela"
+            widget: "object"
+            fields:
+              - { label: "Telephone", name: "tel", widget: "string" }
+              - { label: "E-Mail", name: "emal", widget: "string" }
