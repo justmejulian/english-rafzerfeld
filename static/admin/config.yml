@@ -108,9 +108,9 @@ collections:
             widget: "list"
             fields:
               - { label: Name, name: name, widget: string }
-              - { label: 1 person, name: 1, widget: string }
-              - { label: 3 person, name: 2, widget: string }
-              - { label: 3 person, name: 3, widget: string }
+              - { label: 1 person, name: "1", widget: string }
+              - { label: 3 person, name: "2", widget: string }
+              - { label: 3 person, name: "3", widget: string }
 
       - file: "src/pages/contact/index.md"
         label: "Contact"
