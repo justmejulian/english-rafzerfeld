@@ -19,7 +19,7 @@ export const BlogPostTemplate = ({
   return (
     <section className='section'>
       {helmet || ""}
-      <div style={{ img: { minWidth: 500 } }}>
+      <div style={{ img: { maxWidth: "500px" } }}>
         <h1>{title}</h1>
         <p>{description}</p>
         <PostContent content={content} />
