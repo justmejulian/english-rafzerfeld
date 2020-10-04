@@ -12,6 +12,8 @@ import { useStaticQuery, graphql } from "gatsby";
 import BackgroundImage from "gatsby-background-image";
 
 import Header from "./Header";
+
+import styles from "./Layout.module.css";
 import "../all.css";
 
 const Layout = ({ children }) => {
@@ -36,29 +38,18 @@ const Layout = ({ children }) => {
         backgroundSize: "cover",
         minWidth: 950,
         minHeight: 600,
-        height: "100vh",
+        height: "100%",
       }}
       fluid={bgImage.childImageSharp.fluid}
     >
-      <div
-        style={{
-          margin: `0 auto`,
-          padding: `30px 0px`,
-          display: "flex",
-          alignItems: "center",
-          flexDirection: "column",
-        }}
-      >
+      <div className={styles.container}>
         <Header />
-        <div
-          style={{
-            width: 845,
-            backgroundColor: "rgba(255,255,255,0.9)",
-            padding: `20px 10px`,
-            color: "#000",
-          }}
-        >
-          <main>{children}</main>
+        <div className={styles.mainBody}>
+          <div className={styles.border} />
+          <div className={styles.mainContainer}>
+            <main>{children}</main>
+          </div>
+          <div className={styles.border} />
         </div>
       </div>
     </BackgroundImage>

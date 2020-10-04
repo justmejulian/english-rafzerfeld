@@ -1,0 +1,31 @@
+.name {
+  padding: 20px 0;
+  font-size: 22px;
+}
+.row {
+  display: flex;
+
+  font-size: 20px;
+
+  height: 20px;
+  padding: 8px;
+
+  border-top: 1px solid rgb(221, 221, 221);
+  border-collapse: collapse;
+}
+
+.col {
+  flex: 1;
+}
+
+.list {
+  margin-top: 40px;
+  list-style-type: none;
+}
+.list > li {
+  text-indent: -5px;
+}
+.list > li:before {
+  content: "- ";
+  text-indent: -5px;
+}

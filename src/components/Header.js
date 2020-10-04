@@ -7,6 +7,8 @@ import Img from "gatsby-image";
 
 import Nav from "./Nav";
 
+import styles from "./Header.module.css";
+
 const Header = () => {
   const { logo } = useStaticQuery(graphql`
     query {
@@ -20,20 +22,8 @@ const Header = () => {
     }
   `);
   return (
-    <header
-      style={{
-        height: `90px`,
-        display: "flex",
-        alignItems: "baseline",
-      }}
-    >
-      <Img
-        fluid={logo.childImageSharp.fluid}
-        style={{
-          height: 75,
-          width: 550,
-        }}
-      />
+    <header className={styles.header}>
+      <Img fluid={logo.childImageSharp.fluid} className={styles.img} />
       <Nav />
     </header>
   );

@@ -1,0 +1,12 @@
+.name {
+  padding: 20px 0;
+  font-size: 22px;
+}
+
+.teachers {
+  display: flex;
+}
+
+.teacher {
+  flex: 1;
+}

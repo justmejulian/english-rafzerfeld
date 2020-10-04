@@ -1,20 +1,30 @@
-html {
+html,
+body,
+#___gatsby {
+  height: 100%;
+}
+
+#gatsby-focus-wrapper {
   height: 100%;
 }
 
 body {
-  font-family: "Helvetica";
+  font-family: "Roboto";
   margin: 0;
 }
 
 /* Todo: move to own style */
 a,
 a::selection,
-a:active {
+a:active,
+a:hover {
   text-decoration: none;
   color: inherit;
 }
-a:hover {
-  text-decoration: underline;
-  transform: scale(1.1);
+
+h1 {
+  font-size: 30px;
+  font-weight: 700;
+
+  margin: 0;
 }

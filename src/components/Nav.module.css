@@ -1,0 +1,29 @@
+.nav {
+  font-size: 28px;
+  width: 400px;
+  padding-bottom: 6px;
+  color: white;
+  font-size: 20px;
+  font-family: "Roboto Condensed", colaborate-thin, "Yanone Kaffeesatz",
+    "Helvetica Neue", helvetica;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.active {
+  padding-bottom: 5px;
+  border-bottom: 2px solid rgb(204, 211, 0);
+  color: rgb(204, 211, 0);
+  transform: scale(1.1);
+}
+
+.nav a {
+  display: block;
+}
+
+.nav a:hover {
+  padding-bottom: 5px;
+  border-bottom: 2px solid white;
+  transform: scale(1.1);
+}

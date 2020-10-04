@@ -1,0 +1,30 @@
+.row {
+  display: flex;
+  font-size: 20px;
+}
+.rowElement {
+  flex: 1;
+  margin: 8px 16px;
+}
+
+.name {
+  flex: 1;
+  font-size: 22px;
+}
+
+.image {
+  width: 200px;
+  margin: auto;
+}
+
+.rowName {
+  min-width: 120px;
+}
+
+.nationality {
+  display: flex;
+}
+
+.certificates {
+  display: flex;
+}

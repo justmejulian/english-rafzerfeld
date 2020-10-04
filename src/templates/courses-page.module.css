@@ -1,0 +1,38 @@
+.table {
+  font-family: "Roboto Condensed", colaborate-thin, "Yanone Kaffeesatz",
+    "Helvetica Neue", helvetica;
+}
+
+.description {
+  font-family: "Roboto Condensed", colaborate-thin, "Yanone Kaffeesatz",
+    "Helvetica Neue", helvetica;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 20px;
+
+  height: 20px;
+  padding: 8px;
+
+  border-top: 1px solid rgb(221, 221, 221);
+  border-collapse: collapse;
+}
+
+.day {
+  flex: 1;
+}
+
+.level {
+  width: 200px;
+}
+
+.time {
+  min-width: 300px;
+  text-align: end;
+}

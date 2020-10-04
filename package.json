@@ -26,6 +26,7 @@
     "prop-types": "^15.6.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
+    "react-google-maps": "^9.4.5",
     "react-helmet": "^6.0.0",
     "uuid": "^7.0.0"
   },
@@ -43,6 +44,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "classnames": "^2.2.6",
     "prettier": "^2.0.5"
   }
 }

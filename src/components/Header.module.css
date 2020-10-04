@@ -1,0 +1,12 @@
+.header {
+  height: 90px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.img {
+  height: 71px;
+  width: 550px;
+
+  margin-right: 8px;
+}

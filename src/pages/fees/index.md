@@ -12,5 +12,6 @@ groupLessons:
     },
   ]
 
-privateLessons: [{ name: "Lesson 60 Min", 1: "400.-", 2: "350.-", 3: "350.-" }]
+privateLessons:
+  [{ name: "Lesson 60 Min", one: "400.-", two: "350.-", three: "350.-" }]
 ---

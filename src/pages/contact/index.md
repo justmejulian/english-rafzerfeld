@@ -1,7 +1,11 @@
 ---
 templateKey: "contact-page"
 path: /contact
-title: Contact
+title: Contact us
+
+info: "If you would like to attend a course or visit a lesson, or to receive more details about our courses, please contact us using the email link below."
+
+email: "info@english-rafzerfeld.ch"
 
 bev:
   tel: "079 611 83 52"

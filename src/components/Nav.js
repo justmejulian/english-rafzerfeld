@@ -1,29 +1,30 @@
 import { Link } from "gatsby";
-import PropTypes from "prop-types";
+
 import React from "react";
 
+import styles from "./Nav.module.css";
+
 const Nav = () => (
-  <nav
-    style={{
-      fontSize: 28,
-      width: 400,
-      color: "white",
-      fontSize: 20,
-      display: "flex",
-      justifyContent: "space-between",
-    }}
-  >
-    <Link to='/'>Home</Link>
-    <Link to='/blog'>Blog</Link>
-    <Link to='/courses'>Courses</Link>
-    <Link to='/team'>Team</Link>
-    <Link to='/fees'>Fees</Link>
-    <Link to='/contact'>Contact</Link>
+  <nav className={styles.nav}>
+    <Link activeClassName={styles.active} to='/'>
+      Home
+    </Link>
+    <Link activeClassName={styles.active} to='/blog'>
+      Blog
+    </Link>
+    <Link activeClassName={styles.active} to='/courses'>
+      Courses
+    </Link>
+    <Link activeClassName={styles.active} to='/team'>
+      Team
+    </Link>
+    <Link activeClassName={styles.active} to='/fees'>
+      Fees
+    </Link>
+    <Link activeClassName={styles.active} to='/contact'>
+      Contact
+    </Link>
   </nav>
 );
-
-Nav.propTypes = {};
-
-Nav.defaultProps = {};
 
 export default Nav;
