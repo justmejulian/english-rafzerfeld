@@ -30,21 +30,23 @@ const Layout = ({ children }) => {
     }
   `);
 
-  const { pathname } = window.location;
+  if (typeof window !== "undefined") {
+    const { pathname } = window.location;
 
-  const language = pathname.slice(0, 3);
-  const path = pathname.slice(3, pathname.length);
+    const language = pathname.slice(0, 3);
+    const path = pathname.slice(3, pathname.length);
 
-  // Get lang from url or from localStorage
-  let currentLanguage;
-  let urlContainsLang = false;
+    // Get lang from url or from localStorage
+    let currentLanguage;
+    let urlContainsLang = false;
 
-  if (language === "/en" || language === "/de") {
-    localStorage.setItem("language", language);
-    currentLanguage = language;
-    urlContainsLang = true;
-  } else {
-    currentLanguage = localStorage.getItem("language") ?? "/en";
+    if (language === "/en" || language === "/de") {
+      localStorage.setItem("language", language);
+      currentLanguage = language;
+      urlContainsLang = true;
+    } else {
+      currentLanguage = localStorage.getItem("language") ?? "/en";
+    }
   }
 
   return (
