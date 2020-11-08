@@ -1,9 +1,9 @@
 .nav {
-  font-size: 28px;
+  font-size: 20px;
+  font-weight: 500;
   width: 400px;
   padding-bottom: 6px;
   color: white;
-  font-size: 20px;
   font-family: "Roboto Condensed", colaborate-thin, "Yanone Kaffeesatz",
     "Helvetica Neue", helvetica;
   display: flex;
