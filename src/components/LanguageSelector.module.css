@@ -1,0 +1,37 @@
+.languageSelector {
+  padding: 6px;
+  display: flex;
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+.imageContainer {
+  opacity: 0.3;
+  cursor: pointer;
+}
+
+.imageContainer:hover {
+  opacity: 1;
+}
+
+.active {
+  opacity: 1;
+}
+
+.img {
+  width: 20px;
+  height: 15px;
+  margin-right: 5px;
+}
+
+.nav a {
+  display: block;
+}
+
+.nav a:hover {
+  padding-bottom: 5px;
+  border-bottom: 2px solid white;
+  transform: scale(1.1);
+}

@@ -12,6 +12,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import BackgroundImage from "gatsby-background-image";
 
 import Header from "./Header";
+import LanguageSelector from "./LanguageSelector";
 
 import styles from "./Layout.module.css";
 import "../all.css";
@@ -29,6 +30,23 @@ const Layout = ({ children }) => {
     }
   `);
 
+  const { pathname } = window.location;
+
+  const language = pathname.slice(0, 3);
+  const path = pathname.slice(3, pathname.length);
+
+  // Get lang from url or from localStorage
+  let currentLanguage;
+  let urlContainsLang = false;
+
+  if (language === "/en" || language === "/de") {
+    localStorage.setItem("language", language);
+    currentLanguage = language;
+    urlContainsLang = true;
+  } else {
+    currentLanguage = localStorage.getItem("language") ?? "/en";
+  }
+
   return (
     <BackgroundImage
       style={{
@@ -43,13 +61,18 @@ const Layout = ({ children }) => {
       fluid={bgImage.childImageSharp.fluid}
     >
       <div className={styles.container}>
-        <Header />
+        <Header langUrl={currentLanguage} />
         <div className={styles.mainBody}>
           <div className={styles.border} />
           <div className={styles.mainContainer}>
             <main>{children}</main>
           </div>
           <div className={styles.border} />
+          <LanguageSelector
+            langUrl={currentLanguage}
+            path={path}
+            urlContainsLang={urlContainsLang}
+          />
         </div>
       </div>
     </BackgroundImage>
