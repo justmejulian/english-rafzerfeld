@@ -30,15 +30,17 @@ const Layout = ({ children }) => {
     }
   `);
 
+  let currentLanguage;
+  let urlContainsLang = false;
+  let path;
+
   if (typeof window !== "undefined") {
     const { pathname } = window.location;
 
     const language = pathname.slice(0, 3);
-    const path = pathname.slice(3, pathname.length);
+    path = pathname.slice(3, pathname.length);
 
     // Get lang from url or from localStorage
-    let currentLanguage;
-    let urlContainsLang = false;
 
     if (language === "/en" || language === "/de") {
       localStorage.setItem("language", language);
