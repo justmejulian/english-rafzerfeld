@@ -13,7 +13,14 @@ const detailCompontent = (detailName, detail) => (
   </div>
 );
 
-export const ContactPageTemplate = ({ title, info, email, bev, angela }) => {
+export const ContactPageTemplate = ({
+  title,
+  info,
+  email,
+  bev,
+  angela,
+  locations,
+}) => {
   return (
     <div>
       <h1>{title}</h1>
@@ -40,6 +47,7 @@ export const ContactPageTemplate = ({ title, info, email, bev, angela }) => {
       <div>
         <div className={styles.name}>Location</div>
         <iframe
+          title='Strässler30'
           src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2689.782554249761!2d8.533204815630642!3d47.610917679185064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479079e69a8f4f79%3A0x7cf05e8e1231ed5a!2sStr%C3%A4ssler%2030%2C%208197%20Rafz!5e0!3m2!1sen!2sch!4v1601807020747!5m2!1sen!2sch'
           width='100%'
           height='400'
@@ -47,7 +55,6 @@ export const ContactPageTemplate = ({ title, info, email, bev, angela }) => {
           style={{ border: 0 }}
           allowfullscreen=''
           aria-hidden='false'
-          tabindex='0'
         ></iframe>
       </div>
     </div>

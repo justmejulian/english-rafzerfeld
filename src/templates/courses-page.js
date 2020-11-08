@@ -14,20 +14,20 @@ export const CoursesPageTemplate = ({ title, days }) => {
       </p>
       <div className={styles.table}>
         {days.map((day, index) => (
-          <>
+          <React.Fragment key={day.name}>
             <div className={styles.row}>
               <div className={styles.day}>{day.name}</div>
               {/* Only show level in fists header */}
               {index === 0 && <div className={styles.level}>*CEF level</div>}
             </div>
             {day.courses.map((cours) => (
-              <div className={styles.row}>
+              <div className={styles.row} key={cours.name}>
                 <div className={styles.time}>{cours.name}</div>
                 <div>{cours.level}</div>
                 <div className={styles.level}>{cours.cefLevel}</div>
               </div>
             ))}
-          </>
+          </React.Fragment>
         ))}
       </div>
     </div>
@@ -36,7 +36,7 @@ export const CoursesPageTemplate = ({ title, days }) => {
 
 CoursesPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
-  days: PropTypes.object.isRequired,
+  days: PropTypes.array.isRequired,
 };
 
 const CoursesPage = ({ data }) => {
