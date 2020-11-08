@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
 
@@ -18,6 +18,30 @@ import styles from "./Layout.module.css";
 import "../all.css";
 
 const Layout = ({ children }) => {
+  const [currentLanguage, setCurrentLanguage] = useState(null);
+  const [path, setPath] = useState(null);
+  const [urlContainsLang, setUrlContainsLang] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const { pathname } = window.location;
+
+      const language = pathname.slice(0, 3);
+      setPath(pathname.slice(3, pathname.length));
+
+      // Get lang from url or from localStorage
+
+      if (language === "/en" || language === "/de") {
+        localStorage.setItem("language", language);
+        setCurrentLanguage(language);
+        setUrlContainsLang(true);
+      } else {
+        setCurrentLanguage(localStorage.getItem("language") ?? "/en");
+        setUrlContainsLang(true);
+      }
+    }
+  }, []);
+
   const { bgImage } = useStaticQuery(graphql`
     query {
       bgImage: file(relativePath: { eq: "bgVineyard.jpg" }) {
@@ -29,28 +53,6 @@ const Layout = ({ children }) => {
       }
     }
   `);
-
-  let currentLanguage;
-  let urlContainsLang = false;
-  let path;
-
-  if (typeof window !== "undefined") {
-    const { pathname } = window.location;
-
-    const language = pathname.slice(0, 3);
-    path = pathname.slice(3, pathname.length);
-    console.log(pathname);
-
-    // Get lang from url or from localStorage
-
-    if (language === "/en" || language === "/de") {
-      localStorage.setItem("language", language);
-      currentLanguage = language;
-      urlContainsLang = true;
-    } else {
-      currentLanguage = localStorage.getItem("language") ?? "/en";
-    }
-  }
 
   return (
     <BackgroundImage

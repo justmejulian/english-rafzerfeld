@@ -28,8 +28,12 @@ const Nav = ({ langUrl }) => (
   </nav>
 );
 
+Nav.defaulProps = {
+  langUrl: null,
+};
+
 Nav.propTypes = {
-  langUrl: PropTypes.string.isRequired,
+  langUrl: PropTypes.string,
 };
 
 export default Nav;

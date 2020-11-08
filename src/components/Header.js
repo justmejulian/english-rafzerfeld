@@ -31,11 +31,12 @@ const Header = ({ langUrl }) => {
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-  langUrl: PropTypes.string.isRequired,
+  langUrl: PropTypes.string,
 };
 
 Header.defaultProps = {
-  siteTitle: ``,
+  siteTitle: "",
+  langUrl: null,
 };
 
 export default Header;
