@@ -25,7 +25,7 @@ export const TeamPageTemplate = ({ title, bev, angela }) => {
           <Img fluid={angela.image.childImageSharp.fluid} alt='Angela Image' />
         </div>
         <div className={styles.image}>
-          <Img fluid={bev.image.childImageSharp.fluid} alt='Angela Image' />
+          <Img fluid={bev.image.childImageSharp.fluid} alt='Bev Image' />
         </div>
       </div>
 
@@ -54,7 +54,7 @@ export const TeamPageTemplate = ({ title, bev, angela }) => {
           <div className={styles.rowName}>Certificates:</div>
           <div>
             {angela.certificates.map((certificate) => (
-              <div>{certificate}</div>
+              <div className={styles.certificate}>{certificate}</div>
             ))}
           </div>
         </div>

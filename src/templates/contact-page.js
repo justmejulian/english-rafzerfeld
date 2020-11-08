@@ -6,6 +6,13 @@ import Layout from "../components/Layout";
 
 import styles from "./contact-page.module.css";
 
+const detailCompontent = (detailName, detail) => (
+  <div className={styles.detail}>
+    <span className={styles.detailName}>{detailName}</span>
+    {detail}
+  </div>
+);
+
 export const ContactPageTemplate = ({ title, info, email, bev, angela }) => {
   return (
     <div>
@@ -13,20 +20,20 @@ export const ContactPageTemplate = ({ title, info, email, bev, angela }) => {
 
       <div>
         <div className={styles.name}>Info</div>
-        <div>{info}</div>
-        <div className={styles.email}>{email}</div>
+        <div className={styles.info}>{info}</div>
+        {detailCompontent("E-Mail:", email)}
       </div>
 
       <div className={styles.teachers}>
         <div className={styles.teacher}>
           <div className={styles.name}>Angela Eibner</div>
-          <div className={styles.tel}>{angela.tel}</div>
-          <div className={styles.email}>{angela.email}</div>
+          {detailCompontent("Tel:", angela.tel)}
+          {detailCompontent("E-Mail:", angela.email)}
         </div>
         <div className={styles.teacher}>
           <div className={styles.name}>Bev Visser</div>
-          <div className={styles.tel}>{bev.tel}</div>
-          <div className={styles.email}>{bev.email}</div>
+          {detailCompontent("Tel:", bev.tel)}
+          {detailCompontent("E-Mail:", bev.email)}
         </div>
       </div>
 

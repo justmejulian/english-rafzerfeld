@@ -1,7 +1,13 @@
 .row {
   display: flex;
   font-size: 20px;
+  font-weight: 100;
+  border-bottom: 1px solid #ddd;
 }
+.row:last-child {
+  border-bottom: none;
+}
+
 .rowElement {
   flex: 1;
   margin: 8px 16px;
@@ -10,6 +16,7 @@
 .name {
   flex: 1;
   font-size: 22px;
+  font-weight: 400;
 }
 
 .image {
@@ -27,4 +34,8 @@
 
 .certificates {
   display: flex;
+}
+
+.certificate {
+  margin-bottom: 16px;
 }

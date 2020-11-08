@@ -10,3 +10,20 @@
 .teacher {
   flex: 1;
 }
+
+.info {
+  font-size: 20px;
+  font-weight: 100;
+  margin-bottom: 16px;
+}
+
+.detail {
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.detailName {
+  margin-right: 24px;
+  display: inline-block;
+  width: 60px;
+}

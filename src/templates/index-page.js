@@ -7,11 +7,22 @@ import Content, { HTMLContent } from "../components/Content";
 import Layout from "../components/Layout";
 import BlogRoll from "../components/BlogRoll";
 
-export const IndexPageTemplate = ({ title, content, contentComponent }) => {
+import styles from "./index-page.module.css";
+
+export const IndexPageTemplate = ({
+  title,
+  content,
+  contentComponent,
+  quote,
+}) => {
   const BodyComponent = contentComponent || Content;
   return (
     <div>
       <h1>{title}</h1>
+      <cite className={styles.cite}>
+        {quote.quote}
+        <footer className={styles.quoteFooter}>- {quote.footer}</footer>
+      </cite>
       <BodyComponent content={content} />
     </div>
   );
@@ -30,6 +41,7 @@ const IndexPage = ({ data }) => {
     <Layout>
       <IndexPageTemplate
         title={markdownRemark.frontmatter.title}
+        quote={markdownRemark.frontmatter.quote}
         content={markdownRemark.html}
         contentComponent={HTMLContent}
       />
@@ -60,6 +72,10 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        quote {
+          quote
+          footer
+        }
       }
     }
   }
