@@ -39,6 +39,7 @@ const Layout = ({ children }) => {
 
     const language = pathname.slice(0, 3);
     path = pathname.slice(3, pathname.length);
+    console.log(pathname);
 
     // Get lang from url or from localStorage
 

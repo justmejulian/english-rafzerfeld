@@ -54,7 +54,9 @@ export const TeamPageTemplate = ({ title, bev, angela }) => {
           <div className={styles.rowName}>Certificates:</div>
           <div>
             {angela.certificates.map((certificate) => (
-              <div className={styles.certificate}>{certificate}</div>
+              <div className={styles.certificate} key={certificate}>
+                {certificate}
+              </div>
             ))}
           </div>
         </div>
@@ -62,7 +64,9 @@ export const TeamPageTemplate = ({ title, bev, angela }) => {
           <div className={styles.rowName}>Certificates:</div>
           <div>
             {bev.certificates.map((certificate) => (
-              <div>{certificate}</div>
+              <div className={styles.certificate} key={certificate}>
+                {certificate}
+              </div>
             ))}
           </div>
         </div>

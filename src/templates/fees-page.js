@@ -16,7 +16,7 @@ export const FeesPageTemplate = ({ title, groupLessons, privateLessons }) => {
         <div className={styles.col}>Reduced rate per Semester</div>
       </div>
       {groupLessons.map((lesson) => (
-        <div className={styles.row}>
+        <div className={styles.row} key={lesson.name}>
           <div className={styles.col}>{lesson.name}</div>
           <div className={styles.col}>{lesson.normalRateSemester}</div>
           <div className={styles.col}>{lesson.reducedRateSemester}</div>
@@ -42,7 +42,7 @@ export const FeesPageTemplate = ({ title, groupLessons, privateLessons }) => {
         <div className={styles.col}>3 persons</div>
       </div>
       {privateLessons.map((lesson) => (
-        <div className={styles.row}>
+        <div className={styles.row} key={lesson.name}>
           <div className={styles.col}>{lesson.name}</div>
           <div className={styles.col}>{lesson.one}</div>
           <div className={styles.col}>{lesson.two}</div>
