@@ -1,7 +1,7 @@
 ---
 templateKey: fees-page
 path: /fees
-title: Kursgeld
+title: Preise
 groupLessons:
   - name: Lektion 60 Min.
     normalRateSemester: 400.-
@@ -21,8 +21,4 @@ privateLessons:
     one: 120.-
     two: 60.-
     three: 45.-
-  - name: Lektion 60 Min.
-    one: 400.-
-    two: 350.-
-    three: 350.-
 ---
