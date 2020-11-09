@@ -6,7 +6,7 @@ quote:
     supporting resource materials.
   footer: Student of english in the rafzerfeld
 image: /img/mrFish.jpeg
-heading: '"Well planned, varied ad stimulating, using relevant themes and
+heading: '"Well planned, varied and stimulating, using relevant themes and
   supporting resource materials."'
 subheading: Our priority is to provide creative, enjoyable and effective
   language courses for you. Learn with qualified teachers whose first language
