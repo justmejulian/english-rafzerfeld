@@ -1,7 +1,7 @@
 ---
 templateKey: fees-page
 path: /fees
-title: Kursgeld Gruppenunterricht (4 bis 8 Teilnehmer)
+title: Kursgeld
 groupLessons:
   - name: Lesson 60 Min
     normalRateSemester: 400.-
