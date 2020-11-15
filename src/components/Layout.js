@@ -55,34 +55,34 @@ const Layout = ({ children }) => {
   `);
 
   return (
-    <BackgroundImage
-      style={{
-        backgroundRepeat: "no-repeat",
-        backgroundAttachment: "fixed",
-        backgroundPosition: "top center",
-        backgroundSize: "cover",
-        minWidth: 950,
-        minHeight: 600,
-        height: "100%",
-      }}
-      fluid={bgImage.childImageSharp.fluid}
-    >
-      <div className={styles.container}>
-        <Header langUrl={currentLanguage} />
-        <div className={styles.mainBody}>
-          <div className={styles.border} />
-          <div className={styles.mainContainer}>
-            <main>{children}</main>
+    <div className={styles.layout}>
+      <BackgroundImage
+        style={{
+          backgroundRepeat: "no-repeat",
+          backgroundAttachment: "fixed",
+          backgroundPosition: "top center",
+          backgroundSize: "cover",
+          height: "100%",
+        }}
+        fluid={bgImage.childImageSharp.fluid}
+      >
+        <div className={styles.container}>
+          <Header langUrl={currentLanguage} />
+          <div className={styles.mainBody}>
+            <div className={styles.border} />
+            <div className={styles.mainContainer}>
+              <main>{children}</main>
+            </div>
+            <div className={styles.border} />
+            <LanguageSelector
+              langUrl={currentLanguage}
+              path={path}
+              urlContainsLang={urlContainsLang}
+            />
           </div>
-          <div className={styles.border} />
-          <LanguageSelector
-            langUrl={currentLanguage}
-            path={path}
-            urlContainsLang={urlContainsLang}
-          />
         </div>
-      </div>
-    </BackgroundImage>
+      </BackgroundImage>
+    </div>
   );
 };
 
