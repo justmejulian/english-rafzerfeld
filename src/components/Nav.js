@@ -7,7 +7,7 @@ import styles from "./Nav.module.css";
 
 const Nav = ({ currentLanguage }) => {
   const navNames =
-    currentLanguage === "/de"
+    currentLanguage === "de"
       ? {
           home: "Home",
           blog: "Blog",
