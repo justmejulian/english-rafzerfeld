@@ -2,9 +2,8 @@
 templateKey: index-page
 title: Willkommen bei english in the rafzerfeld
 quote:
-  text: "Gut vorbereitet, vielseitig und anregend mit aktuellen interessanten
-Themen und unterstützenden Kursunterlagen."
-  footer: "Kursteilnehmerin von english in the rafzerfeld"
+  text: Gut vorbereitet, vielseitig und anregend mit aktuellen interessanten Themen und unterstützenden Kursunterlagen.
+  footer: Kursteilnehmerin von english in the rafzerfeld
 ---
 
 Unsere Priorität ist es, für Sie kreativen, angenehmen und wirksamen Unterricht zu gestalten. Hier können Sie mit qualifizierten Lehrerinnen arbeiten, deren Muttersprache Englisch ist. Kurse werden für alle Lernstufen angeboten, von Anfänger bis Fortgeschrittene.

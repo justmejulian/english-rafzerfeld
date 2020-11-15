@@ -19,10 +19,12 @@ export const IndexPageTemplate = ({
   return (
     <div>
       <h1>{title}</h1>
-      <cite className={styles.cite}>
-        {quote.text}
-        <footer className={styles.quoteFooter}>- {quote.footer}</footer>
-      </cite>
+      {quote && (
+        <cite className={styles.cite}>
+          {quote.text}
+          <footer className={styles.quoteFooter}>- {quote.footer}</footer>
+        </cite>
+      )}
       <BodyComponent content={content} />
     </div>
   );
