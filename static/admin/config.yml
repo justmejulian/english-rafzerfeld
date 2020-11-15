@@ -140,6 +140,30 @@ collections:
               - { label: "Telephone", name: "tel", widget: "string" }
               - { label: "E-Mail", name: "email", widget: "string" }
 
+      - file: "src/pages/en/courses/index.md"
+        label: "Courses"
+        name: "courses"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "index-page",
+            }
+          - { label: Title, name: title, widget: string }
+          - label: "Days"
+            name: "days"
+            widget: "object"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - label: "Courses"
+                name: "courses"
+                widget: "object"
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Level", name: "level", widget: "string" }
+                  - { label: "CEF Level", name: "cefLevel", widget: "string" }
+
   - name: "pages-de"
     label: "Pages German"
     files:
@@ -248,3 +272,27 @@ collections:
             fields:
               - { label: "Telephone", name: "tel", widget: "string" }
               - { label: "E-Mail", name: "email", widget: "string" }
+
+      - file: "src/pages/de/courses/index.md"
+        label: "Courses"
+        name: "courses"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "index-page",
+            }
+          - { label: Title, name: title, widget: string }
+          - label: "Days"
+            name: "days"
+            widget: "object"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - label: "Courses"
+                name: "courses"
+                widget: "object"
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Level", name: "level", widget: "string" }
+                  - { label: "CEF Level", name: "cefLevel", widget: "string" }
