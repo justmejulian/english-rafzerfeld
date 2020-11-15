@@ -8,7 +8,13 @@ const IndexPagePreview = ({ entry, widgetFor }) => {
   const data = entry.getIn(["data"]).toJS();
 
   if (data) {
-    return <IndexPageTemplate content={widgetFor("body")} title={data.title} />;
+    return (
+      <IndexPageTemplate
+        content={widgetFor("body")}
+        title={data.title}
+        quote={data.quote}
+      />
+    );
   } else {
     return <div>Loading...</div>;
   }

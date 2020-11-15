@@ -45,9 +45,13 @@ collections:
               default: "index-page",
             }
           - { label: Title, name: title, widget: string }
-          - { label: Image, name: image, widget: image }
-          - { label: Heading, name: heading, widget: string }
-          - { label: Subheading, name: subheading, widget: string }
+          - label: "Quote"
+            name: "quote"
+            widget: "object"
+            fields:
+              - { label: "Quote Text", name: "text", widget: "string" }
+              - { label: "Quote Footer", name: "footer", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
 
       - file: "src/pages/en/team/index.md"
         label: "Team"
@@ -150,9 +154,13 @@ collections:
               default: "index-page",
             }
           - { label: Title, name: title, widget: string }
-          - { label: Image, name: image, widget: image }
-          - { label: Heading, name: heading, widget: string }
-          - { label: Subheading, name: subheading, widget: string }
+          - label: "Quote"
+            name: "quote"
+            widget: "object"
+            fields:
+              - { label: "Quote Text", name: "text", widget: "string" }
+              - { label: "Quote Footer", name: "footer", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
 
       - file: "src/pages/de/team/index.md"
         label: "Team"

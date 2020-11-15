@@ -20,7 +20,7 @@ export const IndexPageTemplate = ({
     <div>
       <h1>{title}</h1>
       <cite className={styles.cite}>
-        {quote.quote}
+        {quote.text}
         <footer className={styles.quoteFooter}>- {quote.footer}</footer>
       </cite>
       <BodyComponent content={content} />
@@ -30,6 +30,10 @@ export const IndexPageTemplate = ({
 
 IndexPageTemplate.propTypes = {
   title: PropTypes.string,
+  quote: PropTypes.shape({
+    text: PropTypes.string.isRequired,
+    footer: PropTypes.string.isRequired,
+  }),
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
 };
@@ -73,7 +77,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         quote {
-          quote
+          text
           footer
         }
       }
