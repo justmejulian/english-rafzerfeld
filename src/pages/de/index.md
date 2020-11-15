@@ -1,13 +1,14 @@
 ---
 templateKey: index-page
-title: Welcome to english in the rafzerfeld
+title: Willkommen bei english in the rafzerfeld
 quote:
-  text: "Well planned, varied and stimulating, using relevant themes and supporting resource materials."
-  footer: "Student of english in the rafzerfeld"
+  text: "Gut vorbereitet, vielseitig und anregend mit aktuellen interessanten
+Themen und unterstützenden Kursunterlagen."
+  footer: "Kursteilnehmerin von english in the rafzerfeld"
 ---
 
-Our priority is to provide creative, enjoyable and effective language courses for you. Learn with qualified teachers whose first language is English. Courses are offered for all levels, beginner to advanced.
+Unsere Priorität ist es, für Sie kreativen, angenehmen und wirksamen Unterricht zu gestalten. Hier können Sie mit qualifizierten Lehrerinnen arbeiten, deren Muttersprache Englisch ist. Kurse werden für alle Lernstufen angeboten, von Anfänger bis Fortgeschrittene.
 
-Small groups (max 8 persons) mean personalised learning and a supportive, friendly environment. Private courses (1-3 persons) are designed for your individual needs and interests.
+Das Lernen in Kleingruppen (max. 8 Personen) ermöglicht ein persönliches, unterstützendes und freundliches Umfeld. Privatkurse (1-3 Personen) werden Ihren individuellen Bedürfnissen und Interessen angepasst.
 
-Whether you need English for travel, work or to communicate internationally, we look forward to hearing from you!
+Ob Sie Englisch für Reisen, Ihre Arbeit oder interkulturelle Kommunikation brauchen, wir freuen uns von Ihnen zu hören!

@@ -4,13 +4,15 @@ path: /team
 title: Our teachers
 bev:
   image: /img/bev.jpg
-  description: Bev was brought up in Johannesburg, South Africa. She studied
-    communications but has been a stay-at-home mum to her 3 children for nearly
-    20 years. Since living in Switzerland, she saw the need for qualified
-    English teachers and completed her CELTA training in 2012. She lives in Rafz
-    with her family. She values working with her students and sharing her
-    enjoyment of the language.
-  nationality: South Africa
+  description: I was brought up in Johannesburg, South Africa. I studied
+    communications at a tertiary education school.  Many years ago my family and
+    I moved to Switzerland and I was a stay-at-home mum to my 3 children. In my
+    time in Switzerland, I have often seen the need for qualified English
+    teachers.  Once I completed the CELTA training in 2012, I joined Angela and
+    have loved every minute of teaching English. I am now a Rafzer and
+    Switzerland has become my home. I value working with my students and sharing
+    my enjoyment of the language.
+  nationality: "Swiss but originally South African "
   certificates:
     - Cambridge Certificate in Teaching English as a Foreign Language
 angela:

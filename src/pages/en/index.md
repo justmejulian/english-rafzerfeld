@@ -2,7 +2,8 @@
 templateKey: index-page
 title: Welcome to english in the rafzerfeld
 quote:
-  text: "Well planned, varied and stimulating, using relevant themes and supporting resource materials."
+  text: "Well planned, varied and stimulating, using relevant themes and
+  supporting resource materials."
   footer: "Student of english in the rafzerfeld"
 ---
 
