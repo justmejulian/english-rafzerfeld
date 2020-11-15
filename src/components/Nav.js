@@ -5,35 +5,58 @@ import { Link } from "gatsby";
 
 import styles from "./Nav.module.css";
 
-const Nav = ({ langUrl }) => (
-  <nav className={styles.nav}>
-    <Link activeClassName={styles.active} to={langUrl + "/"}>
-      Home
-    </Link>
-    <Link activeClassName={styles.active} to={"/blog"}>
-      Blog
-    </Link>
-    <Link activeClassName={styles.active} to={langUrl + "/courses"}>
-      Courses
-    </Link>
-    <Link activeClassName={styles.active} to={langUrl + "/team"}>
-      Team
-    </Link>
-    <Link activeClassName={styles.active} to={langUrl + "/fees"}>
-      Fees
-    </Link>
-    <Link activeClassName={styles.active} to={langUrl + "/contact"}>
-      Contact
-    </Link>
-  </nav>
-);
+const Nav = ({ currentLanguage }) => {
+  const navNames =
+    currentLanguage === "/de"
+      ? {
+          home: "Home",
+          blog: "Blog",
+          courses: "Kurse",
+          fees: "Preis",
+          team: "Team",
+          contact: "Kontakt",
+        }
+      : {
+          home: "Home",
+          blog: "Blog",
+          courses: "Courses",
+          fees: "Fees",
+          team: "Team",
+          contact: "Contact",
+        };
+
+  const languageUrl = "/" + currentLanguage;
+
+  return (
+    <nav className={styles.nav}>
+      <Link activeClassName={styles.active} to={languageUrl + "/"}>
+        {navNames.home}
+      </Link>
+      <Link activeClassName={styles.active} to={"/blog"}>
+        {navNames.blog}
+      </Link>
+      <Link activeClassName={styles.active} to={languageUrl + "/courses"}>
+        {navNames.courses}
+      </Link>
+      <Link activeClassName={styles.active} to={languageUrl + "/team"}>
+        {navNames.team}
+      </Link>
+      <Link activeClassName={styles.active} to={languageUrl + "/fees"}>
+        {navNames.fees}
+      </Link>
+      <Link activeClassName={styles.active} to={languageUrl + "/contact"}>
+        {navNames.contact}
+      </Link>
+    </nav>
+  );
+};
 
 Nav.defaulProps = {
-  langUrl: null,
+  currentLanguage: null,
 };
 
 Nav.propTypes = {
-  langUrl: PropTypes.string,
+  currentLanguage: PropTypes.string,
 };
 
 export default Nav;

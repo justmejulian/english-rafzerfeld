@@ -9,7 +9,7 @@ import Nav from "./Nav";
 
 import styles from "./Header.module.css";
 
-const Header = ({ langUrl }) => {
+const Header = ({ currentLanguage }) => {
   const { logo } = useStaticQuery(graphql`
     query {
       logo: file(relativePath: { eq: "logo.png" }) {
@@ -24,19 +24,19 @@ const Header = ({ langUrl }) => {
   return (
     <header className={styles.header}>
       <Img fluid={logo.childImageSharp.fluid} className={styles.img} />
-      <Nav langUrl={langUrl} />
+      <Nav currentLanguage={currentLanguage} />
     </header>
   );
 };
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-  langUrl: PropTypes.string,
+  currentLanguage: PropTypes.string,
 };
 
 Header.defaultProps = {
   siteTitle: "",
-  langUrl: null,
+  currentLanguage: null,
 };
 
 export default Header;

@@ -26,18 +26,18 @@ const Layout = ({ children }) => {
     if (typeof window !== "undefined") {
       const { pathname } = window.location;
 
-      const language = pathname.slice(0, 3);
+      const language = pathname.slice(1, 3);
       setPath(pathname.slice(3, pathname.length));
 
       // Get lang from url or from localStorage
 
-      if (language === "/en" || language === "/de") {
+      if (language === "en" || language === "de") {
         localStorage.setItem("language", language);
         setCurrentLanguage(language);
         setUrlContainsLang(true);
       } else {
-        setCurrentLanguage(localStorage.getItem("language") ?? "/en");
-        setUrlContainsLang(true);
+        setCurrentLanguage(localStorage.getItem("language") ?? "en");
+        setUrlContainsLang(false);
       }
     }
   }, []);
@@ -67,7 +67,7 @@ const Layout = ({ children }) => {
         fluid={bgImage.childImageSharp.fluid}
       >
         <div className={styles.container}>
-          <Header langUrl={currentLanguage} />
+          <Header currentLanguage={currentLanguage} />
           <div className={styles.mainBody}>
             <div className={styles.border} />
             <div className={styles.mainContainer}>
@@ -75,7 +75,7 @@ const Layout = ({ children }) => {
             </div>
             <div className={styles.border} />
             <LanguageSelector
-              langUrl={currentLanguage}
+              currentLanguage={currentLanguage}
               path={path}
               urlContainsLang={urlContainsLang}
             />

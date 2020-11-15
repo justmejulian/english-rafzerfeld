@@ -8,7 +8,7 @@ import classNames from "classnames";
 
 import styles from "./LanguageSelector.module.css";
 
-const LanguageSelector = ({ langUrl, path, urlContainsLang }) => {
+const LanguageSelector = ({ currentLanguage, path, urlContainsLang }) => {
   const { iconDe, iconEn } = useStaticQuery(graphql`
     query {
       iconDe: file(relativePath: { eq: "icon-de.png" }) {
@@ -29,12 +29,12 @@ const LanguageSelector = ({ langUrl, path, urlContainsLang }) => {
   `);
 
   const handleClick = (lang) => {
-    if (langUrl === lang) {
+    if (currentLanguage === lang) {
       return null;
     }
 
     if (urlContainsLang) {
-      navigate(lang + path);
+      navigate("/" + lang + path);
     }
   };
 
@@ -46,17 +46,17 @@ const LanguageSelector = ({ langUrl, path, urlContainsLang }) => {
     >
       <div
         className={classNames(styles.imageContainer, {
-          [styles.active]: langUrl === "/de" && urlContainsLang,
+          [styles.active]: currentLanguage === "de" && urlContainsLang,
         })}
-        onClick={() => handleClick("/de")}
+        onClick={() => handleClick("de")}
       >
         <Img fluid={iconDe.childImageSharp.fluid} className={styles.img} />
       </div>
       <div
         className={classNames(styles.imageContainer, {
-          [styles.active]: langUrl === "/en" && urlContainsLang,
+          [styles.active]: currentLanguage === "en" && urlContainsLang,
         })}
-        onClick={() => handleClick("/en")}
+        onClick={() => handleClick("en")}
       >
         <Img fluid={iconEn.childImageSharp.fluid} className={styles.img} />
       </div>
