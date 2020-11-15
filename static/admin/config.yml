@@ -153,12 +153,12 @@ collections:
           - { label: Title, name: title, widget: string }
           - label: "Days"
             name: "days"
-            widget: "object"
+            widget: "list"
             fields:
               - { label: "Name", name: "name", widget: "string" }
               - label: "Courses"
                 name: "courses"
-                widget: "object"
+                widget: "list"
                 fields:
                   - { label: "Name", name: "name", widget: "string" }
                   - { label: "Level", name: "level", widget: "string" }
@@ -286,12 +286,12 @@ collections:
           - { label: Title, name: title, widget: string }
           - label: "Days"
             name: "days"
-            widget: "object"
+            widget: "list"
             fields:
               - { label: "Name", name: "name", widget: "string" }
               - label: "Courses"
                 name: "courses"
-                widget: "object"
+                widget: "list"
                 fields:
                   - { label: "Name", name: "name", widget: "string" }
                   - { label: "Level", name: "level", widget: "string" }
