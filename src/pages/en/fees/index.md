@@ -14,9 +14,9 @@ groupLessons:
     reducedRateSemester: 400.-
 privateLessons:
   - name: Lesson 60 Min
-    one: 400.-
-    two: 350.-
-    three: 350.-
+    one: 85.-
+    two: 45.-
+    three: 30.-
   - name: Lesson 90 Min.
     one: 120.-
     two: 60.-
