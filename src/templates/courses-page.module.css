@@ -3,6 +3,24 @@
     "Helvetica Neue", helvetica;
 }
 
+.table table {
+  width: 100%;
+  font-size: 20px;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.table th {
+  font-weight: 400;
+}
+
+.table th,
+.table td {
+  border-top: 1px solid rgb(221, 221, 221);
+  line-height: 20px;
+  padding: 8px 16px;
+}
+
 .description {
   font-family: "Roboto Condensed", colaborate-thin, "Yanone Kaffeesatz",
     "Helvetica Neue", helvetica;
@@ -11,28 +29,7 @@
   font-weight: 400;
 }
 
-.row {
-  display: flex;
-  justify-content: space-between;
-
-  font-size: 20px;
-
-  height: 20px;
-  padding: 8px;
-
-  border-top: 1px solid rgb(221, 221, 221);
-  border-collapse: collapse;
-}
-
-.day {
-  flex: 1;
-}
-
-.level {
-  width: 200px;
-}
-
 .time {
-  min-width: 300px;
+  width: 200px;
   text-align: end;
 }

@@ -13,22 +13,28 @@ export const CoursesPageTemplate = ({ title, days }) => {
         One to one courses and further group courses can be arranged.
       </p>
       <div className={styles.table}>
-        {days.map((day, index) => (
-          <React.Fragment key={day.name}>
-            <div className={styles.row}>
-              <div className={styles.day}>{day.name}</div>
-              {/* Only show level in fists header */}
-              {index === 0 && <div className={styles.level}>*CEF level</div>}
-            </div>
-            {day.courses.map((cours) => (
-              <div className={styles.row} key={cours.name}>
-                <div className={styles.time}>{cours.name}</div>
-                <div>{cours.level}</div>
-                <div className={styles.level}>{cours.cefLevel}</div>
-              </div>
-            ))}
-          </React.Fragment>
-        ))}
+        <table>
+          {days.map((day, index) => (
+            <React.Fragment>
+              <tr>
+                <th>{day.name}</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>{index === 0 && "*CEF level"}</th>
+              </tr>
+              {day.courses.map((cours) => (
+                <tr>
+                  <td className={styles.time}>{cours.name}</td>
+                  <td>{cours.level}</td>
+                  <td>{cours.cefLevel}</td>
+                  <td>{cours.location}</td>
+                  <td>{cours.level}</td>
+                </tr>
+              ))}
+            </React.Fragment>
+          ))}
+        </table>
       </div>
     </div>
   );
@@ -66,6 +72,7 @@ export const coursesPageQuery = graphql`
             name
             level
             cefLevel
+            location
           }
         }
       }
