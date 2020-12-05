@@ -8,6 +8,7 @@ days:
       - name: 16:45 - 17:45
         level: Elementary
         cefLevel: A1/A2
+        location: Zoom
       - name: 19:00 - 20:30
         level: Advanced
         cefLevel: C2
@@ -29,6 +30,7 @@ days:
         cefLevel: C1
       - name: 19:00 - 20:30
         level: Intermediate
+        location: Zoom
         cefLevel: A2/B1
   - name: Thursday
     courses:
