@@ -4,6 +4,7 @@ html,
 body,
 #___gatsby {
   height: 100%;
+  overflow: auto;
 }
 
 #gatsby-focus-wrapper {
