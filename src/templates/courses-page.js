@@ -24,7 +24,7 @@ export const CoursesPageTemplate = ({ title, days }) => {
                 <th>{index === 0 && "*CEF level"}</th>
               </tr>
               {day.courses.map((cours) => (
-                <tr>
+                <tr key={cours.name}>
                   <td className={styles.time}>{cours.name}</td>
                   <td>{cours.level}</td>
                   <td>{cours.cefLevel}</td>
