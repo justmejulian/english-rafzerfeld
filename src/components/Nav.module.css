@@ -27,3 +27,12 @@
   border-bottom: 2px solid white;
   transform: scale(1.1);
 }
+
+@media only screen and (max-width: 1090px) {
+  /* todo: convert mobile nav to dropdown */
+  .nav {
+    font-size: 20px;
+    padding-bottom: 0px;
+    width: 100%;
+  }
+}

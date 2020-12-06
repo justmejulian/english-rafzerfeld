@@ -11,3 +11,21 @@
 
   margin-right: 8px;
 }
+
+@media only screen and (max-width: 1090px) {
+  .header {
+    width: 100%;
+    box-sizing: border-box;
+    height: auto;
+    display: block;
+    padding: 0 8px;
+    margin-top: 8px;
+  }
+
+  .img {
+    width: 90%;
+    height: fit-content;
+    margin: 0 auto;
+    margin-bottom: 8px;
+  }
+}
