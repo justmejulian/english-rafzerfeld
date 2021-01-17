@@ -8,6 +8,13 @@ import classnames from "classnames";
 
 import styles from "./team-page.module.css";
 
+const getImage = (image, alt) => {
+  if (image?.childImageSharp?.fluid) {
+      return <Img fluid={image.childImageSharp.fluid} alt={alt} />
+  }
+  return <img src={image} alt={alt}/>
+}
+
 export const TeamPageTemplate = ({ title, bev, angela }) => {
   return (
     <div>
@@ -22,10 +29,10 @@ export const TeamPageTemplate = ({ title, bev, angela }) => {
       </div>
       <div className={styles.row}>
         <div className={styles.image}>
-          <Img fluid={angela.image.childImageSharp.fluid} alt='Angela Image' />
+          {getImage(angela.image, 'Angela Image')}
         </div>
         <div className={styles.image}>
-          <Img fluid={bev.image.childImageSharp.fluid} alt='Bev Image' />
+          {getImage(bev.image, 'Bev Image')}
         </div>
       </div>
 
