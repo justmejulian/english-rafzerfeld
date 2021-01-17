@@ -5,7 +5,6 @@ import { graphql } from "gatsby";
 import Content, { HTMLContent } from "../components/Content";
 
 import Layout from "../components/Layout";
-import BlogRoll from "../components/BlogRoll";
 
 import styles from "./index-page.module.css";
 
@@ -51,15 +50,6 @@ const IndexPage = ({ data }) => {
         content={markdownRemark.html}
         contentComponent={HTMLContent}
       />
-      <div
-        style={{
-          margin: "40px 0px",
-          height: 1,
-          backgroundColor: "grey",
-        }}
-      />
-      <h2>Latest Posts</h2>
-      <BlogRoll />
     </Layout>
   );
 };
