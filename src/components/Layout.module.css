@@ -38,30 +38,3 @@
   color: #000;
   border-radius: 2px;
 }
-
-@media only screen and (max-width: 1090px) {
-  .layout {
-    width: 100%;
-    min-width: 0;
-    min-height: 0;
-    overflow: auto;
-  }
-  .container {
-    margin: 0;
-    height: 100%;
-  }
-  .mainBody {
-    padding: 8px 0 0 0;
-    min-height: 0;
-    flex-direction: column;
-  }
-  .border {
-    display: none;
-  }
-  .mainContainer {
-    width: 100%;
-    box-sizing: border-box;
-    margin: 0;
-    border-radius: 0;
-  }
-}
