@@ -1,12 +1,26 @@
 ---
+import { marked } from 'marked';
+import { z } from 'astro:content';
 import Layout from '@layouts/Layout.astro';
 import Button from '@preact/Button.tsx';
 import Title from '@components/typography/Title.astro';
+
+import data from '../content/home.json';
+
+const schema = z.object({
+  title: z.string(),
+  intro: z.string(),
+});
+
+const parsedData = schema.parse(data);
+const markdown = parsedData.intro;
+const content = marked.parse(markdown);
 
 const title = 'English-Rafzerfeld';
 ---
 
 <Layout title={title}>
-  <Title>Welcome to the English-Rafzerfeld</Title>
+  <Title>{parsedData.title}</Title>
+  <div class="markdown" set:html={content}></div>
   <Button title="Click Me" client:load />
 </Layout>
