@@ -12,13 +12,27 @@
           }
         ]
       }
-    ]
+    ],
+    "levels": [
+      {
+        "subLevels": [
+          {
+            "name": "Level A1:",
+            "description": "The course for beginners and for those with limited English"
+          }
+        ],
+        "name": "Level A",
+        "description": "Develop basic vocabulary, simple grammar and useful phrases. A solid grounding for further study."
+      }
+    ],
+    "levelsTitle": "A guide to the Levels",
+    "levelsDescription": "Small classes for 4 to 8 persons"
   },
   "de": {
-    "title": "Kursangebot Gruppenunterricht",
+    "title": "Course list: Group courses",
     "days": [
       {
-        "name": "Montag",
+        "name": "Monday",
         "lessons": [
           {
             "time": "16.00 - 17.00",
@@ -26,6 +40,20 @@
             "ceflevel": "A1/A2"
           }
         ]
+      }
+    ],
+    "levelsTitle": "A guide to the Levels",
+    "levelsDescription": "Small classes for 4 to 8 persons",
+    "levels": [
+      {
+        "subLevels": [
+          {
+            "name": "Level A1:",
+            "description": "The course for beginners and for those with limited English"
+          }
+        ],
+        "name": "Level A",
+        "description": "Develop basic vocabulary, simple grammar and useful phrases. A solid grounding for further study."
       }
     ]
   }
