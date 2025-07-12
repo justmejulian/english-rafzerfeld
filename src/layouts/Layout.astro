@@ -5,6 +5,7 @@ import '@fontsource/fira-sans';
 import vinyard from 'public/assets/bgVineyard.jpg';
 
 import Header from '@components/Header.astro';
+import Card from '@components/Card.astro';
 
 export interface Props {
   title: string;
@@ -23,9 +24,13 @@ const backgroundUrl = `url(${vinyard.src})`;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
   </head>
-  <body class="h-full bg-cover bg-center bg-no-repeat">
-    <Header title={title}/>
-    <slot />
+  <body class="m-0 h-full bg-none bg-cover bg-center bg-no-repeat p-0">
+    <Header title={title} />
+    <main class="flex w-full justify-center">
+      <Card>
+        <slot />
+      </Card>
+    </main>
   </body>
 </html>
 
