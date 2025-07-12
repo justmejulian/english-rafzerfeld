@@ -1,0 +1,44 @@
+---
+import { z } from 'astro:content';
+import Layout from '@layouts/Layout.astro';
+import Title from '@components/typography/Title.astro';
+
+import { multiLingualSchema } from '@utils/zod.ts';
+import { getLocaleData, getLocaleFromURL } from '@utils/locale.ts';
+
+import data from '@content/contact.json';
+
+const locale = getLocaleFromURL(Astro.url);
+
+const contentSchema = multiLingualSchema(
+  z.object({
+    title:z.string(),
+    description: z.string(),
+    email: z.string().email(),
+    teachersContact: z.array( z.object({
+      name: z.string(),
+      email: z.string().email(),
+      phone: z.string(),
+    })),
+    address: z.string(),
+  }),
+);
+
+const parsedData = contentSchema.parse(data);
+
+const content = getLocaleData(locale, parsedData);
+---
+
+<Layout locale={locale}>
+  <Title>{content.title}</Title>
+  <p>{content.description}</p>
+  <p>Email: <a href={`mailto:${content.email}`}>{content.email}</a></p>
+  { content.teachersContact.map((teacher) => (
+    <div>
+      <Title>{teacher.name}</Title>
+      <p>Email: <a href={`mailto:${teacher.email}`}>{teacher.email}</a></p>
+      <p>Phone: <a href={`tel:${teacher.phone}`}>{teacher.phone}</a></p>
+    </div>
+  ))}
+  <p>Address: {content.address}</p>
+</Layout>
