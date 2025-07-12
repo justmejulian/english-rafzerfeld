@@ -7,14 +7,11 @@ import Title from '@components/typography/Title.astro';
 import Markdown from '@components/Markdown.astro';
 
 import { multiLingualSchema } from '@utils/zod.ts';
+import { getLocaleData, getLocaleFromURL } from '@utils/locale.ts';
 
 import data from '@content/home.json';
 
-interface Props {
-  locale: 'en' | 'de';
-}
-
-const { locale } = Astro.props as Props;
+const locale = getLocaleFromURL(Astro.url);
 
 const contentSchema = multiLingualSchema(
   z.object({
@@ -25,9 +22,7 @@ const contentSchema = multiLingualSchema(
 
 const parsedData = contentSchema.parse(data);
 
-const { en, de } = parsedData;
-
-const content = locale === 'en' ? en : de;
+const content = getLocaleData(locale, parsedData);
 ---
 
 <Layout locale={locale}>
