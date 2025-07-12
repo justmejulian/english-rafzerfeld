@@ -1,0 +1,32 @@
+---
+
+---
+
+<div id="map"></div>
+
+<style>
+  #map {
+    height: 280px;
+  }
+</style>
+
+<script>
+  import type { LatLngExpression, Map } from 'leaflet';
+  import L from 'leaflet';
+  import 'leaflet/dist/leaflet';
+  import 'leaflet/dist/leaflet.css';
+
+  const center: LatLngExpression = [47.61104709329664, 8.53536773558204];
+  const pin: LatLngExpression = [47.6109, 8.53536773558204];
+
+  const zoom: number = 20;
+
+  const map: Map = L.map('map').setView(center, zoom);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  }).addTo(map);
+
+  L.marker(pin).addTo(map);
+</script>

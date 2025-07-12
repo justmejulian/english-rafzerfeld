@@ -2,6 +2,7 @@
 import { z } from 'astro:content';
 import Layout from '@layouts/Layout.astro';
 import Title from '@components/typography/Title.astro';
+import Map from '@components/Map.astro';
 
 import { multiLingualSchema } from '@utils/zod.ts';
 import { getLocaleData, getLocaleFromURL } from '@utils/locale.ts';
@@ -49,4 +50,5 @@ const content = getLocaleData(locale, parsedData);
     ))
   }
   <p>Address: {content.address}</p>
+  <Map />
 </Layout>
