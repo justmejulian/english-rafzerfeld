@@ -107,3 +107,32 @@ collections:
                 i18n: true
                 fields:
                   - { label: Name, name: name, widget: string, i18n: true }
+      - name: 'fees'
+        label: 'Fees Page'
+        file: 'src/content/fees.json'
+        i18n: true
+        fields:
+          - { label: Title, name: title, widget: string, i18n: true }
+          - { label: 'Group Courses Title', name: groupCoursesTitle, widget: string, i18n: true }
+          - { label: 'Group Courses Description', name: groupCoursesDescription, widget: string, i18n: true }
+          - label: 'Group Courses'
+            name: groupCourses
+            widget: list
+            i18n: true
+            fields:
+              - { label: Length, name: length, widget: number, i18n: true }
+              - { label: 'Normal rate', name: normalRate, widget: number, i18n: true }
+              - { label: 'Reduced rate', name: reducedRate, widget: number, i18n: true }
+              - { label: 'Description', name: description, widget: markdown, i18n: true }
+          - { label: 'Private Courses Title', name: privateCoursesTitle, widget: string, i18n: true }
+          - { label: 'Private Courses Description', name: privateCoursesDescription, widget: string, i18n: true }
+          - label: 'Private Courses'
+            name: privateCourses
+            widget: list
+            i18n: true
+            fields:
+              - { label: Length, name: length, widget: number, i18n: true }
+              - { label: '1 Person Rate', name: onePersonRate, widget: number, i18n: true }
+              - { label: '2 Persons Rate', name: twoPersonsRate, widget: number, i18n: true }
+              - { label: '3 Persons Rate', name: threePersonsRate, widget: number, i18n: true }
+              - { label: 'Description', name: description, widget: markdown, i18n: true }
