@@ -1,0 +1,50 @@
+{
+  "en": {
+    "title": "Fees",
+    "groupCoursesTitle": "Group courses (4 to 8 participants)",
+    "groupCoursesDescription": "All fees are given in Swiss francs",
+    "groupCourses": [
+      {
+        "length": 60,
+        "normalRate": 450,
+        "reducedRate": 396,
+        "description": "\\- All fees are per semester.\n- Semester length February to July and August to January, excluding school holidays.\n- You can join a group during the semester.\n- Fees are reduced for late entry.\n- Reduced rates are for seniors, students and couples."
+      }
+    ],
+    "privateCoursesTitle": "Private courses",
+    "privateCoursesDescription": "All fees are given in Swiss francs",
+    "privateCourses": [
+      {
+        "length": 60,
+        "onePersonRate": 85,
+        "twoPersonsRate": 45,
+        "threePersonsRate": 28,
+        "description": "\\- All fees are per lesson and per person.\n- Private lessons can be scheduled at flexible times to suit you.\n- You pay only for the number of lessons booked.\n- Reduced rates for seniors, students and couples on request."
+      }
+    ]
+  },
+  "de": {
+    "title": "Fees",
+    "groupCoursesTitle": "Group courses (4 to 8 participants)",
+    "groupCoursesDescription": "All fees are given in Swiss francs",
+    "groupCourses": [
+      {
+        "length": 60,
+        "normalRate": 450,
+        "reducedRate": 396,
+        "description": "\\- All fees are per semester.\n- Semester length February to July and August to January, excluding school holidays.\n- You can join a group during the semester.\n- Fees are reduced for late entry.\n- Reduced rates are for seniors, students and couples."
+      }
+    ],
+    "privateCoursesTitle": "Private courses",
+    "privateCoursesDescription": "All fees are given in Swiss francs",
+    "privateCourses": [
+      {
+        "length": 60,
+        "onePersonRate": 85,
+        "twoPersonsRate": 45,
+        "threePersonsRate": 28,
+        "description": "\\- All fees are per lesson and per person.\n- Private lessons can be scheduled at flexible times to suit you.\n- You pay only for the number of lessons booked.\n- Reduced rates for seniors, students and couples on request."
+      }
+    ]
+  }
+}
