@@ -1,0 +1,32 @@
+{
+  "en": {
+    "title": "Course list: Group courses",
+    "days": [
+      {
+        "name": "Monday",
+        "lessons": [
+          {
+            "time": "16.00 - 17.00",
+            "level": "Beginners",
+            "ceflevel": "A1/A2"
+          }
+        ]
+      }
+    ]
+  },
+  "de": {
+    "title": "Kursangebot Gruppenunterricht",
+    "days": [
+      {
+        "name": "Montag",
+        "lessons": [
+          {
+            "time": "16.00 - 17.00",
+            "level": "Beginners",
+            "ceflevel": "A1/A2"
+          }
+        ]
+      }
+    ]
+  }
+}
