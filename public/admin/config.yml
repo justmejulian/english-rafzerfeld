@@ -102,9 +102,19 @@ collections:
             i18n: true
             fields:
               - { label: Name, name: name, widget: string, i18n: true }
-              - { label: Description, name: description, widget: string, i18n: true }
-              - { label: Image, name: image, widget: image}
-              - { label: Nationality, name: nationality, widget: string, i18n: true }
+              - {
+                  label: Description,
+                  name: description,
+                  widget: string,
+                  i18n: true,
+                }
+              - { label: Image, name: image, widget: image }
+              - {
+                  label: Nationality,
+                  name: nationality,
+                  widget: string,
+                  i18n: true,
+                }
               - label: 'Certificates'
                 name: certificates
                 widget: list
@@ -117,36 +127,96 @@ collections:
         i18n: true
         fields:
           - { label: Title, name: title, widget: string, i18n: true }
-          - { label: 'Group Courses Title', name: groupCoursesTitle, widget: string, i18n: true }
-          - { label: 'Group Courses Description', name: groupCoursesDescription, widget: string, i18n: true }
+          - {
+              label: 'Group Courses Title',
+              name: groupCoursesTitle,
+              widget: string,
+              i18n: true,
+            }
+          - {
+              label: 'Group Courses Description',
+              name: groupCoursesDescription,
+              widget: string,
+              i18n: true,
+            }
           - label: 'Group Courses'
             name: groupCourses
             widget: list
             i18n: true
             fields:
               - { label: Length, name: length, widget: number, i18n: true }
-              - { label: 'Normal rate', name: normalRate, widget: number, i18n: true }
-              - { label: 'Reduced rate', name: reducedRate, widget: number, i18n: true }
-              - { label: 'Description', name: description, widget: markdown, i18n: true }
-          - { label: 'Private Courses Title', name: privateCoursesTitle, widget: string, i18n: true }
-          - { label: 'Private Courses Description', name: privateCoursesDescription, widget: string, i18n: true }
+              - {
+                  label: 'Normal rate',
+                  name: normalRate,
+                  widget: number,
+                  i18n: true,
+                }
+              - {
+                  label: 'Reduced rate',
+                  name: reducedRate,
+                  widget: number,
+                  i18n: true,
+                }
+              - {
+                  label: 'Description',
+                  name: description,
+                  widget: markdown,
+                  i18n: true,
+                }
+          - {
+              label: 'Private Courses Title',
+              name: privateCoursesTitle,
+              widget: string,
+              i18n: true,
+            }
+          - {
+              label: 'Private Courses Description',
+              name: privateCoursesDescription,
+              widget: string,
+              i18n: true,
+            }
           - label: 'Private Courses'
             name: privateCourses
             widget: list
             i18n: true
             fields:
               - { label: Length, name: length, widget: number, i18n: true }
-              - { label: '1 Person Rate', name: onePersonRate, widget: number, i18n: true }
-              - { label: '2 Persons Rate', name: twoPersonsRate, widget: number, i18n: true }
-              - { label: '3 Persons Rate', name: threePersonsRate, widget: number, i18n: true }
-              - { label: 'Description', name: description, widget: markdown, i18n: true }
+              - {
+                  label: '1 Person Rate',
+                  name: onePersonRate,
+                  widget: number,
+                  i18n: true,
+                }
+              - {
+                  label: '2 Persons Rate',
+                  name: twoPersonsRate,
+                  widget: number,
+                  i18n: true,
+                }
+              - {
+                  label: '3 Persons Rate',
+                  name: threePersonsRate,
+                  widget: number,
+                  i18n: true,
+                }
+              - {
+                  label: 'Description',
+                  name: description,
+                  widget: markdown,
+                  i18n: true,
+                }
       - name: 'contact'
         label: 'Contact Page'
         file: 'src/content/contact.json'
         i18n: true
         fields:
           - { label: Title, name: title, widget: string, i18n: true }
-          - { label: description, name: description, widget: markdown, i18n: true }
+          - {
+              label: description,
+              name: description,
+              widget: markdown,
+              i18n: true,
+            }
           - { label: email, name: email, widget: string, i18n: true }
           - label: 'Teachers Contact'
             name: teachersContact
@@ -157,4 +227,3 @@ collections:
               - { label: Email, name: email, widget: string, i18n: true }
               - { label: Phone, name: phone, widget: string, i18n: true }
           - { label: address, name: address, widget: string, i18n: true }
-

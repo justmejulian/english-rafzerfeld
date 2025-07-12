@@ -12,14 +12,16 @@ const locale = getLocaleFromURL(Astro.url);
 
 const contentSchema = multiLingualSchema(
   z.object({
-    title:z.string(),
+    title: z.string(),
     description: z.string(),
     email: z.string().email(),
-    teachersContact: z.array( z.object({
-      name: z.string(),
-      email: z.string().email(),
-      phone: z.string(),
-    })),
+    teachersContact: z.array(
+      z.object({
+        name: z.string(),
+        email: z.string().email(),
+        phone: z.string(),
+      }),
+    ),
     address: z.string(),
   }),
 );
@@ -33,12 +35,18 @@ const content = getLocaleData(locale, parsedData);
   <Title>{content.title}</Title>
   <p>{content.description}</p>
   <p>Email: <a href={`mailto:${content.email}`}>{content.email}</a></p>
-  { content.teachersContact.map((teacher) => (
-    <div>
-      <Title>{teacher.name}</Title>
-      <p>Email: <a href={`mailto:${teacher.email}`}>{teacher.email}</a></p>
-      <p>Phone: <a href={`tel:${teacher.phone}`}>{teacher.phone}</a></p>
-    </div>
-  ))}
+  {
+    content.teachersContact.map((teacher) => (
+      <div>
+        <Title>{teacher.name}</Title>
+        <p>
+          Email: <a href={`mailto:${teacher.email}`}>{teacher.email}</a>
+        </p>
+        <p>
+          Phone: <a href={`tel:${teacher.phone}`}>{teacher.phone}</a>
+        </p>
+      </div>
+    ))
+  }
   <p>Address: {content.address}</p>
 </Layout>

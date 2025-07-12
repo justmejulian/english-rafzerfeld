@@ -50,7 +50,9 @@ const content = getLocaleData(locale, parsedData);
   {
     content.groupCourses.map((course) => (
       <div class="mb-4">
-        <h3 class="text-lg font-semibold">Group Course ({course.length} min)</h3>
+        <h3 class="text-lg font-semibold">
+          Group Course ({course.length} min)
+        </h3>
         <ul class="list-disc pl-5">
           <li>Normal Rate: {course.normalRate} CHF</li>
           <li>Reduced Rate: {course.reducedRate} CHF</li>
@@ -64,7 +66,9 @@ const content = getLocaleData(locale, parsedData);
   {
     content.privateCourses.map((course) => (
       <div class="mb-4">
-        <h3 class="text-lg font-semibold">Private Course ({course.length} min)</h3>
+        <h3 class="text-lg font-semibold">
+          Private Course ({course.length} min)
+        </h3>
         <ul class="list-disc pl-5">
           <li>1 Person: {course.onePersonRate} CHF</li>
           <li>2 Persons: {course.twoPersonsRate} CHF</li>
@@ -74,5 +78,4 @@ const content = getLocaleData(locale, parsedData);
       </div>
     ))
   }
-
 </Layout>
