@@ -7,15 +7,18 @@ import Title from '@components/typography/Title.astro';
 
 import data from '../content/home.json';
 
-const multiLingualSchema = (schema: z.Schema) => z.object({
-  en: schema,
-  de: schema,
+const multiLingualSchema = (schema: z.Schema) =>
+  z.object({
+    en: schema,
+    de: schema,
   });
 
-const contentSchema = multiLingualSchema(z.object({
-  title: z.string(),
-  intro: z.string(),
-}));
+const contentSchema = multiLingualSchema(
+  z.object({
+    title: z.string(),
+    intro: z.string(),
+  }),
+);
 
 const parsedData = contentSchema.parse(data);
 
@@ -33,6 +36,6 @@ const title = 'English-Rafzerfeld';
 
 <Layout title={title}>
   <Title>{content.title}</Title>
-  <div class="markdown" set:html={markdownContent}></div>
+  <div class="markdown" set:html={markdownContent} />
   <Button title="Click Me" client:load />
 </Layout>
