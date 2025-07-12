@@ -6,7 +6,8 @@ import Title from '@components/typography/Title.astro';
 import { multiLingualSchema } from '@utils/zod.ts';
 import { getLocaleData, getLocaleFromURL } from '@utils/locale.ts';
 
-import data from '@content/team.json';
+import data from '@content/fees.json';
+import Markdown from '@components/Markdown.astro';
 
 const locale = getLocaleFromURL(Astro.url);
 
@@ -44,32 +45,17 @@ const content = getLocaleData(locale, parsedData);
 
 <Layout locale={locale}>
   <Title>{content.title}</Title>
-  <Title>{content.privateCoursesTitle}</Title>
-  <p>{content.privateCoursesDescription}</p>
-{
-    content.privateCourses.map((course) => (
-      <div class="mb-4">
-        <h3 class="text-lg font-semibold">Private Course ({course.length} min)</h3>
-        <p>{course.description}</p>
-        <ul class="list-disc pl-5">
-          <li>1 Person: {course.onePersonRate} CHF</li>
-          <li>2 Persons: {course.twoPersonsRate} CHF</li>
-          <li>3 Persons: {course.threePersonsRate} CHF</li>
-        </ul>
-      </div>
-    ))
-  }
   <Title>{content.groupCoursesTitle}</Title>
   <p>{content.groupCoursesDescription}</p>
   {
     content.groupCourses.map((course) => (
       <div class="mb-4">
         <h3 class="text-lg font-semibold">Group Course ({course.length} min)</h3>
-        <p>{course.description}</p>
         <ul class="list-disc pl-5">
           <li>Normal Rate: {course.normalRate} CHF</li>
           <li>Reduced Rate: {course.reducedRate} CHF</li>
         </ul>
+        <Markdown markdown={course.description} />
       </div>
     ))
   }
@@ -79,12 +65,12 @@ const content = getLocaleData(locale, parsedData);
     content.privateCourses.map((course) => (
       <div class="mb-4">
         <h3 class="text-lg font-semibold">Private Course ({course.length} min)</h3>
-        <p>{course.description}</p>
         <ul class="list-disc pl-5">
           <li>1 Person: {course.onePersonRate} CHF</li>
           <li>2 Persons: {course.twoPersonsRate} CHF</li>
           <li>3 Persons: {course.threePersonsRate} CHF</li>
         </ul>
+        <Markdown markdown={course.description} />
       </div>
     ))
   }
