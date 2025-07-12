@@ -1,0 +1,101 @@
+---
+import { z } from 'astro:content';
+import Layout from '@layouts/Layout.astro';
+import Title from '@components/typography/Title.astro';
+
+import { multiLingualSchema } from '@utils/zod.ts';
+
+import data from '@content/courses.json';
+
+interface Props {
+  locale: 'en' | 'de';
+}
+
+const { locale } = Astro.props as Props;
+
+const contentSchema = multiLingualSchema(
+  z.object({
+    title: z.string(),
+    days: z.array(
+      z.object({
+        name: z.string(),
+        lessons: z.array(
+          z.object({
+            time: z.string(),
+            level: z.string(),
+            ceflevel: z.string(),
+          }),
+        ),
+      }),
+    ),
+    levelsTitle: z.string(),
+    levelsDescription: z.string(),
+    levels: z.array(
+      z.object({
+        name: z.string(),
+        description: z.string(),
+        subLevels: z.array(
+          z.object({
+            name: z.string(),
+            description: z.string(),
+          }),
+        ),
+      }),
+    ),
+  }),
+);
+
+const parsedData = contentSchema.parse(data);
+
+const { en, de } = parsedData;
+
+const content = locale === 'en' ? en : de;
+
+const title = 'English-Rafzerfeld';
+---
+
+<Layout title={title} locale={locale}>
+  <Title>{content.title}</Title>
+  {
+    content.days.map((day) => (
+      <table class="w-full">
+        <thead>
+          <tr>
+            <th class="text-left">{day.name}</th>
+            <th />
+            <th />
+            <th class="text-left">CEF Level</th>
+          </tr>
+        </thead>
+        <tbody>
+          {day.lessons.map((lesson) => (
+            <tr>
+              <td />
+              <td>{lesson.time}</td>
+              <td>{lesson.level}</td>
+              <td>{lesson.ceflevel}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    ))
+  }
+
+  <Title>{content.levelsTitle}</Title>
+  <p>{content.levelsDescription}</p>
+
+  {
+    content.levels.map((level) => (
+      <div class="mb-4">
+        <h3 class="text-lg font-semibold">{level.name}</h3>
+        <p>{level.description}</p>
+        {level.subLevels.map((subLevel) => (
+          <div class="ml-4">
+            <h4 class="text-md font-medium">{subLevel.name}</h4>
+            <p>{subLevel.description}</p>
+          </div>
+        ))}
+      </div>
+    ))
+  }
+</Layout>

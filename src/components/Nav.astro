@@ -20,7 +20,7 @@ const linksLocale = {
     { href: '/de/fees', label: 'Preise' },
     { href: '/de/contact', label: 'Kontakt' },
   ],
-}
+};
 
 const links = linksLocale[locale];
 ---
@@ -30,7 +30,10 @@ const links = linksLocale[locale];
     <div class="flex h-16 items-center justify-between">
       <div class="flex-1 md:flex md:items-center md:gap-12">
         <!-- todo create logo component -->
-        <a class="text-white transition hover:text-gray-500/75" href={links[0].href}>
+        <a
+          class="text-white transition hover:text-gray-500/75"
+          href={links[0].href}
+        >
           {title}
         </a>
       </div>

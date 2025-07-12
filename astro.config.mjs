@@ -1,17 +1,17 @@
 // @ts-check
-import { defineConfig } from "astro/config";
+import { defineConfig } from 'astro/config';
 
-import preact from "@astrojs/preact";
+import preact from '@astrojs/preact';
 
-import tailwindcss from "@tailwindcss/vite";
+import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [preact()],
 
   i18n: {
-    locales: ["de", "en"],
-    defaultLocale: "en",
+    locales: ['de', 'en'],
+    defaultLocale: 'en',
     routing: {
       prefixDefaultLocale: true,
     },
