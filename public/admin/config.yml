@@ -5,7 +5,7 @@ backend:
 local_backend: true
 
 media_folder: 'public/assets/' # The folder where user-uploaded files are stored
-public_folder: 'assets/' # The src attribute for uploaded media
+public_folder: '/assets/' # The src attribute for uploaded media
 
 i18n:
   structure: single_file
