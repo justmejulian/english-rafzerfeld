@@ -45,3 +45,19 @@ collections:
                   - {label: Time, name: time, widget: string, i18n: true}
                   - {label: Level, name: level, widget: string, i18n: true}
                   - {label: "CEF Level", name: ceflevel, widget: string, i18n: true}
+          - { label: "Levels Title", name: levelsTitle, widget: string, i18n: true }
+          - { label: "Levels Desctiption", name: levelsDescription, widget: string, i18n: true }
+          - label: Levels
+            name: levels
+            widget: list
+            i18n: true
+            fields:
+              - {label: Name, name: name, widget: string, i18n: true}
+              - {label: Description, name: description, widget: string, i18n: true}
+              - label: "Sub Levels"
+                name: subLevels
+                widget: list
+                i18n: true
+                fields:
+                  - {label: Name, name: name, widget: string, i18n: true}
+                  - {label: Description, name: description, widget: string, i18n: true}
