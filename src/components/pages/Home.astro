@@ -28,11 +28,9 @@ const parsedData = contentSchema.parse(data);
 const { en, de } = parsedData;
 
 const content = locale === 'en' ? en : de;
-
-const title = 'English-Rafzerfeld';
 ---
 
-<Layout title={title} locale={locale}>
+<Layout locale={locale}>
   <Title>{content.title}</Title>
   <Markdown markdown={content.intro} />
   <Button title="Click Me" client:load />

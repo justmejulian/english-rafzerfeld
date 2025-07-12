@@ -8,11 +8,12 @@ import Nav from '@components/Nav.astro';
 import Card from '@components/Card.astro';
 
 export interface Props {
-  title: string;
   locale: 'en' | 'de';
 }
 
-const { title, locale } = Astro.props;
+const title = 'English-Rafzerfeld';
+
+const { locale } = Astro.props;
 const backgroundUrl = `url(${vinyard.src})`;
 ---
 

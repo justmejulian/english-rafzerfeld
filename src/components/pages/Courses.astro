@@ -51,10 +51,9 @@ const { en, de } = parsedData;
 
 const content = locale === 'en' ? en : de;
 
-const title = 'English-Rafzerfeld';
 ---
 
-<Layout title={title} locale={locale}>
+<Layout locale={locale}>
   <Title>{content.title}</Title>
   {
     content.days.map((day) => (
