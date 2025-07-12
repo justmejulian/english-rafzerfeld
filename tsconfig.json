@@ -4,6 +4,12 @@
   "exclude": ["dist"],
   "compilerOptions": {
     "jsx": "react-jsx",
-    "jsxImportSource": "preact"
+    "jsxImportSource": "preact",
+    "paths": {
+      "@layouts/*": ["./src/layouts/*"],
+      "@components/*": ["./src/components/*"],
+      "@preact/*": ["./src/components/preact/*"],
+      "@images/*": ["./src/images/*"]
+    }
   }
 }
