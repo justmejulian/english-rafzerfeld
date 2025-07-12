@@ -1,13 +1,28 @@
 ---
-const { title } = Astro.props;
-const links = [
-  { href: '#', label: 'About' },
-  { href: '#', label: 'Careers' },
-  { href: '#', label: 'History' },
-  { href: '#', label: 'Services' },
-  { href: '#', label: 'Projects' },
-  { href: '#', label: 'Blog' },
-];
+interface Props {
+  title: string;
+  locale: 'en' | 'de';
+}
+
+const { title, locale } = Astro.props;
+const linksLocale = {
+  en: [
+    { href: '/en/', label: 'Home' },
+    { href: '/en/courses', label: 'Courses' },
+    { href: '/en/team', label: 'Team' },
+    { href: '/en/fees', label: 'Fees' },
+    { href: '/en/contact', label: 'Contact' },
+  ],
+  de: [
+    { href: '/de/', label: 'Home' },
+    { href: '/de/courses', label: 'Kurse' },
+    { href: '/de/team', label: 'Team' },
+    { href: '/de/fees', label: 'Preise' },
+    { href: '/de/contact', label: 'Kontakt' },
+  ],
+}
+
+const links = linksLocale[locale];
 ---
 
 <header>
@@ -15,7 +30,7 @@ const links = [
     <div class="flex h-16 items-center justify-between">
       <div class="flex-1 md:flex md:items-center md:gap-12">
         <!-- todo create logo component -->
-        <a class="text-white transition hover:text-gray-500/75" href="/">
+        <a class="text-white transition hover:text-gray-500/75" href={links[0].href}>
           {title}
         </a>
       </div>
