@@ -86,3 +86,24 @@ collections:
                       widget: string,
                       i18n: true,
                     }
+      - name: 'team'
+        label: 'Team Page'
+        file: 'src/content/team.json'
+        i18n: true
+        fields:
+          - { label: Title, name: title, widget: string, i18n: true }
+          - label: Teachers
+            name: teachers
+            widget: list
+            i18n: true
+            fields:
+              - { label: Name, name: name, widget: string, i18n: true }
+              - { label: Description, name: description, widget: string, i18n: true }
+              - { label: Image, name: image, widget: image}
+              - { label: Nationality, name: nationality, widget: string, i18n: true }
+              - label: 'Certificates'
+                name: certificates
+                widget: list
+                i18n: true
+                fields:
+                  - { label: Name, name: name, widget: string, i18n: true }
