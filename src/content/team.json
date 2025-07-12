@@ -1,0 +1,40 @@
+{
+  "en": {
+    "title": "Our teachers",
+    "teachers": [
+      {
+        "name": "Bev Visser",
+        "description": "Bev grew up up in Johannesburg, South Africa. She studied communications and was a stay-at-home mum to her 3 children. Since living in Switzerland, she saw the need for qualified English teachers and completed her CELTA training in 2012. She lives in Rafz. She values working with her students and sharing her enjoyment of the language.",
+        "nationality": "South Africa/Swiss",
+        "certificates": [
+          {
+            "name": "\"Teaching 1 on 1\""
+          },
+          {
+            "name": "\"Cambridge Certificate in Teaching English as a Foreign Language\""
+          }
+        ],
+        "image": "assets/bev.jpeg"
+      }
+    ]
+  },
+  "de": {
+    "title": "Our teachers",
+    "teachers": [
+      {
+        "name": "Bev Visser",
+        "description": "Bev grew up up in Johannesburg, South Africa. She studied communications and was a stay-at-home mum to her 3 children. Since living in Switzerland, she saw the need for qualified English teachers and completed her CELTA training in 2012. She lives in Rafz. She values working with her students and sharing her enjoyment of the language.",
+        "nationality": "South Africa/Swiss",
+        "certificates": [
+          {
+            "name": "\"Teaching 1 on 1\""
+          },
+          {
+            "name": "\"Cambridge Certificate in Teaching English as a Foreign Language\""
+          }
+        ],
+        "image": "assets/bev.jpeg"
+      }
+    ]
+  }
+}
