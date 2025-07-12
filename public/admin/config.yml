@@ -140,3 +140,21 @@ collections:
               - { label: '2 Persons Rate', name: twoPersonsRate, widget: number, i18n: true }
               - { label: '3 Persons Rate', name: threePersonsRate, widget: number, i18n: true }
               - { label: 'Description', name: description, widget: markdown, i18n: true }
+      - name: 'contact'
+        label: 'Contact Page'
+        file: 'src/content/contact.json'
+        i18n: true
+        fields:
+          - { label: Title, name: title, widget: string, i18n: true }
+          - { label: description, name: description, widget: markdown, i18n: true }
+          - { label: email, name: email, widget: string, i18n: true }
+          - label: 'Teachers Contact'
+            name: teachersContact
+            widget: list
+            i18n: true
+            fields:
+              - { label: Name, name: name, widget: string, i18n: true }
+              - { label: Email, name: email, widget: string, i18n: true }
+              - { label: Phone, name: phone, widget: string, i18n: true }
+          - { label: address, name: address, widget: string, i18n: true }
+
