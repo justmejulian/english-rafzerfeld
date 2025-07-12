@@ -11,6 +11,8 @@ i18n:
   structure: single_file
   locales: [en, de]
 
+# Todo create a collection for teachers
+
 collections:
   - label: 'Pages'
     name: 'pages'
@@ -31,6 +33,7 @@ collections:
         i18n: true
         fields:
           - { label: Title, name: title, widget: string, i18n: true }
+          # todo use select widget for days
           - label: Days
             name: days
             widget: list
@@ -43,6 +46,7 @@ collections:
                 i18n: true
                 fields:
                   - { label: Time, name: time, widget: string, i18n: true }
+                  # todo use select widget for days
                   - { label: Level, name: level, widget: string, i18n: true }
                   - {
                       label: 'CEF Level',
