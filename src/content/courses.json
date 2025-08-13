@@ -3,16 +3,75 @@
     "title": "Course list: Group courses",
     "days": [
       {
-        "name": "Monday",
+        "name": "Montag",
         "lessons": [
           {
             "time": "16.00 - 17.00",
             "level": "Beginners",
             "ceflevel": "A1/A2"
+          },
+          { "time": "17.00 - 18.00", "level": "Elementary", "ceflevel": "A2" },
+          { "time": "19.00 - 20.30", "level": "Advanced", "ceflevel": "C1/C2" },
+          {
+            "time": "19.00 - 20.00",
+            "level": "Conversation (Eglisau)",
+            "ceflevel": "B2"
           }
+        ]
+      },
+      {
+        "name": "Dienstag",
+        "lessons": [
+          {
+            "time": "16.30 - 17.30",
+            "level": "Intermediate",
+            "ceflevel": "B1"
+          },
+          {
+            "time": "18.30 - 20.00",
+            "level": "Conversation",
+            "ceflevel": "B2"
+          },
+          { "time": "19.15 - 20.45", "level": "Elementary", "ceflevel": "A2" }
+        ]
+      },
+      {
+        "name": "Mittwoch",
+        "lessons": [
+          { "time": "10.00 – 11.00", "level": "Advanced", "ceflevel": "C1/C2" },
+          { "time": "19.00 – 20.30", "level": "Intermediate", "ceflevel": "B1" }
+        ]
+      },
+      {
+        "name": "Donnerstag",
+        "lessons": [
+          {
+            "time": "08.30 – 9.45",
+            "level": "Pre-Intermediate",
+            "ceflevel": "B1/B2"
+          },
+          {
+            "time": "10.00 – 11.00",
+            "level": "Intermediate",
+            "ceflevel": "B1/B2"
+          },
+          {
+            "time": "19.00 – 20.00",
+            "level": "Conversation (Online)",
+            "ceflevel": "B2"
+          }
+        ]
+      },
+      {
+        "name": "Freitag",
+        "lessons": [
+          { "time": "08.30 – 09.30", "level": "Beginner", "ceflevel": "A1/A2" },
+          { "time": "09.30 – 10.30", "level": "Beginner", "ceflevel": "A1/A2" }
         ]
       }
     ],
+    "levelsTitle": "A guide to the Levels",
+    "levelsDescription": "Small classes for 4 to 8 persons",
     "levels": [
       {
         "subLevels": [
@@ -24,21 +83,76 @@
         "name": "Level A",
         "description": "Develop basic vocabulary, simple grammar and useful phrases. A solid grounding for further study."
       }
-    ],
-    "levelsTitle": "A guide to the Levels",
-    "levelsDescription": "Small classes for 4 to 8 persons"
+    ]
   },
   "de": {
     "title": "Course list: Group courses",
     "days": [
       {
-        "name": "Monday",
+        "name": "Montag",
         "lessons": [
           {
             "time": "16.00 - 17.00",
             "level": "Beginners",
             "ceflevel": "A1/A2"
+          },
+          { "time": "17.00 - 18.00", "level": "Elementary", "ceflevel": "A2" },
+          { "time": "19.00 - 20.30", "level": "Advanced", "ceflevel": "C1/C2" },
+          {
+            "time": "19.00 - 20.00",
+            "level": "Conversation (Eglisau)",
+            "ceflevel": "B2"
           }
+        ]
+      },
+      {
+        "name": "Dienstag",
+        "lessons": [
+          {
+            "time": "16.30 - 17.30",
+            "level": "Intermediate",
+            "ceflevel": "B1"
+          },
+          {
+            "time": "18.30 - 20.00",
+            "level": "Conversation",
+            "ceflevel": "B2"
+          },
+          { "time": "19.15 - 20.45", "level": "Elementary", "ceflevel": "A2" }
+        ]
+      },
+      {
+        "name": "Mittwoch",
+        "lessons": [
+          { "time": "10.00 – 11.00", "level": "Advanced", "ceflevel": "C1/C2" },
+          { "time": "19.00 – 20.30", "level": "Intermediate", "ceflevel": "B1" }
+        ]
+      },
+      {
+        "name": "Donnerstag",
+        "lessons": [
+          {
+            "time": "08.30 – 9.45",
+            "level": "Pre-Intermediate",
+            "ceflevel": "B1/B2"
+          },
+          {
+            "time": "10.00 – 11.00",
+            "level": "Intermediate",
+            "ceflevel": "B1/B2"
+          },
+          {
+            "time": "19.00 – 20.00",
+            "level": "Conversation (Online)",
+            "ceflevel": "B2"
+          }
+        ]
+      },
+      {
+        "name": "Freitag",
+        "lessons": [
+          { "time": "08.30 – 09.30", "level": "Beginner", "ceflevel": "A1/A2" },
+          { "time": "09.30 – 10.30", "level": "Beginner", "ceflevel": "A1/A2" }
         ]
       }
     ],
