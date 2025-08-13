@@ -15,6 +15,26 @@
           }
         ],
         "image": "/assets/bev.jpeg"
+      },
+      {
+        "name": "Angela Eibner",
+        "description": "Angela grew up and went to university in London. On coming to Switzerland she trained as an English language teacher. She has been teaching with great pleasure for over 30 years. Besides the MA in English Language Teaching, she has a Business English qualification and a Diploma in Adult Education. She lives with her family in Rafz.",
+        "nationality": "UK / Switzerland",
+        "certificates": [
+          {
+            "name": "\"MA in English Language Teaching\""
+          },
+          {
+            "name": "\"Cambridge Certificate in Teaching English as a Foreign Language\""
+          },
+          {
+            "name": "\"Certificate in Teaching English for Business\""
+          },
+          {
+            "name": "\"Diploma in Adult and Further Education\""
+          }
+        ],
+        "image": "/assets/angela.jpeg"
       }
     ]
   },
@@ -34,6 +54,26 @@
           }
         ],
         "image": "/assets/bev.jpeg"
+      },
+      {
+        "name": "Angela Eibner",
+        "description": "Angela grew up and went to university in London. On coming to Switzerland she trained as an English language teacher. She has been teaching with great pleasure for over 30 years. Besides the MA in English Language Teaching, she has a Business English qualification and a Diploma in Adult Education. She lives with her family in Rafz.",
+        "nationality": "UK / Switzerland",
+        "certificates": [
+          {
+            "name": "\"MA in English Language Teaching\""
+          },
+          {
+            "name": "\"Cambridge Certificate in Teaching English as a Foreign Language\""
+          },
+          {
+            "name": "\"Certificate in Teaching English for Business\""
+          },
+          {
+            "name": "\"Diploma in Adult and Further Education\""
+          }
+        ],
+        "image": "/assets/angela.jpeg"
       }
     ]
   }
