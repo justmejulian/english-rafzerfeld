@@ -1,47 +1,34 @@
-# Astro Starter Kit: Minimal
+# English Rafzerfeld Website
 
-```sh
-npm create astro@latest -- --template minimal
-```
+This repository contains the source code for the English Rafzerfeld website.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+The website is built using [Astro](https://astro.build).
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+It also uses [Decap](https://decapcms.org/) for content management.
 
-## 🚀 Project Structure
+## Development
 
-Inside of your Astro project, you'll see the following folders and files:
+1. Install dependencies:
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+   ```sh
+   nvm install
+   npm install
+   ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+1. Start the development server:
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+   ```sh
+   npm run dev
+   ```
 
-Any static assets, like images, can be placed in the `public/` directory.
+   The website will be available at `http://localhost:4321`.
 
-## 🧞 Commands
+## CMS
 
-All commands are run from the root of the project, from a terminal:
+To manage content, use the Decap CMS interface at `http://localhost:4321/admin`.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Note that the website reads content directly from GitHub. Any changes you make in the CMS must be pushed to the repository for them to appear on the site.
 
-## 👀 Want to learn more?
+Even when running the CMS locally, all content is fetched from the remote repository.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
