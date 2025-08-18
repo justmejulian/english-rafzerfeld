@@ -1,0 +1,20 @@
+---
+import { getLocaleFromURL, replaceLocaleInURL } from '@utils/locale';
+
+const url = Astro.url;
+const locale = getLocaleFromURL(url);
+
+const urls = {
+  de: replaceLocaleInURL(url, 'de'),
+  en: replaceLocaleInURL(url, 'en'),
+};
+---
+
+<div>
+  <a class=`${locale === 'de' ? 'opacity-100' : 'opacity-30'}` href={urls.de}
+    >🇩🇪</a
+  >
+  <a class=`${locale === 'en' ? 'opacity-100' : 'opacity-30'}` href={urls.en}
+    >🇬🇧</a
+  >
+</div>

@@ -11,6 +11,12 @@ export function getLocaleFromURL(url: URL): Locale {
   return locale;
 }
 
+export function replaceLocaleInURL(url: URL, newLocale: Locale): URL {
+  const locale = getLocaleFromURL(url);
+  const newPathname = url.pathname.replace(`/${locale}`, `/${newLocale}`);
+  return new URL(newPathname, url.origin);
+}
+
 export function getLocaleData<T>(locale: Locale, data: { en: T; de: T }): T {
   return data[locale];
 }
