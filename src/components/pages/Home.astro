@@ -1,7 +1,6 @@
 ---
 import { z } from 'astro:content';
 import Layout from '@layouts/Layout.astro';
-import Title from '@components/typography/Title.astro';
 
 import Markdown from '@components/Markdown.astro';
 
@@ -30,10 +29,10 @@ const content = getLocaleData(locale, parsedData);
 ---
 
 <Layout locale={locale}>
-  <div class="flex min-h-3/4 w-full justify-center">
-    <div class="mx-auto min-h-full">
-      <div class="grid grid-cols-1 gap-4 md:h-full lg:grid-cols-2">
-        <div class="relative bg-black">
+  <div class="flex w-full justify-center">
+    <div class="mx-auto max-h-full">
+      <div class="flex max-h-full flex-col gap-4 md:flex-row">
+        <div class="relative max-w-full bg-black">
           <img
             src={vinyard.src}
             alt="Vineyard background"
@@ -42,7 +41,7 @@ const content = getLocaleData(locale, parsedData);
           <div
             class="relative h-full w-full bg-black/40 p-3 text-left text-white"
           >
-            <Title>{content.title}</Title>
+            <h1 class="text-white">{content.title}</h1>
 
             <p class="sm:mt-4">
               <Markdown markdown={content.intro} />
@@ -57,17 +56,19 @@ const content = getLocaleData(locale, parsedData);
           </div>
         </div>
 
-        <div class="grid grid-cols-2 gap-4 lg:grid-cols-2">
+        <div
+          class="flex max-h-40 min-w-1/2 flex-row gap-4 overflow-hidden md:max-h-full"
+        >
           <img
             alt=""
             src="/assets/angela.jpeg"
-            class="h-40 w-full object-cover md:h-56 lg:h-full"
+            class="max-w-1/2 object-cover md:max-h-full"
           />
 
           <img
             alt=""
             src="/assets/bev.jpeg"
-            class="h-40 w-full object-cover md:h-56 lg:h-full"
+            class="max-h-full max-w-1/2 object-cover"
           />
         </div>
       </div>

@@ -43,8 +43,8 @@ const content = getLocaleData(locale, parsedData);
 ---
 
 <div id="fees" class="flex w-full flex-col justify-center">
-  <Title>{content.title}</Title>
-  <Title>{content.groupCoursesTitle}</Title>
+  <h1>{content.title}</h1>
+  <h2>{content.groupCoursesTitle}</h2>
   <p>{content.groupCoursesDescription}</p>
   {
     content.groupCourses.map((course) => (
@@ -60,7 +60,7 @@ const content = getLocaleData(locale, parsedData);
       </div>
     ))
   }
-  <Title>{content.privateCoursesTitle}</Title>
+  <h1 class="text-2xl font-bold">{content.privateCoursesTitle}</h1>
   <p>{content.privateCoursesDescription}</p>
   {
     content.privateCourses.map((course) => (
