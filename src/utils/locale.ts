@@ -13,8 +13,9 @@ export function getLocaleFromURL(url: URL): Locale {
 
 export function replaceLocaleInURL(url: URL, newLocale: Locale): URL {
   const locale = getLocaleFromURL(url);
-  const newUrl = url.href.replace(`/${locale}`, `/${newLocale}`);
-  return new URL(newUrl);
+  const newPathname = url.pathname.replace(`/${locale}`, `/${newLocale}`);
+  const newUrl = new URL(url.origin + newPathname);
+  return newUrl;
 }
 
 export function getLocaleData<T>(locale: Locale, data: { en: T; de: T }): T {
