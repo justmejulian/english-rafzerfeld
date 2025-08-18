@@ -1,6 +1,5 @@
 ---
 import { z } from 'astro:content';
-import Layout from '@layouts/Layout.astro';
 import Title from '@components/typography/Title.astro';
 
 import { multiLingualSchema } from '@utils/zod.ts';
@@ -43,7 +42,7 @@ const parsedData = contentSchema.parse(data);
 const content = getLocaleData(locale, parsedData);
 ---
 
-<Layout locale={locale}>
+<div id="fees" class="flex w-full flex-col justify-center">
   <Title>{content.title}</Title>
   <Title>{content.groupCoursesTitle}</Title>
   <p>{content.groupCoursesDescription}</p>
@@ -78,4 +77,4 @@ const content = getLocaleData(locale, parsedData);
       </div>
     ))
   }
-</Layout>
+</div>

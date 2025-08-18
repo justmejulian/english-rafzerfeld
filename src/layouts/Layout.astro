@@ -2,10 +2,7 @@
 import '@styles/global.css';
 import '@fontsource/fira-sans';
 
-import vinyard from 'public/assets/bgVineyard.jpg';
-
 import Nav from '@components/Nav.astro';
-import Card from '@components/Card.astro';
 
 export interface Props {
   locale: 'en' | 'de';
@@ -14,7 +11,6 @@ export interface Props {
 const title = 'English-Rafzerfeld';
 
 const { locale } = Astro.props;
-const backgroundUrl = `url(${vinyard.src})`;
 ---
 
 <!doctype html>
@@ -28,16 +24,10 @@ const backgroundUrl = `url(${vinyard.src})`;
   </head>
   <body class="m-0 h-full bg-none bg-cover bg-center bg-no-repeat p-0">
     <Nav title={title} locale={locale} />
-    <main class="flex w-full justify-center">
-      <Card>
-        <slot />
-      </Card>
+    <main class="mx-auto h-full w-full max-w-screen-xl px-4 sm:px-6 lg:px-8">
+      <slot />
     </main>
   </body>
-</html>
 
-<style define:vars={{ backgroundUrl }}>
-  body {
-    background-image: var(--backgroundUrl);
-  }
-</style>
+  <style></style>
+</html>

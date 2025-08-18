@@ -1,6 +1,5 @@
 ---
 import { z } from 'astro:content';
-import Layout from '@layouts/Layout.astro';
 import Title from '@components/typography/Title.astro';
 import Map from '@components/Map.astro';
 
@@ -32,7 +31,7 @@ const parsedData = contentSchema.parse(data);
 const content = getLocaleData(locale, parsedData);
 ---
 
-<Layout locale={locale}>
+<div id="contact" class="flex w-full flex-col justify-center">
   <Title>{content.title}</Title>
   <p>{content.description}</p>
   <p>Email: <a href={`mailto:${content.email}`}>{content.email}</a></p>
@@ -51,4 +50,4 @@ const content = getLocaleData(locale, parsedData);
   }
   <p>Address: {content.address}</p>
   <Map />
-</Layout>
+</div>

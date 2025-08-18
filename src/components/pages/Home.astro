@@ -5,10 +5,15 @@ import Title from '@components/typography/Title.astro';
 
 import Markdown from '@components/Markdown.astro';
 
+import vinyard from 'public/assets/bgVineyard.jpg';
+
 import { multiLingualSchema } from '@utils/zod.ts';
 import { getLocaleData, getLocaleFromURL } from '@utils/locale.ts';
 
 import data from '@content/home.json';
+import Fees from '@components/sections/Fees.astro';
+import Courses from '@components/sections/Courses.astro';
+import Contact from '@components/sections/Contact.astro';
 
 const locale = getLocaleFromURL(Astro.url);
 
@@ -25,6 +30,51 @@ const content = getLocaleData(locale, parsedData);
 ---
 
 <Layout locale={locale}>
-  <Title>{content.title}</Title>
-  <Markdown markdown={content.intro} />
+  <div class="flex min-h-3/4 w-full justify-center">
+    <div class="mx-auto min-h-full">
+      <div class="grid grid-cols-1 gap-4 md:h-full lg:grid-cols-2">
+        <div class="relative bg-black">
+          <img
+            src={vinyard.src}
+            alt="Vineyard background"
+            class="absolute inset-0 h-full w-full object-cover"
+          />
+          <div
+            class="relative h-full w-full bg-black/40 p-3 text-left text-white"
+          >
+            <Title>{content.title}</Title>
+
+            <p class="sm:mt-4">
+              <Markdown markdown={content.intro} />
+            </p>
+
+            <a
+              href="#courses"
+              class="my-3 inline-block bg-white p-3 text-black"
+            >
+              Have a look at our courses
+            </a>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 lg:grid-cols-2">
+          <img
+            alt=""
+            src="/assets/angela.jpeg"
+            class="h-40 w-full object-cover md:h-56 lg:h-full"
+          />
+
+          <img
+            alt=""
+            src="/assets/bev.jpeg"
+            class="h-40 w-full object-cover md:h-56 lg:h-full"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <Fees />
+  <Courses />
+  <Contact />
 </Layout>

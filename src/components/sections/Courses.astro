@@ -1,6 +1,5 @@
 ---
 import { z } from 'astro:content';
-import Layout from '@layouts/Layout.astro';
 import Title from '@components/typography/Title.astro';
 
 import { multiLingualSchema } from '@utils/zod.ts';
@@ -47,26 +46,26 @@ const parsedData = contentSchema.parse(data);
 const content = getLocaleData(locale, parsedData);
 ---
 
-<Layout locale={locale}>
+<div id="courses" class="flex w-full flex-col items-center justify-center">
   <Title>{content.title}</Title>
   {
     content.days.map((day) => (
-      <table class="w-full">
+      <table class="w-full max-w-3xl divide-y-2 divide-gray-200">
         <thead>
-          <tr>
-            <th class="text-left">{day.name}</th>
+          <tr class="text-left *:text-gray-900 *:first:font-medium">
+            <th class="w-1/4 px-3 py-2 whitespace-nowrap">{day.name}</th>
             <th />
-            <th />
-            <th class="text-left">CEF Level</th>
+            <th class="px-3 py-2 text-left whitespace-nowrap">CEF Level</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="divide-y divide-gray-200">
           {day.lessons.map((lesson) => (
-            <tr>
-              <td />
-              <td>{lesson.time}</td>
-              <td>{lesson.level}</td>
-              <td>{lesson.ceflevel}</td>
+            <tr class="*:font-medium *:text-gray-900">
+              <td class="w-1/8 px-3 py-2 whitespace-nowrap">{lesson.time}</td>
+              <td class="px-3 py-2 whitespace-nowrap">{lesson.level}</td>
+              <td class="w-1/8 px-3 py-2 whitespace-nowrap">
+                {lesson.ceflevel}
+              </td>
             </tr>
           ))}
         </tbody>
@@ -91,4 +90,4 @@ const content = getLocaleData(locale, parsedData);
       </div>
     ))
   }
-</Layout>
+</div>
