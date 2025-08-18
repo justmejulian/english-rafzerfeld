@@ -30,5 +30,3 @@ To manage content, use the Decap CMS interface at `http://localhost:4321/admin`.
 Note that the website reads content directly from GitHub. Any changes you make in the CMS must be pushed to the repository for them to appear on the site.
 
 Even when running the CMS locally, all content is fetched from the remote repository.
-
-

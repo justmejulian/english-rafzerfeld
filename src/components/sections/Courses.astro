@@ -1,6 +1,5 @@
 ---
 import { z } from 'astro:content';
-import Title from '@components/typography/Title.astro';
 
 import { multiLingualSchema } from '@utils/zod.ts';
 import { getLocaleData, getLocaleFromURL } from '@utils/locale.ts';
@@ -47,7 +46,7 @@ const content = getLocaleData(locale, parsedData);
 ---
 
 <div id="courses" class="flex w-full flex-col items-center justify-center">
-  <h1 class='text-2xl font-bold'>{content.title}</h1>
+  <h1 class="text-2xl font-bold">{content.title}</h1>
   {
     content.days.map((day) => (
       <table class="w-full max-w-3xl divide-y-2 divide-gray-200">
@@ -73,7 +72,7 @@ const content = getLocaleData(locale, parsedData);
     ))
   }
 
-  <h1 class='text-2xl font-bold'>{content.levelsTitle}</h1>
+  <h1 class="text-2xl font-bold">{content.levelsTitle}</h1>
   <p>{content.levelsDescription}</p>
 
   {

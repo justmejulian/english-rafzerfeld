@@ -7,8 +7,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://justmejulian.ch',
-  base: 'english-rafzerfeld',
+  site: 'https://english.justmejulian.ch',
   integrations: [preact()],
 
   i18n: {

@@ -1,6 +1,5 @@
 ---
 import { z } from 'astro:content';
-import Title from '@components/typography/Title.astro';
 import Map from '@components/Map.astro';
 
 import { multiLingualSchema } from '@utils/zod.ts';
@@ -32,13 +31,13 @@ const content = getLocaleData(locale, parsedData);
 ---
 
 <div id="contact" class="flex w-full flex-col justify-center">
-  <h1 class='text-2xl font-bold'>{content.title}</h1>
+  <h1 class="text-2xl font-bold">{content.title}</h1>
   <p>{content.description}</p>
   <p>Email: <a href={`mailto:${content.email}`}>{content.email}</a></p>
   {
     content.teachersContact.map((teacher) => (
       <div>
-        <h1 class='text-2xl font-bold'>{teacher.name}</h1>
+        <h1 class="text-2xl font-bold">{teacher.name}</h1>
         <p>
           Email: <a href={`mailto:${teacher.email}`}>{teacher.email}</a>
         </p>
