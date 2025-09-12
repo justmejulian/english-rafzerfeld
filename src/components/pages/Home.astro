@@ -58,20 +58,22 @@ const content = getLocaleData(locale, parsedData);
             class="absolute inset-0 h-full w-full object-cover"
           />
           <div
-            class="relative h-full w-full bg-black/40 p-3 text-left text-white"
+            class="relative flex h-full max-w-full items-center justify-center bg-black/40 p-4"
           >
-            <h1 class="text-white">{content.title}</h1>
+            <div class="m-auto bg-black/40 p-3 text-left text-white">
+              <h1 class="text-white">{content.title}</h1>
 
-            <p class="sm:mt-4">
-              <Markdown markdown={content.intro} />
-            </p>
+              <p class="sm:mt-4">
+                <Markdown markdown={content.intro} />
+              </p>
 
-            <a
-              href="#courses"
-              class="my-3 inline-block bg-white p-3 text-black"
-            >
-              Have a look at our courses
-            </a>
+              <a
+                href="#courses"
+                class="mt-4 inline-block bg-white p-3 text-black"
+              >
+                Have a look at our courses
+              </a>
+            </div>
           </div>
         </div>
 

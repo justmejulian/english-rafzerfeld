@@ -72,8 +72,8 @@ const content = getLocaleData(locale, parsedData);
     ))
   }
 
-  <h1 class="mt-2 text-2xl font-bold">{content.levelsTitle}</h1>
-  <p>{content.levelsDescription}</p>
+  <h2 class="mt-4">{content.levelsTitle}</h2>
+  <p class="mb-2">{content.levelsDescription}</p>
 
   {
     content.levels.map((level) => (
