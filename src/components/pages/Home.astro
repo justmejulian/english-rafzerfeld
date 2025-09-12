@@ -1,18 +1,21 @@
 ---
 import { z } from 'astro:content';
+
 import Layout from '@layouts/Layout.astro';
 
 import Markdown from '@components/Markdown.astro';
+import Banner from '@components/Banner.astro';
 
 import vinyard from 'public/assets/bgVineyard.jpg';
 
 import { multiLingualSchema } from '@utils/zod.ts';
 import { getLocaleData, getLocaleFromURL } from '@utils/locale.ts';
 
-import data from '@content/home.json';
 import Fees from '@components/sections/Fees.astro';
 import Courses from '@components/sections/Courses.astro';
 import Contact from '@components/sections/Contact.astro';
+
+import data from '@content/home.json';
 
 const locale = getLocaleFromURL(Astro.url);
 
@@ -20,6 +23,13 @@ const contentSchema = multiLingualSchema(
   z.object({
     title: z.string(),
     intro: z.string(),
+    banner: z
+      .object({
+        message: z.string(),
+        linkText: z.string(),
+        linkUrl: z.string(),
+      })
+      .optional(),
   }),
 );
 
@@ -31,6 +41,15 @@ const content = getLocaleData(locale, parsedData);
 <Layout locale={locale}>
   <div class="flex w-full justify-center">
     <div class="mx-auto max-h-full">
+      {
+        content.banner && (
+          <Banner
+            message={content.banner.message}
+            linkText={content.banner.linkText}
+            linkUrl={content.banner.linkUrl ?? '#courses'}
+          />
+        )
+      }
       <div class="flex max-h-full flex-col gap-4 md:flex-row">
         <div class="relative max-w-full bg-black">
           <img
