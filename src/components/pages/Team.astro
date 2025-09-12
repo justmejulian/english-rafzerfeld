@@ -33,7 +33,7 @@ const content = getLocaleData(locale, parsedData);
 ---
 
 <Layout locale={locale}>
-  <h1 class="text-2xl font-bold">{content.title}</h1>
+  <h1>{content.title}</h1>
   <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
     {
       content.teachers.map((teacher) => (
@@ -41,14 +41,16 @@ const content = getLocaleData(locale, parsedData);
           <img
             src={teacher.image}
             alt={teacher.name}
-            class="h-48 w-full rounded-t-lg object-cover"
+            class="h-120 w-full rounded-t-lg object-cover"
           />
           <h3 class="mt-2 text-xl font-bold">{teacher.name}</h3>
           <p class="text-gray-700">{teacher.description}</p>
-          <h4 class="mt-2 font-semibold">Certificates:</h4>
-          <ul class="list-disc pl-5">
+          <h4 class="mt-4 text-lg font-semibold text-gray-800">
+            Certificates:
+          </h4>
+          <ul class="mt-2 list-disc space-y-1 pl-5 text-gray-600">
             {teacher.certificates.map((cert) => (
-              <li>{cert.name}</li>
+              <li class="text-sm font-medium">{cert.name}</li>
             ))}
           </ul>
         </div>
