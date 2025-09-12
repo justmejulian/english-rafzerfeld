@@ -6,7 +6,8 @@ export function getLocaleFromURL(url: URL): Locale {
   const locale = url.pathname.split('/')[1];
 
   if (!locale || (locale !== 'en' && locale !== 'de')) {
-    throw new Error('Invalid locale in URL');
+    console.error('Invalid locale in URL:', locale);
+    return 'en';
   }
   return locale;
 }
