@@ -16,8 +16,8 @@
     "privateCourses": [
       {
         "length": 60,
-        "onePersonRate": 85,
-        "twoPersonsRate": 45,
+        "onePersonRate": 84,
+        "twoPersonsRate": 47,
         "threePersonsRate": 28,
         "description": "- All fees are per lesson and per person.\n- Private lessons can be scheduled at flexible times to suit you.\n- You pay only for the number of lessons booked.\n- Reduced rates for seniors, students and couples on request."
       }
@@ -36,7 +36,7 @@
       }
     ],
     "privateCoursesTitle": "Privatunterricht",
-    "privateCoursesDescription": "All fees are given in Swiss francs",
+    "privateCoursesDescription": "Alle Preise werden in Schweizer Franken angegeben.",
     "privateCourses": [
       {
         "length": 60,
