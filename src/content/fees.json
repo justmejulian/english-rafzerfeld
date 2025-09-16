@@ -11,14 +11,14 @@
         "description": "- All fees are per semester.\n- Semester length February to July and August to January, excluding school holidays.\n- You can join a group during the semester.\n- Fees are reduced for late entry.\n- Reduced rates are for seniors, students and couples."
       }
     ],
-    "privateCoursesTitle": "Private courses",
+    "privateCoursesTitle": "Private courses (1 to 3 participants)",
     "privateCoursesDescription": "All fees are given in Swiss francs",
     "privateCourses": [
       {
         "length": 60,
-        "onePersonRate": 84,
-        "twoPersonsRate": 47,
-        "threePersonsRate": 28,
+        "onePersonRate": 85,
+        "twoPersonsRate": 45,
+        "threePersonsRate": 30,
         "description": "- All fees are per lesson and per person.\n- Private lessons can be scheduled at flexible times to suit you.\n- You pay only for the number of lessons booked.\n- Reduced rates for seniors, students and couples on request."
       }
     ]
@@ -35,7 +35,7 @@
         "description": "* Alle Preise sind zahlbar pro Semester.\n* Semesterdauer Februar bis Juli und August bis Januar, exklusive Schulferien.\n* Der Einsteig in eine Gruppe ist auch während dem Semestermöglich.\n* Bei Kurseinsteigern nach Semesterbeginn wird der Preis angepasst.\n* Ermässigte Preise gelten für Senioren, Studenten und Paaren."
       }
     ],
-    "privateCoursesTitle": "Privatunterricht",
+    "privateCoursesTitle": "Privatunterricht (1 bis 3 Teilnehmer)",
     "privateCoursesDescription": "Alle Preise werden in Schweizer Franken angegeben.",
     "privateCourses": [
       {
