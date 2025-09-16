@@ -4,11 +4,11 @@
     "teachers": [
       {
         "name": "Bev Visser",
-        "description": "Bev grew up up in Johannesburg, South Africa. She studied communications and was a stay-at-home mum to her 3 children. Since living in Switzerland, she saw the need for qualified English teachers and completed her CELTA training in 2012. She lives in Rafz. She values working with her students and sharing her enjoyment of the language.",
-        "nationality": "South Africa/Swiss",
+        "description": "Bev grew up in Johannesburg, South Africa. She studied communications and was a stay-at-home mum to her 3 children. After settling in Switzerland, she saw the need for qualified English teachers and completed her CELTA training in 2012. She lives in Rafz. She values working with her students and sharing her enjoyment of the language.",
+        "nationality": "South Africa / Switzerland",
         "certificates": [
           {
-            "name": "\"Teaching 1 on 1\""
+            "name": "\"Teaching 1 to 1\""
           },
           {
             "name": "\"Cambridge Certificate in Teaching English as a Foreign Language\""
@@ -43,11 +43,11 @@
     "teachers": [
       {
         "name": "Bev Visser",
-        "description": "Bev grew up up in Johannesburg, South Africa. She studied communications and was a stay-at-home mum to her 3 children. Since living in Switzerland, she saw the need for qualified English teachers and completed her CELTA training in 2012. She lives in Rafz. She values working with her students and sharing her enjoyment of the language.",
-        "nationality": "South Africa/Swiss",
+        "description": "Bev ist in Johannesburg, Südafrika aufgewachsen. Sie studiert Kommunikationswissenschaft und ist Mutter von 3 Kindern. Seit sie in der Schweiz wohnt hat sie den Mangel an qualifiziertem Englischunterricht gesehen. 2012 hat sie die CELTA absolviert. Sie schätzt ihre Arbeit mit ihren Studenten und freut sich ihre Liebe zur Sprache mit ihnen zu teilen. Sie wohnt in Rafz. ",
+        "nationality": "South Africa / Swiss",
         "certificates": [
           {
-            "name": "\"Teaching 1 on 1\""
+            "name": "\"Teaching 1 to 1\""
           },
           {
             "name": "\"Cambridge Certificate in Teaching English as a Foreign Language\""
