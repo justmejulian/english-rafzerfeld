@@ -9,6 +9,18 @@
         "normalRate": 450,
         "reducedRate": 396,
         "description": "- All fees are per semester.\n- Semester length February to July and August to January, excluding school holidays.\n- You can join a group during the semester.\n- Fees are reduced for late entry.\n- Reduced rates are for seniors, students and couples."
+      },
+      {
+        "length": 75,
+        "normalRate": 475,
+        "reducedRate": 425,
+        "description": "* All fees are per semester.\n\n* Semester length February to July and August to January, excluding school holidays.\n\n* You can join a group during the semester.\n\n* Fees are reduced for late entry.\n\n* Reduced rates are for seniors, students and couples."
+      },
+      {
+        "length": 90,
+        "normalRate": 500,
+        "reducedRate": 450,
+        "description": "* All fees are per semester.\n\n* Semester length February to July and August to January, excluding school holidays.\n\n* You can join a group during the semester.\n\n* Fees are reduced for late entry.\n\n* Reduced rates are for seniors, students and couples."
       }
     ],
     "privateCoursesTitle": "Private courses (1 to 3 participants)",
@@ -33,6 +45,18 @@
         "normalRate": 450,
         "reducedRate": 396,
         "description": "* Alle Preise sind zahlbar pro Semester.\n* Semesterdauer Februar bis Juli und August bis Januar, exklusive Schulferien.\n* Der Einsteig in eine Gruppe ist auch während dem Semestermöglich.\n* Bei Kurseinsteigern nach Semesterbeginn wird der Preis angepasst.\n* Ermässigte Preise gelten für Senioren, Studenten und Paaren."
+      },
+      {
+        "length": 75,
+        "normalRate": 475,
+        "reducedRate": 425,
+        "description": "* Preise gelten pro Person und pro Lektion.\n\n* Zeiten für den Privatunterricht sind flexibel.\n\n* Sie bezahlen nur für die Anzahl gebuchter Lektionen.\n\n* Preisermässigungen für Senioren, Studenten und Paaren auf Anfrage."
+      },
+      {
+        "length": 90,
+        "normalRate": 500,
+        "reducedRate": 450,
+        "description": "* Preise gelten pro Person und pro Lektion.\n\n* Zeiten für den Privatunterricht sind flexibel.\n\n* Sie bezahlen nur für die Anzahl gebuchter Lektionen.\n\n* Preisermässigungen für Senioren, Studenten und Paaren auf Anfrage."
       }
     ],
     "privateCoursesTitle": "Privatunterricht (1 bis 3 Teilnehmer)",
@@ -42,8 +66,8 @@
         "length": 60,
         "onePersonRate": 85,
         "twoPersonsRate": 45,
-        "threePersonsRate": 28,
-        "description": "- All fees are per lesson and per person.\n- Private lessons can be scheduled at flexible times to suit you.\n- You pay only for the number of lessons booked.\n- Reduced rates for seniors, students and couples on request."
+        "threePersonsRate": 30,
+        "description": "* * Preise gelten pro Person und pro Lektion.\n\n  * Zeiten für den Privatunterricht sind flexibel.\n\n  * Sie bezahlen nur für die Anzahl gebuchter Lektionen.\n\n  * Preisermässigungen für Senioren, Studenten und Paaren auf Anfrage."
       }
     ]
   }
