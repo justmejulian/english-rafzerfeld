@@ -41,14 +41,19 @@
         "name": "Wednesday",
         "lessons": [
           {
-            "time": "10.00 – 11.00",
-            "level": "Advanced",
-            "ceflevel": "C1/C2"
+            "time": "08.00 – 09.15",
+            "level": "Intermediate",
+            "ceflevel": "B1/B2"
           },
           {
             "time": "19.00 – 20.30",
             "level": "Intermediate",
             "ceflevel": "B1"
+          },
+          {
+            "time": "09.30 - 10:30",
+            "level": "Advanced",
+            "ceflevel": "C1"
           }
         ]
       },
@@ -62,7 +67,7 @@
           },
           {
             "time": "10.00 – 11.00",
-            "level": "Intermediate",
+            "level": "Upper Intermediate",
             "ceflevel": "B1/B2"
           },
           {
@@ -145,14 +150,19 @@
         "name": "Mittwoch",
         "lessons": [
           {
-            "time": "10.00 – 11.00",
-            "level": "Advanced",
-            "ceflevel": "C1/C2"
+            "time": "08.00 – 09.15",
+            "level": "Intermediate",
+            "ceflevel": "B1/B2"
           },
           {
             "time": "19.00 – 20.30",
             "level": "Intermediate",
             "ceflevel": "B1"
+          },
+          {
+            "time": "09.30 - 10.30",
+            "level": "Advanced",
+            "ceflevel": "C1"
           }
         ]
       },
@@ -166,7 +176,7 @@
           },
           {
             "time": "10.00 – 11.00",
-            "level": "Intermediate",
+            "level": "Upper Intermediate",
             "ceflevel": "B1/B2"
           },
           {
