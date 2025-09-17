@@ -240,13 +240,12 @@ collections:
               widget: markdown,
               i18n: true,
             }
-          - { label: email, name: email, widget: string, i18n: true }
+          - { label: email, name: email, widget: string }
           - label: 'Teachers Contact'
             name: teachersContact
             widget: list
-            i18n: true
             fields:
-              - { label: Name, name: name, widget: string, i18n: true }
-              - { label: Email, name: email, widget: string, i18n: true }
-              - { label: Phone, name: phone, widget: string, i18n: true }
-          - { label: address, name: address, widget: string, i18n: true }
+              - { label: Name, name: name, widget: string }
+              - { label: Email, name: email, widget: string }
+              - { label: Phone, name: phone, widget: string }
+          - { label: address, name: address, widget: string }
