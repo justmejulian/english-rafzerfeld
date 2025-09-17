@@ -38,29 +38,52 @@ const contentSchema = multiLingualSchema(
 
 const parsedData = contentSchema.parse(data);
 
+// todo improve crouse description stuff
 const content = getLocaleData(locale, parsedData);
+
+// todo: move to translantions
+const titles = {
+  en: [
+    'Group Course',
+    'Normal Rate',
+    'Reduced Rate',
+    'Private Course',
+    'Person',
+    'Persons',
+  ],
+  de: [
+    'Gruppenunterricht',
+    'Normalpreis pro Semester',
+    'Ermässigter Preis pro Semester',
+    'Privatunterricht',
+    'Person',
+    'Personen',
+  ],
+};
 ---
 
 <div id="fees" class="mt-4 flex w-full flex-col justify-center">
   <h1>{content.title}</h1>
   <h2>{content.groupCoursesTitle}</h2>
   <p>{content.groupCoursesDescription}</p>
-  {
-    content.groupCourses.map((course) => (
-      <div class="mb-4">
-        <table class="my-2 w-full max-w-3xl divide-y-2 divide-gray-200">
-          <thead>
-            <tr class="text-left *:text-gray-900 *:first:font-medium">
-              <th class="w-1/4 px-3 py-2 whitespace-nowrap">
-                Group Course ({course.length} min)
-              </th>
-              <th class="px-3 py-2 text-left whitespace-nowrap">Normal Rate</th>
-              <th class="px-3 py-2 text-left whitespace-nowrap">
-                Reduced Rate
-              </th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-gray-200">
+  <div class="mb-4">
+    <table class="my-2 w-full max-w-3xl divide-y-2 divide-gray-200">
+      <thead>
+        <tr class="text-left *:text-gray-900 *:first:font-medium">
+          <th class="w-1/4 px-3 py-2 whitespace-nowrap">
+            {titles[locale][0]}
+          </th>
+          <th class="px-3 py-2 text-left whitespace-nowrap">
+            {titles[locale][1]}
+          </th>
+          <th class="px-3 py-2 text-left whitespace-nowrap">
+            {titles[locale][2]}
+          </th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-200">
+        {
+          content.groupCourses.map((course) => (
             <tr class="*:font-medium *:text-gray-900">
               <td class="px-3 py-2 whitespace-nowrap">{course.length} min</td>
               <td class="px-3 py-2 whitespace-nowrap">
@@ -70,29 +93,35 @@ const content = getLocaleData(locale, parsedData);
                 {course.reducedRate} CHF
               </td>
             </tr>
-          </tbody>
-        </table>
-        <Markdown markdown={course.description} />
-      </div>
-    ))
-  }
+          ))
+        }
+      </tbody>
+    </table>
+    <Markdown markdown={content.groupCourses[0].description} />
+  </div>
   <h2>{content.privateCoursesTitle}</h2>
   <p>{content.privateCoursesDescription}</p>
-  {
-    content.privateCourses.map((course) => (
-      <div class="mb-4">
-        <table class="my-2 w-full max-w-3xl divide-y-2 divide-gray-200">
-          <thead>
-            <tr class="text-left *:text-gray-900 *:first:font-medium">
-              <th class="w-1/4 px-3 py-2 whitespace-nowrap">
-                Private Course ({course.length} min)
-              </th>
-              <th class="px-3 py-2 text-left whitespace-nowrap">1 Person</th>
-              <th class="px-3 py-2 text-left whitespace-nowrap">2 Persons</th>
-              <th class="px-3 py-2 text-left whitespace-nowrap">3 Persons</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-gray-200">
+  <div class="mb-4">
+    <table class="my-2 w-full max-w-3xl divide-y-2 divide-gray-200">
+      <thead>
+        <tr class="text-left *:text-gray-900 *:first:font-medium">
+          <th class="w-1/4 px-3 py-2 whitespace-nowrap">
+            {titles[locale][3]}
+          </th>
+          <th class="px-3 py-2 text-left whitespace-nowrap">
+            1{titles[locale][4]}
+          </th>
+          <th class="px-3 py-2 text-left whitespace-nowrap">
+            2{titles[locale][5]}
+          </th>
+          <th class="px-3 py-2 text-left whitespace-nowrap">
+            3{titles[locale][5]}
+          </th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-200">
+        {
+          content.privateCourses.map((course) => (
             <tr class="*:font-medium *:text-gray-900">
               <td class="px-3 py-2 whitespace-nowrap">{course.length} min</td>
               <td class="px-3 py-2 whitespace-nowrap">
@@ -105,10 +134,10 @@ const content = getLocaleData(locale, parsedData);
                 {course.threePersonsRate} CHF
               </td>
             </tr>
-          </tbody>
-        </table>
-        <Markdown markdown={course.description} />
-      </div>
-    ))
-  }
+          ))
+        }
+      </tbody>
+    </table>
+    <Markdown markdown={content.privateCourses[0].description} />
+  </div>
 </div>
