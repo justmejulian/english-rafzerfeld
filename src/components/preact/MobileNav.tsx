@@ -37,7 +37,7 @@ const Mobile = ({ links }: Props) => {
       {isMenuOpen && (
         <div
           role="menu"
-          class="absolute end-0 top-10 z-auto m-4 w-56 overflow-hidden rounded border border-gray-300 bg-white shadow-sm"
+          class="absolute end-0 top-10 z-99 m-4 w-56 overflow-hidden rounded border border-gray-300 bg-white shadow-sm"
         >
           {links.map((link: Link) => (
             <a
