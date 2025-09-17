@@ -27,14 +27,29 @@ collections:
         fields:
           - { label: Title, name: title, widget: string, i18n: true }
           - { label: Intro, name: intro, widget: markdown, i18n: true }
-          - label: "Banner"
-            name: "banner"
-            widget: "object"
+          - label: 'Banner'
+            name: 'banner'
+            widget: 'object'
             i18n: true
             fields:
-              - { label: "Message", name: "message", widget: "string", i18n: true }
-              - { label: "LinkURL", name: "linkUrl", widget: "string", i18n: true }
-              - { label: "LinkText", name: "linkText", widget: "string", i18n: true }
+              - {
+                  label: 'Message',
+                  name: 'message',
+                  widget: 'string',
+                  i18n: true,
+                }
+              - {
+                  label: 'LinkURL',
+                  name: 'linkUrl',
+                  widget: 'string',
+                  i18n: true,
+                }
+              - {
+                  label: 'LinkText',
+                  name: 'linkText',
+                  widget: 'string',
+                  i18n: true,
+                }
       - name: 'courses'
         label: 'Courses Page'
         file: 'src/content/courses.json'
