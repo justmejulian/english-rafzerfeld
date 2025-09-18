@@ -91,6 +91,16 @@
             "ceflevel": "A2"
           }
         ]
+      },
+      {
+        "name": "Saturday",
+        "lessons": [
+          {
+            "time": "9.00-10.00",
+            "level": "Pre-Intermediate",
+            "ceflevel": "A2/B1"
+          }
+        ]
       }
     ],
     "levelsTitle": "A guide to the Levels",
@@ -198,6 +208,16 @@
             "time": "09.30 – 10.30",
             "level": "Elementary",
             "ceflevel": "A2"
+          }
+        ]
+      },
+      {
+        "name": "Samstag",
+        "lessons": [
+          {
+            "time": "9.00-10.00",
+            "level": "Pre-Intermediate",
+            "ceflevel": "A2/B1"
           }
         ]
       }
