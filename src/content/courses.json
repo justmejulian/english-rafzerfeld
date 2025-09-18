@@ -83,12 +83,12 @@
           {
             "time": "08.30 – 09.30",
             "level": "New Class",
-            "ceflevel": "B2"
+            "ceflevel": "A2"
           },
           {
             "time": "09.30 – 10.30",
             "level": "Elementary",
-            "ceflevel": "A1/A2"
+            "ceflevel": "A2"
           }
         ]
       }
@@ -191,13 +191,13 @@
         "lessons": [
           {
             "time": "08.30 – 09.30",
-            "level": "Beginner",
-            "ceflevel": "A1/A2"
+            "level": "New Class",
+            "ceflevel": "A2"
           },
           {
             "time": "09.30 – 10.30",
             "level": "Elementary",
-            "ceflevel": "A1/A2"
+            "ceflevel": "A2"
           }
         ]
       }
