@@ -72,21 +72,43 @@ const content = getLocaleData(locale, parsedData);
     ))
   }
 
-  <h2 class="mt-4">{content.levelsTitle}</h2>
-  <p class="mb-2">{content.levelsDescription}</p>
-
-  {
-    content.levels.map((level) => (
-      <div class="mb-4">
-        <h3 class="text-lg font-semibold">{level.name}</h3>
-        <p>{level.description}</p>
-        {level.subLevels.map((subLevel) => (
-          <div class="ml-4">
-            <h4 class="text-md font-medium">{subLevel.name}</h4>
-            <p>{subLevel.description}</p>
-          </div>
-        ))}
+  <details class="group [&_summary::-webkit-details-marker]:hidden">
+    <summary
+      class="flex items-center justify-between gap-1.5 rounded-md border border-gray-100 bg-gray-50 p-4 text-gray-900"
+    >
+      <div>
+        <h2 class="mt-4">{content.levelsTitle}</h2>
+        <p class="mb-2">{content.levelsDescription}</p>
       </div>
-    ))
-  }
+
+      <svg
+        class="size-5 shrink-0 transition-transform duration-300 group-open:-rotate-180"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </summary>
+
+    {
+      content.levels.map((level) => (
+        <div class="mb-4">
+          <h3 class="text-lg font-semibold">{level.name}</h3>
+          <p>{level.description}</p>
+          {level.subLevels.map((subLevel) => (
+            <div class="ml-4">
+              <h4 class="text-md font-medium">{subLevel.name}</h4>
+              <p>{subLevel.description}</p>
+            </div>
+          ))}
+        </div>
+      ))
+    }
+  </details>
 </div>
