@@ -8,8 +8,8 @@ interface Props {
 const { message, linkText, linkUrl } = Astro.props;
 ---
 
-<div class="mb-2 bg-gray-100 px-4 py-2 text-gray-900">
-  <p class="text-center font-medium">
+<div class="bg-accent mb-2 px-4 py-2 text-gray-900">
+  <p class="text-center text-lg font-medium">
     {message}
     <a href={linkUrl} class="inline-block underline">
       {linkText}
