@@ -31,7 +31,7 @@
         "onePersonRate": 85,
         "twoPersonsRate": 45,
         "threePersonsRate": 30,
-        "description": "- All fees are per lesson and per person.\n- Private lessons can be scheduled at flexible times to suit you.\n- You pay only for the number of lessons booked.\n- Reduced rates for seniors, students and couples on request."
+        "description": "* All fees are per lesson and per person.\n* Private lessons can be scheduled at flexible times to suit you.\n* You pay only for the number of lessons booked."
       }
     ]
   },
@@ -67,7 +67,7 @@
         "onePersonRate": 85,
         "twoPersonsRate": 45,
         "threePersonsRate": 30,
-        "description": "* * Preise gelten pro Person und pro Lektion.\n\n  * Zeiten für den Privatunterricht sind flexibel.\n\n  * Sie bezahlen nur für die Anzahl gebuchter Lektionen.\n\n  * Preisermässigungen für Senioren, Studenten und Paaren auf Anfrage."
+        "description": "* * Preise gelten pro Person und pro Lektion.\n  * Zeiten für den Privatunterricht sind flexibel.\n  * Sie bezahlen nur für die Anzahl gebuchter Lektionen."
       }
     ]
   }
