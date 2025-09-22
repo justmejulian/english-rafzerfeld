@@ -26,11 +26,6 @@
         "name": "Tuesday",
         "lessons": [
           {
-            "time": "16.30 - 17.30",
-            "level": "Intermediate",
-            "ceflevel": "B1"
-          },
-          {
             "time": "19.15 - 20.45",
             "level": "Pre-Intermediate",
             "ceflevel": "B1"
@@ -144,11 +139,6 @@
       {
         "name": "Dienstag",
         "lessons": [
-          {
-            "time": "16.30 - 17.30",
-            "level": "Intermediate",
-            "ceflevel": "B1"
-          },
           {
             "time": "19.15 - 20.45",
             "level": "Pre-Intermediate",
