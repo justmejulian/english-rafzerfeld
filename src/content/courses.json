@@ -38,7 +38,7 @@
           {
             "time": "08.00 – 09.15",
             "level": "Intermediate",
-            "ceflevel": "B1/B2"
+            "ceflevel": "B1"
           },
           {
             "time": "09.30 - 10:30",
@@ -48,7 +48,7 @@
           {
             "time": "19.00 – 20.30",
             "level": "Intermediate",
-            "ceflevel": "B1"
+            "ceflevel": "B2"
           }
         ]
       },
@@ -63,7 +63,7 @@
           {
             "time": "10.00 – 11.00",
             "level": "Upper Intermediate",
-            "ceflevel": "B1/B2"
+            "ceflevel": "B2"
           },
           {
             "time": "19.00 – 20.00",
@@ -152,7 +152,7 @@
           {
             "time": "08.00 – 09.15",
             "level": "Intermediate",
-            "ceflevel": "B1/B2"
+            "ceflevel": "B1"
           },
           {
             "time": "09.30 - 10.30",
@@ -162,7 +162,7 @@
           {
             "time": "19.00 – 20.30",
             "level": "Intermediate",
-            "ceflevel": "B1"
+            "ceflevel": "B2"
           }
         ]
       },
@@ -172,12 +172,12 @@
           {
             "time": "08.30 – 9.45",
             "level": "Pre-Intermediate",
-            "ceflevel": "B1/B2"
+            "ceflevel": "B2"
           },
           {
             "time": "10.00 – 11.00",
             "level": "Upper Intermediate",
-            "ceflevel": "B1/B2"
+            "ceflevel": "B2"
           },
           {
             "time": "19.00 – 20.00",
