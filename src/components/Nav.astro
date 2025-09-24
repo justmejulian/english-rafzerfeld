@@ -28,41 +28,43 @@ const linksLocale = {
 const links = linksLocale[locale];
 ---
 
-<div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-  <div class="flex h-16 items-center justify-between">
-    <div class="flex-1 md:flex md:items-center md:gap-12">
-      <!-- todo create logo component -->
-      <a
-        class="text-black transition hover:text-gray-500/75"
-        href={links[0].href}
-      >
-        {title}
-      </a>
-    </div>
+<div class="mx-auto mb-2 max-w-screen-xl px-4 sm:px-6 lg:px-8">
+  <div class="bg-gray-600 px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 items-center justify-between">
+      <div class="flex-1 md:flex md:items-center md:gap-12">
+        <!-- todo create logo component -->
+        <a
+          class="text-black transition hover:text-gray-500/75"
+          href={links[0].href}
+        >
+          <img class="h-10" src="assets/logo.png" alt={title} />
+        </a>
+      </div>
 
-    <div class="md:flex md:items-center md:gap-12">
-      <nav aria-label="Global" class="hidden md:block">
-        <ul class="flex items-center gap-6 text-sm">
-          {
-            links.map((link) => (
-              <li>
-                <a
-                  class="text-black transition hover:text-gray-500/75"
-                  href={link.href}
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </nav>
+      <div class="md:flex md:items-center md:gap-12">
+        <nav aria-label="Global" class="hidden md:block">
+          <ul class="flex items-center gap-6 text-sm">
+            {
+              links.map((link) => (
+                <li>
+                  <a
+                    class="hover:text-accent text-white transition"
+                    href={link.href}
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
 
-      <div class="flex items-center gap-4">
-        <LanguageButton />
+        <div class="flex items-center gap-4">
+          <LanguageButton />
 
-        <div class="block md:hidden">
-          <MobileNav links={links} client:visible />
+          <div class="block md:hidden">
+            <MobileNav links={links} client:visible />
+          </div>
         </div>
       </div>
     </div>
