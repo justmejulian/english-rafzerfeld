@@ -102,14 +102,42 @@
     "levelsDescription": "Small classes for 4 to 8 persons",
     "levels": [
       {
+        "name": "Level A",
+        "description": "Develop basic vocabulary, simple grammar and useful phrases. A solid grounding for further study.",
         "subLevels": [
           {
-            "name": "Level A1:",
-            "description": "The course for beginners and for those with limited English"
+            "name": "Level A2: Elementary",
+            "description": "Can understand sentences and common expressions related to immediate needs. Can communicate in simple, routine tasks that require a straightforward exchange of information on familiar topics."
           }
-        ],
-        "name": "Level A",
-        "description": "Develop basic vocabulary, simple grammar and useful phrases. A solid grounding for further study."
+        ]
+      },
+      {
+        "name": "Level B",
+        "description": "Strengthen communication with more confidence, fluency and accuracy on familiar and some abstract topics.",
+        "subLevels": [
+          {
+            "name": "Level B1: Intermediate",
+            "description": "Can understand the main points of clear, standard input on familiar matters. Can produce simple connected text on topics that are familiar or of personal interest."
+          },
+          {
+            "name": "Level B2: Upper Intermediate",
+            "description": "Can understand the main ideas of complex text on both concrete and abstract topics. Can interact with a degree of fluency and spontaneity that makes regular interaction with native speakers quite possible."
+          }
+        ]
+      },
+      {
+        "name": "Level C",
+        "description": "Master advanced English for complex communication, fluency, and nuance.",
+        "subLevels": [
+          {
+            "name": "Level C1: Advanced",
+            "description": "Can understand a wide range of demanding, longer texts, and recognize implicit meaning. Can express themselves fluently and spontaneously without much obvious searching for expressions."
+          },
+          {
+            "name": "Level C2: Proficient",
+            "description": "Can understand with ease virtually everything heard or read. Can express themselves spontaneously, very fluently, and precisely, differentiating finer shades of meaning even in more complex situations."
+          }
+        ]
       }
     ]
   },
@@ -216,14 +244,42 @@
     "levelsDescription": "Small classes for 4 to 8 persons",
     "levels": [
       {
+        "name": "Level A",
+        "description": "Grundlegender Wortschatz, einfache Grammatik und nützliche Redewendungen. Eine solide Basis für weiteres Lernen.",
         "subLevels": [
           {
-            "name": "Level A1:",
-            "description": "The course for beginners and for those with limited English"
+            "name": "Level A2: Elementary",
+            "description": "Kann Sätze und häufig gebrauchte Ausdrücke verstehen, die mit Bereichen von unmittelbarem Interesse zusammenhängen. Kann sich in einfachen, routinemässigen Situationen verständigen, in denen es um einen einfachen und direkten Austausch von Informationen geht."
           }
-        ],
-        "name": "Level A",
-        "description": "Develop basic vocabulary, simple grammar and useful phrases. A solid grounding for further study."
+        ]
+      },
+      {
+        "name": "Level B",
+        "description": "Stärkt die Kommunikationsfähigkeit mit mehr Sicherheit, Flüssigkeit und Genauigkeit zu vertrauten und teilweise abstrakten Themen.",
+        "subLevels": [
+          {
+            "name": "Level B1: Intermediate",
+            "description": "Kann die Hauptpunkte verstehen, wenn klare Standardsprache verwendet wird und wenn es um vertraute Dinge geht. Kann einfache zusammenhängende Texte über Themen verstehen, die vertraut sind oder von persönlichem Interesse sind."
+          },
+          {
+            "name": "Level B2: Upper Intermediate",
+            "description": "Kann die Hauptideen komplexer Texte zu konkreten und abstrakten Themen verstehen. Kann sich so spontan und fliessend verständigen, dass es ein normales Gespräch mit Muttersprachlern ohne grössere Anstrengung auf beiden Seiten ermöglicht."
+          }
+        ]
+      },
+      {
+        "name": "Level C",
+        "description": "Beherrscht fortgeschrittenes Deutsch für komplexe Kommunikation, Flüssigkeit und Nuancen.",
+        "subLevels": [
+          {
+            "name": "Level C1: Advanced",
+            "description": "Kann Texte verstehen, die komplexer und länger sind und auch implizite Bedeutungen erfassen. Kann sich spontan und fliessend ausdrücken, ohne öfter erkennbar nach Worten suchen zu müssen."
+          },
+          {
+            "name": "Level C2: Proficient",
+            "description": "Kann praktisch alles, was er/sie liest oder hört, mühelos verstehen. Kann sich spontan, sehr flüssig und genau ausdrücken und auch bei komplexeren Sachverhalten feinere Bedeutungsnuancen unterscheiden."
+          }
+        ]
       }
     ]
   }
