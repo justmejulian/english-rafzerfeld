@@ -20,6 +20,9 @@
 }
 
 @layer utilities {
+  .text-accent {
+    color: #cbd300;
+  }
   .bg-accent {
     background-color: #cbd300;
   }
