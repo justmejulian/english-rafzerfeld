@@ -157,6 +157,42 @@ collections:
         fields:
           - { label: Title, name: title, widget: string, i18n: true }
           - {
+              label: 'Group Course Label',
+              name: groupCourseLabel,
+              widget: string,
+              i18n: true,
+            }
+          - {
+              label: 'Normal Rate Label',
+              name: normalRateLabel,
+              widget: string,
+              i18n: true,
+            }
+          - {
+              label: 'Reduced Rate Label',
+              name: reducedRateLabel,
+              widget: string,
+              i18n: true,
+            }
+          - {
+              label: 'Private Course Label',
+              name: privateCourseLabel,
+              widget: string,
+              i18n: true,
+            }
+          - {
+              label: 'Person Label',
+              name: personLabel,
+              widget: string,
+              i18n: true,
+            }
+          - {
+              label: 'Persons Label',
+              name: personsLabel,
+              widget: string,
+              i18n: true,
+            }
+          - {
               label: 'Group Courses Title',
               name: groupCoursesTitle,
               widget: string,

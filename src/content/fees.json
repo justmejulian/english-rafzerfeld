@@ -3,6 +3,12 @@
     "title": "Fees",
     "groupCoursesTitle": "Group courses (4 to 8 participants)",
     "groupCoursesDescription": "All fees are given in Swiss francs",
+    "groupCourseLabel": "Group Course",
+    "normalRateLabel": "Normal Rate",
+    "reducedRateLabel": "Reduced Rate",
+    "privateCourseLabel": "Private Course",
+    "personLabel": "Person",
+    "personsLabel": "Persons",
     "groupCourses": [
       {
         "length": 60,
@@ -39,6 +45,12 @@
     "title": "Preise",
     "groupCoursesTitle": "Gruppenunterricht (4 bis 8 Teilnehmer)",
     "groupCoursesDescription": "Alle Preise werden in Schweizer Franken angegeben.",
+    "groupCourseLabel": "Gruppenunterricht",
+    "normalRateLabel": "Normalpreis pro Semester",
+    "reducedRateLabel": "Ermässigter Preis pro Semester",
+    "privateCourseLabel": "Privatunterricht",
+    "personLabel": "Person",
+    "personsLabel": "Personen",
     "groupCourses": [
       {
         "length": 60,

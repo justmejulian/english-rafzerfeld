@@ -14,6 +14,12 @@ const contentSchema = multiLingualSchema(
     title: z.string(),
     groupCoursesTitle: z.string(),
     groupCoursesDescription: z.string(),
+    groupCourseLabel: z.string(),
+    normalRateLabel: z.string(),
+    reducedRateLabel: z.string(),
+    privateCourseLabel: z.string(),
+    personLabel: z.string(),
+    personsLabel: z.string(),
     groupCourses: z.array(
       z.object({
         length: z.number(),
@@ -38,28 +44,7 @@ const contentSchema = multiLingualSchema(
 
 const parsedData = contentSchema.parse(data);
 
-// todo improve crouse description stuff
 const content = getLocaleData(locale, parsedData);
-
-// todo: move to translantions
-const titles = {
-  en: [
-    'Group Course',
-    'Normal Rate',
-    'Reduced Rate',
-    'Private Course',
-    'Person',
-    'Persons',
-  ],
-  de: [
-    'Gruppenunterricht',
-    'Normalpreis pro Semester',
-    'Ermässigter Preis pro Semester',
-    'Privatunterricht',
-    'Person',
-    'Personen',
-  ],
-};
 ---
 
 <div id="fees" class="mt-4 flex w-full flex-col justify-center">
@@ -71,13 +56,13 @@ const titles = {
       <thead>
         <tr class="text-left *:text-gray-900 *:first:font-medium">
           <th class="w-1/4 px-3 py-2 whitespace-nowrap">
-            {titles[locale][0]}
+            {content.groupCourseLabel}
           </th>
           <th class="px-3 py-2 text-left whitespace-nowrap">
-            {titles[locale][1]}
+            {content.normalRateLabel}
           </th>
           <th class="px-3 py-2 text-left whitespace-nowrap">
-            {titles[locale][2]}
+            {content.reducedRateLabel}
           </th>
         </tr>
       </thead>
@@ -106,16 +91,16 @@ const titles = {
       <thead>
         <tr class="text-left *:text-gray-900 *:first:font-medium">
           <th class="w-1/4 px-3 py-2 whitespace-nowrap">
-            {titles[locale][3]}
+            {content.privateCourseLabel}
           </th>
           <th class="px-3 py-2 text-left whitespace-nowrap">
-            1{titles[locale][4]}
+            1{content.personLabel}
           </th>
           <th class="px-3 py-2 text-left whitespace-nowrap">
-            2{titles[locale][5]}
+            2{content.personsLabel}
           </th>
           <th class="px-3 py-2 text-left whitespace-nowrap">
-            3{titles[locale][5]}
+            3{content.personsLabel}
           </th>
         </tr>
       </thead>
