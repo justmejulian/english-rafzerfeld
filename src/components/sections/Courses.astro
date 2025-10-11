@@ -51,10 +51,10 @@ const content = getLocaleData(locale, parsedData);
   <h1>{content.title}</h1>
   {
     content.days.map((day) => (
-      <table class="w-full max-w-3xl divide-y-2 divide-gray-200">
+      <table class="w-full divide-y-2 divide-gray-200">
         <thead>
           <tr class="text-left *:text-gray-900 *:first:font-medium">
-            <th class="w-1/4 px-3 py-2 whitespace-nowrap">{day.name}</th>
+            <th class="px-3 py-2 whitespace-nowrap">{day.name}</th>
             <th />
             <th class="px-3 py-2 text-left whitespace-nowrap">CEF Level</th>
           </tr>
@@ -62,10 +62,10 @@ const content = getLocaleData(locale, parsedData);
         <tbody class="divide-y divide-gray-200">
           {day.lessons.map((lesson) => (
             <tr class="*:font-medium *:text-gray-900">
-              <td class="w-1/8 px-3 py-2 whitespace-nowrap">{lesson.time}</td>
-              <td class="px-3 py-2 whitespace-nowrap">{lesson.level}</td>
+              <td class="w-1/5 px-3 py-2 whitespace-nowrap">{lesson.time}</td>
+              <td class="w-full px-3 py-2">{lesson.level}</td>
               <td
-                class={`w-1/8 px-3 py-2 whitespace-nowrap ${getLevelColor(lesson.ceflevel).bg}`}
+                class={`px-3 py-2 text-center whitespace-nowrap ${getLevelColor(lesson.ceflevel).bg}`}
               >
                 <a href={`#${getLevelId(lesson.ceflevel)}`} class="underline">
                   {lesson.ceflevel}
