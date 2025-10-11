@@ -5,6 +5,7 @@ import { multiLingualSchema } from '@utils/zod.ts';
 import { getLocaleData, getLocaleFromURL } from '@utils/locale.ts';
 
 import data from '@content/courses.json';
+import Levels from '@components/sections/Levels.astro';
 
 const locale = getLocaleFromURL(Astro.url);
 
@@ -85,10 +86,7 @@ const getLevelId = (ceflevel: string) => {
               <td
                 class={`w-1/8 px-3 py-2 whitespace-nowrap ${getLevelColor(lesson.ceflevel).bg}`}
               >
-                <a
-                  href={`#${getLevelId(lesson.ceflevel)}`}
-                  class="underline hover:text-blue-700"
-                >
+                <a href={`#${getLevelId(lesson.ceflevel)}`} class="underline">
                   {lesson.ceflevel}
                 </a>
               </td>
@@ -99,82 +97,9 @@ const getLevelId = (ceflevel: string) => {
     ))
   }
 
-  <details
-    id="levels-details"
-    class="group mt-6 [&_summary::-webkit-details-marker]:hidden"
-  >
-    <summary
-      class="flex cursor-pointer items-center justify-between gap-4 bg-gray-50 p-6"
-    >
-      <div>
-        <h2 class="mb-2 text-2xl font-bold text-gray-900">
-          {content.levelsTitle}
-        </h2>
-        <p class="text-gray-600">{content.levelsDescription}</p>
-      </div>
-      <svg
-        class="size-6 shrink-0 text-gray-500 transition-transform duration-300 group-open:-rotate-180"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M19 9l-7 7-7-7"></path>
-      </svg>
-    </summary>
-
-    <div class="space-y-6 bg-gray-50 p-6">
-      {
-        content.levels.map((level, index) => {
-          const color = colors[index] || colors[0];
-
-          return (
-            <div
-              id={`level-${index}`}
-              class={`border-l-4 bg-white p-5 shadow-sm ${color.border}`}
-            >
-              <h3 class="mb-2 text-xl font-bold text-gray-900">{level.name}</h3>
-              <p class="mb-4 text-gray-700">{level.description}</p>
-
-              {level.subLevels && level.subLevels.length > 0 && (
-                <div class="ml-4 space-y-3">
-                  {level.subLevels.map((subLevel) => (
-                    <div class={`${color.bg} p-4`}>
-                      <h4 class="mb-1 font-semibold text-gray-900">
-                        {subLevel.name}
-                      </h4>
-                      <p class="text-sm text-gray-700">
-                        {subLevel.description}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-          );
-        })
-      }
-    </div>
-  </details>
+  <Levels
+    title={content.levelsTitle}
+    description={content.levelsDescription}
+    levels={content.levels}
+  />
 </div>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const levelLinks = document.querySelectorAll('a[href^="#level-"]');
-    const details = document.getElementById(
-      'levels-details',
-    ) as HTMLDetailsElement;
-
-    levelLinks.forEach((link) => {
-      link.addEventListener('click', (e) => {
-        if (details && !details.open) {
-          details.open = true;
-        }
-      });
-    });
-  });
-</script>
