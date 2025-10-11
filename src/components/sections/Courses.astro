@@ -3,6 +3,7 @@ import { z } from 'astro:content';
 
 import { multiLingualSchema } from '@utils/zod.ts';
 import { getLocaleData, getLocaleFromURL } from '@utils/locale.ts';
+import { getLevelColor, getLevelId } from '@utils/cefLevel.ts';
 
 import data from '@content/courses.json';
 import Levels from '@components/sections/Levels.astro';
@@ -44,26 +45,6 @@ const contentSchema = multiLingualSchema(
 const parsedData = contentSchema.parse(data);
 
 const content = getLocaleData(locale, parsedData);
-
-const colors = [
-  { border: 'border-blue-500', bg: 'bg-blue-50' },
-  { border: 'border-green-500', bg: 'bg-green-50' },
-  { border: 'border-purple-500', bg: 'bg-purple-50' },
-];
-
-const getLevelColor = (ceflevel: string) => {
-  if (ceflevel.startsWith('A')) return colors[0];
-  if (ceflevel.startsWith('B')) return colors[1];
-  if (ceflevel.startsWith('C')) return colors[2];
-  return colors[0];
-};
-
-const getLevelId = (ceflevel: string) => {
-  if (ceflevel.startsWith('A')) return 'level-0';
-  if (ceflevel.startsWith('B')) return 'level-1';
-  if (ceflevel.startsWith('C')) return 'level-2';
-  return 'level-0';
-};
 ---
 
 <div id="courses" class="mt-4 flex w-full flex-col">
