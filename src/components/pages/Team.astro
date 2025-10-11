@@ -38,11 +38,11 @@ const content = getLocaleData(locale, parsedData);
   <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
     {
       content.teachers.map((teacher) => (
-        <div class="rounded-lg bg-white p-4 shadow-md">
+        <div class="bg-white">
           <img
             src={teacher.image}
             alt={teacher.name}
-            class="h-120 w-full rounded-t-lg object-cover"
+            class="h-120 w-full object-cover"
           />
           <h3 class="mt-2 text-xl font-bold">{teacher.name}</h3>
           <p class="text-gray-700">{teacher.description}</p>
