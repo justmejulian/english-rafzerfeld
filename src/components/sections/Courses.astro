@@ -43,6 +43,26 @@ const contentSchema = multiLingualSchema(
 const parsedData = contentSchema.parse(data);
 
 const content = getLocaleData(locale, parsedData);
+
+const colors = [
+  { border: 'border-blue-500', bg: 'bg-blue-50' },
+  { border: 'border-green-500', bg: 'bg-green-50' },
+  { border: 'border-purple-500', bg: 'bg-purple-50' },
+];
+
+const getLevelColor = (ceflevel: string) => {
+  if (ceflevel.startsWith('A')) return colors[0];
+  if (ceflevel.startsWith('B')) return colors[1];
+  if (ceflevel.startsWith('C')) return colors[2];
+  return colors[0];
+};
+
+const getLevelId = (ceflevel: string) => {
+  if (ceflevel.startsWith('A')) return 'level-0';
+  if (ceflevel.startsWith('B')) return 'level-1';
+  if (ceflevel.startsWith('C')) return 'level-2';
+  return 'level-0';
+};
 ---
 
 <div id="courses" class="mt-4 flex w-full flex-col">
@@ -62,8 +82,15 @@ const content = getLocaleData(locale, parsedData);
             <tr class="*:font-medium *:text-gray-900">
               <td class="w-1/8 px-3 py-2 whitespace-nowrap">{lesson.time}</td>
               <td class="px-3 py-2 whitespace-nowrap">{lesson.level}</td>
-              <td class="w-1/8 px-3 py-2 whitespace-nowrap">
-                {lesson.ceflevel}
+              <td
+                class={`w-1/8 px-3 py-2 whitespace-nowrap ${getLevelColor(lesson.ceflevel).bg}`}
+              >
+                <a
+                  href={`#${getLevelId(lesson.ceflevel)}`}
+                  class="underline hover:text-blue-700"
+                >
+                  {lesson.ceflevel}
+                </a>
               </td>
             </tr>
           ))}
@@ -72,7 +99,10 @@ const content = getLocaleData(locale, parsedData);
     ))
   }
 
-  <details class="group [&_summary::-webkit-details-marker]:hidden">
+  <details
+    id="levels-details"
+    class="group mt-6 [&_summary::-webkit-details-marker]:hidden"
+  >
     <summary
       class="flex cursor-pointer items-center justify-between gap-4 bg-gray-50 p-6"
     >
@@ -100,15 +130,13 @@ const content = getLocaleData(locale, parsedData);
     <div class="space-y-6 bg-gray-50 p-6">
       {
         content.levels.map((level, index) => {
-          const colors = [
-            { border: 'border-blue-500', bg: 'bg-blue-50' },
-            { border: 'border-green-500', bg: 'bg-green-50' },
-            { border: 'border-purple-500', bg: 'bg-purple-50' },
-          ];
           const color = colors[index] || colors[0];
 
           return (
-            <div class={`border-l-4 bg-white p-5 shadow-sm ${color.border}`}>
+            <div
+              id={`level-${index}`}
+              class={`border-l-4 bg-white p-5 shadow-sm ${color.border}`}
+            >
               <h3 class="mb-2 text-xl font-bold text-gray-900">{level.name}</h3>
               <p class="mb-4 text-gray-700">{level.description}</p>
 
@@ -133,3 +161,20 @@ const content = getLocaleData(locale, parsedData);
     </div>
   </details>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const levelLinks = document.querySelectorAll('a[href^="#level-"]');
+    const details = document.getElementById(
+      'levels-details',
+    ) as HTMLDetailsElement;
+
+    levelLinks.forEach((link) => {
+      link.addEventListener('click', (e) => {
+        if (details && !details.open) {
+          details.open = true;
+        }
+      });
+    });
+  });
+</script>
