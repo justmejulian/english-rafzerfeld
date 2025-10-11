@@ -4,20 +4,6 @@
     "qualificationsLabel": "Qualifications",
     "teachers": [
       {
-        "name": "Bev Visser",
-        "description": "Bev grew up in Johannesburg, South Africa. She studied communications and was a stay-at-home mum to her 3 children. After settling in Switzerland, she saw the need for qualified English teachers and completed her CELTA training in 2012. She lives in Rafz. She values working with her students and sharing her enjoyment of the language.",
-        "nationality": "South Africa / Switzerland",
-        "certificates": [
-          {
-            "name": "Teaching 1 to 1"
-          },
-          {
-            "name": "Cambridge Certificate in Teaching English as a Foreign Language"
-          }
-        ],
-        "image": "/assets/bev.jpeg"
-      },
-      {
         "name": "Angela Eibner",
         "description": "Angela has over 30 years of teaching experience and is committed to supporting each learner develop their English communication skills. She grew up in London and trained as a language teacher on moving to Switzerland. Besides the CTEFL and Masters in English Language Teaching, she has a Business English Certificate and the Diploma in Adult Education. She lives in Rafz",
         "nationality": "UK / Switzerland",
@@ -36,17 +22,11 @@
           }
         ],
         "image": "/assets/angela.jpeg"
-      }
-    ]
-  },
-  "de": {
-    "title": "Unsere Lehrerinnen",
-    "qualificationsLabel": "Qualifikationen",
-    "teachers": [
+      },
       {
         "name": "Bev Visser",
-        "description": "Bev ist in Johannesburg, Südafrika aufgewachsen. Sie studiert Kommunikationswissenschaft und ist Mutter von 3 Kindern. Seit sie in der Schweiz wohnt hat sie den Mangel an qualifiziertem Englischunterricht gesehen. 2012 hat sie die CELTA absolviert. Sie schätzt ihre Arbeit mit ihren Studenten und freut sich ihre Liebe zur Sprache mit ihnen zu teilen. Sie wohnt in Rafz. ",
-        "nationality": "Süd Afrika / Schweiz",
+        "description": "Bev grew up in Johannesburg, South Africa. She studied communications and was a stay-at-home mum to her 3 children. After settling in Switzerland, she saw the need for qualified English teachers and completed her CELTA training in 2012. She lives in Rafz. She values working with her students and sharing her enjoyment of the language.",
+        "nationality": "South Africa / Switzerland",
         "certificates": [
           {
             "name": "Teaching 1 to 1"
@@ -56,7 +36,13 @@
           }
         ],
         "image": "/assets/bev.jpeg"
-      },
+      }
+    ]
+  },
+  "de": {
+    "title": "Unsere Lehrerinnen",
+    "qualificationsLabel": "Qualifikationen",
+    "teachers": [
       {
         "name": "Angela Eibner",
         "description": "Angela hat über 30 Jahre Erfahrungen im Unterrichten und setzt sich dafür ein, jeden Lernenden bei der Entwicklung seiner Englischkenntnisse zu unterstützen. Sie ist in London aufgewachsen und hat nach ihrem Umzug in die Schweiz eine Ausbildung zur Sprachlehrerin absolviert. Neben dem Master in Englischunterricht verfügt sie über ein Business English Certificate und ein Diplom in Erwachsenenbildung. Sie wohnt in Rafz.",
@@ -76,6 +62,20 @@
           }
         ],
         "image": "/assets/angela.jpeg"
+      },
+      {
+        "name": "Bev Visser",
+        "description": "Bev ist in Johannesburg, Südafrika aufgewachsen. Sie studiert Kommunikationswissenschaft und ist Mutter von 3 Kindern. Seit sie in der Schweiz wohnt hat sie den Mangel an qualifiziertem Englischunterricht gesehen. 2012 hat sie die CELTA absolviert. Sie schätzt ihre Arbeit mit ihren Studenten und freut sich ihre Liebe zur Sprache mit ihnen zu teilen. Sie wohnt in Rafz. ",
+        "nationality": "Südafrika / Schweiz",
+        "certificates": [
+          {
+            "name": "Teaching 1 to 1"
+          },
+          {
+            "name": "Cambridge Certificate in Teaching English as a Foreign Language"
+          }
+        ],
+        "image": "/assets/bev.jpeg"
       }
     ]
   }
