@@ -35,6 +35,8 @@ const contentSchema = multiLingualSchema(
 
 const parsedData = contentSchema.parse(data);
 
+const teamLink = `/${locale}/team`;
+
 const content = getLocaleData(locale, parsedData);
 ---
 
@@ -78,19 +80,39 @@ const content = getLocaleData(locale, parsedData);
         </div>
 
         <div
-          class="flex max-h-40 min-w-1/2 flex-row gap-4 overflow-hidden md:max-h-full"
+          class="flex min-h-40 min-w-1/2 flex-row gap-4 overflow-hidden md:max-h-full"
         >
-          <img
-            alt=""
-            src="/assets/angela.jpeg"
-            class="max-w-1/2 object-cover md:max-h-full"
-          />
+          <a href={teamLink} class="group relative block flex-1 bg-black">
+            <img
+              alt="Angela Eibner"
+              src="/assets/angela.jpeg"
+              class="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50"
+            />
 
-          <img
-            alt=""
-            src="/assets/bev.jpeg"
-            class="max-h-full max-w-1/2 object-cover"
-          />
+            <div
+              class="translate-y-8 transform p-4 opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
+            >
+              <p class="text-xl font-bold text-white sm:text-2xl">
+                Angela Eibner
+              </p>
+              <p class="text-sm text-white">Meet our teacher</p>
+            </div>
+          </a>
+
+          <a href={teamLink} class="group relative block flex-1 bg-black">
+            <img
+              alt="Bev Visser"
+              src="/assets/bev.jpeg"
+              class="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50"
+            />
+
+            <div
+              class="translate-y-8 transform p-4 opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
+            >
+              <p class="text-xl font-bold text-white sm:text-2xl">Bev Visser</p>
+              <p class="text-sm text-white">Meet our teacher</p>
+            </div>
+          </a>
         </div>
       </div>
       <Courses />
