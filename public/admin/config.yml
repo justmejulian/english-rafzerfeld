@@ -119,6 +119,12 @@ collections:
         i18n: true
         fields:
           - { label: Title, name: title, widget: string, i18n: true }
+          - {
+              label: 'Qualifications Label',
+              name: qualificationsLabel,
+              widget: string,
+              i18n: true,
+            }
           - label: Teachers
             name: teachers
             widget: list

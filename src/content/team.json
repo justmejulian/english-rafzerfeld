@@ -1,6 +1,7 @@
 {
   "en": {
     "title": "Our teachers",
+    "qualificationsLabel": "Qualifications",
     "teachers": [
       {
         "name": "Bev Visser",
@@ -40,6 +41,7 @@
   },
   "de": {
     "title": "Unsere Lehrerinnen",
+    "qualificationsLabel": "Qualifikationen",
     "teachers": [
       {
         "name": "Bev Visser",
