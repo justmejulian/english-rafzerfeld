@@ -19,6 +19,11 @@
             "time": "19.00 - 20.00",
             "level": "Conversation (Eglisau)",
             "ceflevel": "B2"
+          },
+          {
+            "time": "test",
+            "level": "teste",
+            "ceflevel": "set"
           }
         ]
       },
