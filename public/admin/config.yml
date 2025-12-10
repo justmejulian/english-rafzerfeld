@@ -67,6 +67,7 @@ collections:
             i18n: true
             fields:
               - { label: Name, name: name, widget: string, i18n: true }
+              - { label: Subtitle, name: subtitle, widget: string, i18n: true }
               - label: Lessons
                 name: lessons
                 widget: list

@@ -93,7 +93,8 @@
         ]
       },
       {
-        "name": "Saturday NEW CLASS",
+        "name": "Saturday",
+        "subtitle": "COMING SOON",
         "lessons": [
           {
             "time": "9.00-10.00",
@@ -240,7 +241,8 @@
         ]
       },
       {
-        "name": "Samstag NEUE GRÜPPE",
+        "name": "Samstag",
+        "subtitle": "BALD VERFÜGBAR",
         "lessons": [
           {
             "time": "9.00-10.00",

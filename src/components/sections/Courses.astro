@@ -16,6 +16,7 @@ const contentSchema = multiLingualSchema(
     days: z.array(
       z.object({
         name: z.string(),
+        subtitle: z.string().optional(),
         lessons: z.array(
           z.object({
             time: z.string(),
@@ -59,9 +60,13 @@ const content = getLocaleData(locale, parsedData);
             <col class="w-[90px]" />
           </colgroup>
           <thead>
-            <tr class="text-left *:text-gray-900 *:first:font-medium">
-              <th class="px-3 py-2 whitespace-nowrap">{day.name}</th>
-              <th />
+            <tr class="text-left text-gray-900">
+              <th class="px-3 py-2 font-medium whitespace-nowrap">
+                {day.name}
+              </th>
+              <th class="px-3 py-2 text-left font-medium whitespace-nowrap">
+                {day.subtitle}
+              </th>
               <th class="px-3 py-2 text-left whitespace-nowrap">CEF Level</th>
             </tr>
           </thead>
