@@ -24,7 +24,7 @@ const { title, description, levels } = Astro.props;
   class="group mt-6 [&_summary::-webkit-details-marker]:hidden"
 >
   <summary
-    class="flex cursor-pointer items-center justify-between gap-4 bg-gray-50 p-6"
+    class="flex cursor-pointer items-center justify-between gap-4 bg-gray-100 p-6"
   >
     <div>
       <h2 class="mb-2 text-2xl font-bold text-gray-900">
@@ -47,7 +47,7 @@ const { title, description, levels } = Astro.props;
     </svg>
   </summary>
 
-  <div class="space-y-6 bg-gray-50 p-6">
+  <div class="space-y-6 bg-gray-200 p-6">
     {
       levels.map((level, index) => {
         const levelId = `level-${index}`;

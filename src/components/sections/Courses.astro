@@ -49,34 +49,48 @@ const content = getLocaleData(locale, parsedData);
 
 <div id="courses" class="mt-4 flex w-full flex-col">
   <h1>{content.title}</h1>
-  {
-    content.days.map((day) => (
-      <table class="w-full divide-y-2 divide-gray-200">
-        <thead>
-          <tr class="text-left *:text-gray-900 *:first:font-medium">
-            <th class="px-3 py-2 whitespace-nowrap">{day.name}</th>
-            <th />
-            <th class="px-3 py-2 text-left whitespace-nowrap">CEF Level</th>
-          </tr>
-        </thead>
-        <tbody class="divide-y divide-gray-200">
-          {day.lessons.map((lesson) => (
-            <tr class="*:font-medium *:text-gray-900">
-              <td class="w-1/5 px-3 py-2 whitespace-nowrap">{lesson.time}</td>
-              <td class="w-full px-3 py-2">{lesson.level}</td>
-              <td
-                class={`px-3 py-2 text-center whitespace-nowrap ${getLevelColor(lesson.ceflevel).bg}`}
-              >
-                <a href={`#${getLevelId(lesson.ceflevel)}`} class="underline">
-                  {lesson.ceflevel}
-                </a>
-              </td>
+  <div class="flex w-full flex-col flex-wrap items-start gap-4 md:flex-row">
+    {
+      content.days.map((day) => (
+        <table class="min-w-full flex-1 table-fixed divide-y-2 divide-gray-200 md:min-w-0">
+          <colgroup>
+            <col class="w-[100px]" />
+            <col />
+            <col class="w-[90px]" />
+          </colgroup>
+          <thead>
+            <tr class="text-left *:text-gray-900 *:first:font-medium">
+              <th class="px-3 py-2 whitespace-nowrap">{day.name}</th>
+              <th />
+              <th class="px-3 py-2 text-left whitespace-nowrap">CEF Level</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-    ))
-  }
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            {day.lessons.map((lesson) => (
+              <tr class="*:font-medium *:text-gray-900">
+                <td class="px-3 py-2 whitespace-nowrap">{lesson.time}</td>
+                <td class="overflow-hidden px-3 py-2 text-ellipsis">
+                  {lesson.level}
+                </td>
+                <td class="px-3">
+                  <div
+                    class={`h-full w-full px-3 py-2 text-center whitespace-nowrap ${getLevelColor(lesson.ceflevel).bg}`}
+                  >
+                    <a
+                      href={`#${getLevelId(lesson.ceflevel)}`}
+                      class="underline"
+                    >
+                      {lesson.ceflevel}
+                    </a>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      ))
+    }
+  </div>
 
   <Levels
     title={content.levelsTitle}
