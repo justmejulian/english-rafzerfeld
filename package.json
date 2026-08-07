@@ -7,7 +7,9 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "code": "npm run format && npm run lint",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "code": "npm run format && npm run lint && npm run test",
     "code:fix": "npm run format:fix && npm run lint:fix",
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
@@ -37,6 +39,7 @@
     "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.12",
-    "typescript-eslint": "^8.33.1"
+    "typescript-eslint": "^8.33.1",
+    "vitest": "^3.2.7"
   }
 }

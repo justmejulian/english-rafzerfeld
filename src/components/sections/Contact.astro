@@ -1,37 +1,18 @@
 ---
-import { z } from 'astro:content';
-
 import Section from '@components/Section.astro';
 import SectionHeading from '@components/SectionHeading.astro';
 import Button from '@components/Button.astro';
 import ContactCard from '@components/ContactCard.astro';
 import Map from '@components/Map.astro';
 
-import { multiLingualSchema } from '@utils/zod.ts';
 import { getLocaleData, getLocaleFromURL } from '@utils/locale.ts';
 
+import { contactSchema } from '@content/schemas.ts';
 import data from '@content/contact.json';
 
 const locale = getLocaleFromURL(Astro.url);
 
-const contentSchema = multiLingualSchema(
-  z.object({
-    title: z.string(),
-    description: z.string(),
-    email: z.string().email(),
-    mapsLabel: z.string(),
-    teachersContact: z.array(
-      z.object({
-        name: z.string(),
-        email: z.string().email(),
-        phone: z.string(),
-      }),
-    ),
-    address: z.string(),
-  }),
-);
-
-const content = getLocaleData(locale, contentSchema.parse(data));
+const content = getLocaleData(locale, contactSchema.parse(data));
 
 const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(content.address)}`;
 ---

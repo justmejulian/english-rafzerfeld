@@ -1,6 +1,4 @@
 ---
-import { z } from 'astro:content';
-
 import Layout from '@layouts/Layout.astro';
 
 import Banner from '@components/Banner.astro';
@@ -11,7 +9,6 @@ import Button from '@components/Button.astro';
 import Tag from '@components/Tag.astro';
 import TeacherCard from '@components/TeacherCard.astro';
 
-import { multiLingualSchema } from '@utils/zod.ts';
 import { getLocaleData, getLocaleFromURL } from '@utils/locale.ts';
 
 import Fees from '@components/sections/Fees.astro';
@@ -19,35 +16,13 @@ import Courses from '@components/sections/Courses.astro';
 import Levels from '@components/sections/Levels.astro';
 import Contact from '@components/sections/Contact.astro';
 
+import { homeSchema } from '@content/schemas.ts';
 import data from '@content/home.json';
 import teamData from '@content/team.json';
 
 const locale = getLocaleFromURL(Astro.url);
 
-const contentSchema = multiLingualSchema(
-  z.object({
-    eyebrow: z.string(),
-    title: z.string(),
-    intro: z.string(),
-    pills: z.array(z.string()),
-    coursesCta: z.string(),
-    askCta: z.string(),
-    teachers: z.object({
-      title: z.string(),
-      tagline: z.string(),
-      cta: z.string(),
-    }),
-    banner: z
-      .object({
-        message: z.string(),
-        linkText: z.string(),
-        linkUrl: z.string(),
-      })
-      .optional(),
-  }),
-);
-
-const content = getLocaleData(locale, contentSchema.parse(data));
+const content = getLocaleData(locale, homeSchema.parse(data));
 const teachers = teamData[locale].teachers;
 const teamHref = `/${locale}/team`;
 ---

@@ -1,42 +1,18 @@
 ---
-import { z } from 'astro:content';
-
 import Layout from '@layouts/Layout.astro';
 import Container from '@components/Container.astro';
 import Section from '@components/Section.astro';
 import SectionHeading from '@components/SectionHeading.astro';
 import Button from '@components/Button.astro';
 
-import { multiLingualSchema } from '@utils/zod.ts';
 import { getLocaleData, getLocaleFromURL } from '@utils/locale.ts';
 
+import { teamSchema } from '@content/schemas.ts';
 import data from '@content/team.json';
 
 const locale = getLocaleFromURL(Astro.url);
 
-const contentSchema = multiLingualSchema(
-  z.object({
-    title: z.string(),
-    qualificationsTitle: z.string(),
-    meet: z.object({
-      title: z.string(),
-      text: z.string(),
-      contactCta: z.string(),
-      coursesCta: z.string(),
-    }),
-    teachers: z.array(
-      z.object({
-        name: z.string(),
-        tagline: z.string(),
-        description: z.string(),
-        image: z.string(),
-        certificates: z.array(z.object({ name: z.string() })),
-      }),
-    ),
-  }),
-);
-
-const content = getLocaleData(locale, contentSchema.parse(data));
+const content = getLocaleData(locale, teamSchema.parse(data));
 
 const contactHref = `/${locale}/#contact`;
 const coursesHref = `/${locale}/#courses`;
