@@ -1,8 +1,9 @@
 {
   "en": {
     "title": "Contact us",
-    "description": "If you would like to attend a course or visit a lesson, or to receive more details about our courses, please contact us using the email link below.",
+    "description": "Would you like to attend a course, visit a lesson, or receive more details about our courses? Please get in touch using the email link below.",
     "email": "info@english-rafzerfeld.ch",
+    "mapsLabel": "Open in maps",
     "teachersContact": [
       {
         "name": "Bev Visser",
@@ -12,15 +13,16 @@
       {
         "name": "Angela Eibner",
         "email": "angela@english-rafzerfeld.ch",
-        "phone": "079 385 4678"
+        "phone": "079 385 46 78"
       }
     ],
     "address": "Strässler 30, 8197 Rafz"
   },
   "de": {
-    "title": "Contact us",
-    "description": "Um an einem Kurs teilzunehmen, eine Probelektion zu besuchen, oder für mehr Informationen über unsere Kurse, können Sie uns unter der folgenden E-Mail Adresse kontaktieren.",
+    "title": "Kontakt",
+    "description": "Möchten Sie an einem Kurs teilnehmen, eine Probelektion besuchen oder mehr über unsere Kurse erfahren? Melden Sie sich über den E-Mail-Link unten.",
     "email": "info@english-rafzerfeld.ch",
+    "mapsLabel": "In Karten öffnen",
     "teachersContact": [
       {
         "name": "Bev Visser",
@@ -30,7 +32,7 @@
       {
         "name": "Angela Eibner",
         "email": "angela@english-rafzerfeld.ch",
-        "phone": "044 869 09 62"
+        "phone": "079 385 46 78"
       }
     ],
     "address": "Strässler 30, 8197 Rafz"

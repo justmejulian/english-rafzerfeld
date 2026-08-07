@@ -1,23 +1,23 @@
 {
   "en": {
-    "title": "Course list: Group courses",
+    "title": "Group courses",
+    "subtitle": "Semester times, 4–8 participants. All times are local.",
+    "levelNoteText": "Levels follow the Common European Framework —",
+    "levelNoteLink": "see the level guide",
     "days": [
       {
         "name": "Monday",
         "lessons": [
+          { "time": "16:00 – 17:00", "level": "New class", "ceflevel": "A2" },
           {
-            "time": "16.00 - 17.00",
-            "level": "New Class",
-            "ceflevel": "A2"
-          },
-          {
-            "time": "17.00 - 18.00",
+            "time": "17:00 – 18:00",
             "level": "Pre-Intermediate",
             "ceflevel": "B1"
           },
           {
-            "time": "19.00 - 20.00",
-            "level": "Conversation (Eglisau)",
+            "time": "19:00 – 20:00",
+            "level": "Conversation",
+            "location": "Eglisau",
             "ceflevel": "B2"
           }
         ]
@@ -25,8 +25,9 @@
       {
         "name": "Tuesday",
         "lessons": [
+          { "time": "17:30 – 18:30", "level": "Elementary", "ceflevel": "A2" },
           {
-            "time": "19.15 - 20.45",
+            "time": "19:15 – 20:45",
             "level": "Pre-Intermediate",
             "ceflevel": "B1"
           }
@@ -36,38 +37,31 @@
         "name": "Wednesday",
         "lessons": [
           {
-            "time": "08.00 – 09.15",
+            "time": "08:00 – 09:15",
             "level": "Intermediate",
             "ceflevel": "B1"
           },
-          {
-            "time": "09.30 - 10:30",
-            "level": "Advanced",
-            "ceflevel": "C1"
-          },
-          {
-            "time": "19.00 – 20.30",
-            "level": "Intermediate",
-            "ceflevel": "B2"
-          }
+          { "time": "09:30 – 10:30", "level": "Advanced", "ceflevel": "C1" },
+          { "time": "19:00 – 20:30", "level": "Intermediate", "ceflevel": "B2" }
         ]
       },
       {
         "name": "Thursday",
         "lessons": [
           {
-            "time": "08.30 – 9.45",
+            "time": "08:30 – 09:45",
             "level": "Pre-Intermediate",
             "ceflevel": "B2"
           },
           {
-            "time": "10.00 – 11.00",
+            "time": "10:00 – 11:00",
             "level": "Upper Intermediate",
             "ceflevel": "B2"
           },
           {
-            "time": "19.00 – 20.00",
-            "level": "Conversation (Online)",
+            "time": "19:00 – 20:00",
+            "level": "Conversation",
+            "location": "online",
             "ceflevel": "B2"
           }
         ]
@@ -75,91 +69,92 @@
       {
         "name": "Friday",
         "lessons": [
-          {
-            "time": "08.30 – 09.30",
-            "level": "New Class",
-            "ceflevel": "A2"
-          },
-          {
-            "time": "09.30 – 10.30",
-            "level": "Elementary",
-            "ceflevel": "A2"
-          }
+          { "time": "08:30 – 09:30", "level": "New class", "ceflevel": "A2" },
+          { "time": "09:30 – 10:30", "level": "Elementary", "ceflevel": "A2" }
         ]
       },
       {
-        "name": "Saturday NEW CLASS",
+        "name": "Saturday",
+        "note": "Coming soon",
         "lessons": [
           {
-            "time": "9.00-10.00",
+            "time": "09:00 – 10:00",
             "level": "Pre-Intermediate",
             "ceflevel": "A2/B1"
           }
         ]
       }
     ],
-    "levelsTitle": "A guide to the Levels",
-    "levelsDescription": "Small classes for 4 to 8 persons",
+    "levelsTitle": "A guide to the levels",
+    "levelsDescription": "A short summary to help you assess your own English level before you get in touch.",
     "levels": [
       {
         "name": "Level A",
-        "description": "Develop basic vocabulary, simple grammar and useful phrases. A solid grounding for further study.",
+        "userType": "Basic user",
+        "description": "Develop basic vocabulary, simple grammar and useful phrases — a solid grounding for further study.",
         "subLevels": [
           {
-            "name": "Level A2: Elementary",
+            "cefr": "A2",
+            "label": "Elementary",
             "description": "Can understand sentences and common expressions related to immediate needs. Can communicate in simple, routine tasks that require a straightforward exchange of information on familiar topics."
           }
         ]
       },
       {
         "name": "Level B",
-        "description": "Strengthen communication with more confidence, fluency and accuracy on familiar and some abstract topics.",
+        "userType": "Independent user",
+        "description": "Strengthen communication with more confidence, fluency and accuracy — on familiar and some abstract topics.",
         "subLevels": [
           {
-            "name": "Level B1: Intermediate",
+            "cefr": "B1",
+            "label": "Intermediate",
             "description": "Can understand the main points of clear, standard input on familiar matters. Can produce simple connected text on topics that are familiar or of personal interest."
           },
           {
-            "name": "Level B2: Upper Intermediate",
-            "description": "Can understand the main ideas of complex text on both concrete and abstract topics. Can interact with a degree of fluency and spontaneity that makes regular interaction with native speakers quite possible."
+            "cefr": "B2",
+            "label": "Upper Intermediate",
+            "description": "Can understand the main ideas of complex text on both concrete and abstract topics, and interact with a degree of fluency and spontaneity."
           }
         ]
       },
       {
         "name": "Level C",
-        "description": "Master advanced English for complex communication, fluency, and nuance.",
+        "userType": "Proficient user",
+        "description": "Master advanced English for complex communication, fluency and nuance.",
         "subLevels": [
           {
-            "name": "Level C1: Advanced",
-            "description": "Can understand a wide range of demanding, longer texts, and recognize implicit meaning. Can express themselves fluently and spontaneously without much obvious searching for expressions."
+            "cefr": "C1",
+            "label": "Advanced",
+            "description": "Can understand a wide range of demanding, longer texts, recognise implicit meaning, and express ideas fluently and spontaneously without much obvious searching for expressions."
           },
           {
-            "name": "Level C2: Proficient",
-            "description": "Can understand with ease virtually everything heard or read. Can express themselves spontaneously, very fluently, and precisely, differentiating finer shades of meaning even in more complex situations."
+            "cefr": "C2",
+            "label": "Proficient",
+            "description": "Can understand with ease virtually everything heard or read, and express themselves spontaneously, very fluently and precisely, differentiating finer shades of meaning."
           }
         ]
       }
     ]
   },
   "de": {
-    "title": "Kursangebot Gruppenunterricht",
+    "title": "Gruppenkurse",
+    "subtitle": "Semesterzeiten, 4–8 Teilnehmende. Alle Zeiten sind Ortszeiten.",
+    "levelNoteText": "Die Niveaus folgen dem Gemeinsamen Europäischen Referenzrahmen —",
+    "levelNoteLink": "zur Niveau-Übersicht",
     "days": [
       {
         "name": "Montag",
         "lessons": [
+          { "time": "16:00 – 17:00", "level": "Neue Gruppe", "ceflevel": "A2" },
           {
-            "time": "16.00 - 17.00",
-            "level": "Neue",
-            "ceflevel": "A1/A2"
-          },
-          {
-            "time": "17.00 - 18.00",
+            "time": "17:00 – 18:00",
             "level": "Pre-Intermediate",
-            "ceflevel": "B2"
+            "ceflevel": "B1"
           },
           {
-            "time": "19.00 - 20.00",
-            "level": "Conversation (Eglisau)",
+            "time": "19:00 – 20:00",
+            "level": "Conversation",
+            "location": "Eglisau",
             "ceflevel": "B2"
           }
         ]
@@ -167,8 +162,9 @@
       {
         "name": "Dienstag",
         "lessons": [
+          { "time": "17:30 – 18:30", "level": "Elementary", "ceflevel": "A2" },
           {
-            "time": "19.15 - 20.45",
+            "time": "19:15 – 20:45",
             "level": "Pre-Intermediate",
             "ceflevel": "B1"
           }
@@ -178,38 +174,31 @@
         "name": "Mittwoch",
         "lessons": [
           {
-            "time": "08.00 – 09.15",
+            "time": "08:00 – 09:15",
             "level": "Intermediate",
             "ceflevel": "B1"
           },
-          {
-            "time": "09.30 - 10.30",
-            "level": "Advanced",
-            "ceflevel": "C1"
-          },
-          {
-            "time": "19.00 – 20.30",
-            "level": "Intermediate",
-            "ceflevel": "B2"
-          }
+          { "time": "09:30 – 10:30", "level": "Advanced", "ceflevel": "C1" },
+          { "time": "19:00 – 20:30", "level": "Intermediate", "ceflevel": "B2" }
         ]
       },
       {
         "name": "Donnerstag",
         "lessons": [
           {
-            "time": "08.30 – 9.45",
+            "time": "08:30 – 09:45",
             "level": "Pre-Intermediate",
             "ceflevel": "B2"
           },
           {
-            "time": "10.00 – 11.00",
+            "time": "10:00 – 11:00",
             "level": "Upper Intermediate",
             "ceflevel": "B2"
           },
           {
-            "time": "19.00 – 20.00",
-            "level": "Conversation (Online)",
+            "time": "19:00 – 20:00",
+            "level": "Conversation",
+            "location": "online",
             "ceflevel": "B2"
           }
         ]
@@ -217,67 +206,68 @@
       {
         "name": "Freitag",
         "lessons": [
-          {
-            "time": "08.30 – 09.30",
-            "level": "New Class",
-            "ceflevel": "A2"
-          },
-          {
-            "time": "09.30 – 10.30",
-            "level": "Elementary",
-            "ceflevel": "A2"
-          }
+          { "time": "08:30 – 09:30", "level": "Neue Gruppe", "ceflevel": "A2" },
+          { "time": "09:30 – 10:30", "level": "Elementary", "ceflevel": "A2" }
         ]
       },
       {
-        "name": "Samstag NEUE GRÜPPE",
+        "name": "Samstag",
+        "note": "Demnächst",
         "lessons": [
           {
-            "time": "9.00-10.00",
+            "time": "09:00 – 10:00",
             "level": "Pre-Intermediate",
             "ceflevel": "A2/B1"
           }
         ]
       }
     ],
-    "levelsTitle": "A guide to the Levels",
-    "levelsDescription": "Small classes for 4 to 8 persons",
+    "levelsTitle": "Eine Übersicht der Niveaus",
+    "levelsDescription": "Eine kurze Zusammenfassung, damit Sie Ihr Englischniveau einschätzen können, bevor Sie sich melden.",
     "levels": [
       {
-        "name": "Level A",
-        "description": "Grundlegender Wortschatz, einfache Grammatik und nützliche Redewendungen. Eine solide Basis für weiteres Lernen.",
+        "name": "Niveau A",
+        "userType": "Grundlegende Kenntnisse",
+        "description": "Grundlegender Wortschatz, einfache Grammatik und nützliche Redewendungen — eine solide Basis für weiteres Lernen.",
         "subLevels": [
           {
-            "name": "Level A2: Elementary",
-            "description": "Kann Sätze und häufig gebrauchte Ausdrücke verstehen, die mit Bereichen von unmittelbarem Interesse zusammenhängen. Kann sich in einfachen, routinemässigen Situationen verständigen, in denen es um einen einfachen und direkten Austausch von Informationen geht."
+            "cefr": "A2",
+            "label": "Elementary",
+            "description": "Kann Sätze und häufig gebrauchte Ausdrücke verstehen, die mit Bereichen von unmittelbarem Interesse zusammenhängen. Kann sich in einfachen, routinemässigen Situationen verständigen."
           }
         ]
       },
       {
-        "name": "Level B",
-        "description": "Stärkt die Kommunikationsfähigkeit mit mehr Sicherheit, Flüssigkeit und Genauigkeit zu vertrauten und teilweise abstrakten Themen.",
+        "name": "Niveau B",
+        "userType": "Selbständige Sprachverwendung",
+        "description": "Stärkt die Kommunikationsfähigkeit mit mehr Sicherheit, Flüssigkeit und Genauigkeit — zu vertrauten und teilweise abstrakten Themen.",
         "subLevels": [
           {
-            "name": "Level B1: Intermediate",
-            "description": "Kann die Hauptpunkte verstehen, wenn klare Standardsprache verwendet wird und wenn es um vertraute Dinge geht. Kann einfache zusammenhängende Texte über Themen verstehen, die vertraut sind oder von persönlichem Interesse sind."
+            "cefr": "B1",
+            "label": "Intermediate",
+            "description": "Kann die Hauptpunkte verstehen, wenn klare Standardsprache verwendet wird und wenn es um vertraute Dinge geht. Kann einfache zusammenhängende Texte zu vertrauten Themen verfassen."
           },
           {
-            "name": "Level B2: Upper Intermediate",
-            "description": "Kann die Hauptideen komplexer Texte zu konkreten und abstrakten Themen verstehen. Kann sich so spontan und fliessend verständigen, dass es ein normales Gespräch mit Muttersprachlern ohne grössere Anstrengung auf beiden Seiten ermöglicht."
+            "cefr": "B2",
+            "label": "Upper Intermediate",
+            "description": "Kann die Hauptideen komplexer Texte zu konkreten und abstrakten Themen verstehen und sich so spontan und fliessend verständigen, dass ein normales Gespräch mit Muttersprachlern möglich ist."
           }
         ]
       },
       {
-        "name": "Level C",
-        "description": "Beherrscht fortgeschrittenes Deutsch für komplexe Kommunikation, Flüssigkeit und Nuancen.",
+        "name": "Niveau C",
+        "userType": "Kompetente Sprachverwendung",
+        "description": "Beherrscht fortgeschrittenes Englisch für komplexe Kommunikation, Flüssigkeit und Nuancen.",
         "subLevels": [
           {
-            "name": "Level C1: Advanced",
-            "description": "Kann Texte verstehen, die komplexer und länger sind und auch implizite Bedeutungen erfassen. Kann sich spontan und fliessend ausdrücken, ohne öfter erkennbar nach Worten suchen zu müssen."
+            "cefr": "C1",
+            "label": "Advanced",
+            "description": "Kann anspruchsvolle, längere Texte verstehen, implizite Bedeutungen erfassen und sich spontan und fliessend ausdrücken, ohne öfter erkennbar nach Worten suchen zu müssen."
           },
           {
-            "name": "Level C2: Proficient",
-            "description": "Kann praktisch alles, was er/sie liest oder hört, mühelos verstehen. Kann sich spontan, sehr flüssig und genau ausdrücken und auch bei komplexeren Sachverhalten feinere Bedeutungsnuancen unterscheiden."
+            "cefr": "C2",
+            "label": "Proficient",
+            "description": "Kann praktisch alles, was er/sie liest oder hört, mühelos verstehen und sich spontan, sehr flüssig und genau ausdrücken und dabei feinere Bedeutungsnuancen unterscheiden."
           }
         ]
       }

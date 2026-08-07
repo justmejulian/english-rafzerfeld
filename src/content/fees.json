@@ -1,73 +1,75 @@
 {
   "en": {
     "title": "Fees",
-    "groupCoursesTitle": "Group courses (4 to 8 participants)",
-    "groupCoursesDescription": "All fees are given in Swiss francs",
+    "note": "All fees are given in Swiss francs (CHF).",
+    "groupCoursesTitle": "Group courses",
+    "groupCoursesDescription": "4 to 8 participants · price per semester",
     "groupCourses": [
       {
         "length": 60,
         "normalRate": 450,
         "reducedRate": 400,
-        "description": "- All fees are per semester.\n- Semester length February to July and August to January, excluding school holidays.\n- You can join a group during the semester.\n- Fees are reduced for late entry.\n- Reduced rates are for seniors, students and couples."
+        "description": "- A semester runs February–July and August–January, excluding school holidays.\n- You can join a group mid-semester — the fee is reduced for late entry.\n- Reduced rates apply to seniors, students and couples."
       },
       {
         "length": 75,
         "normalRate": 475,
         "reducedRate": 425,
-        "description": "* All fees are per semester.\n\n* Semester length February to July and August to January, excluding school holidays.\n\n* You can join a group during the semester.\n\n* Fees are reduced for late entry.\n\n* Reduced rates are for seniors, students and couples."
+        "description": ""
       },
       {
         "length": 90,
         "normalRate": 500,
         "reducedRate": 450,
-        "description": "* All fees are per semester.\n\n* Semester length February to July and August to January, excluding school holidays.\n\n* You can join a group during the semester.\n\n* Fees are reduced for late entry.\n\n* Reduced rates are for seniors, students and couples."
+        "description": ""
       }
     ],
-    "privateCoursesTitle": "Private courses (1 to 3 participants)",
-    "privateCoursesDescription": "All fees are given in Swiss francs",
+    "privateCoursesTitle": "Private courses",
+    "privateCoursesDescription": "1 to 3 participants · price per person, per lesson",
     "privateCourses": [
       {
         "length": 60,
         "onePersonRate": 85,
         "twoPersonsRate": 45,
         "threePersonsRate": 30,
-        "description": "* All fees are per lesson and per person.\n* Private lessons can be scheduled at flexible times to suit you.\n* You pay only for the number of lessons booked."
+        "description": "- Private lessons are scheduled at flexible times to suit you.\n- You pay only for the number of lessons booked."
       }
     ]
   },
   "de": {
     "title": "Preise",
-    "groupCoursesTitle": "Gruppenunterricht (4 bis 8 Teilnehmer)",
-    "groupCoursesDescription": "Alle Preise werden in Schweizer Franken angegeben.",
+    "note": "Alle Preise werden in Schweizer Franken (CHF) angegeben.",
+    "groupCoursesTitle": "Gruppenkurse",
+    "groupCoursesDescription": "4 bis 8 Teilnehmende · Preis pro Semester",
     "groupCourses": [
       {
         "length": 60,
         "normalRate": 450,
         "reducedRate": 400,
-        "description": "* Alle Preise sind zahlbar pro Semester.\n* Semesterdauer Februar bis Juli und August bis Januar, exklusive Schulferien.\n* Der Einsteig in eine Gruppe ist auch während dem Semestermöglich.\n* Bei Kurseinsteigern nach Semesterbeginn wird der Preis angepasst.\n* Ermässigte Preise gelten für Senioren, Studenten und Paaren."
+        "description": "- Ein Semester dauert Februar–Juli und August–Januar, exklusive Schulferien.\n- Der Einstieg in eine Gruppe ist auch während des Semesters möglich — bei späterem Einstieg wird der Preis angepasst.\n- Ermässigte Preise gelten für Senioren, Studenten und Paare."
       },
       {
         "length": 75,
         "normalRate": 475,
         "reducedRate": 425,
-        "description": "* Preise gelten pro Person und pro Lektion.\n\n* Zeiten für den Privatunterricht sind flexibel.\n\n* Sie bezahlen nur für die Anzahl gebuchter Lektionen.\n\n* Preisermässigungen für Senioren, Studenten und Paaren auf Anfrage."
+        "description": ""
       },
       {
         "length": 90,
         "normalRate": 500,
         "reducedRate": 450,
-        "description": "* Preise gelten pro Person und pro Lektion.\n\n* Zeiten für den Privatunterricht sind flexibel.\n\n* Sie bezahlen nur für die Anzahl gebuchter Lektionen.\n\n* Preisermässigungen für Senioren, Studenten und Paaren auf Anfrage."
+        "description": ""
       }
     ],
-    "privateCoursesTitle": "Privatunterricht (1 bis 3 Teilnehmer)",
-    "privateCoursesDescription": "Alle Preise werden in Schweizer Franken angegeben.",
+    "privateCoursesTitle": "Privatkurse",
+    "privateCoursesDescription": "1 bis 3 Teilnehmende · Preis pro Person und Lektion",
     "privateCourses": [
       {
         "length": 60,
         "onePersonRate": 85,
         "twoPersonsRate": 45,
         "threePersonsRate": 30,
-        "description": "* * Preise gelten pro Person und pro Lektion.\n  * Zeiten für den Privatunterricht sind flexibel.\n  * Sie bezahlen nur für die Anzahl gebuchter Lektionen."
+        "description": "- Zeiten für den Privatunterricht sind flexibel und richten sich nach Ihnen.\n- Sie bezahlen nur für die Anzahl gebuchter Lektionen."
       }
     ]
   }

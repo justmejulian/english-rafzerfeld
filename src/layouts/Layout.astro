@@ -1,6 +1,7 @@
 ---
 import '@styles/global.css';
-import '@fontsource/fira-sans';
+import '@fontsource-variable/source-serif-4';
+import '@fontsource-variable/source-sans-3';
 
 import Nav from '@components/Nav.astro';
 import Footer from '@components/sections/Footer.astro';
@@ -23,11 +24,11 @@ const { locale } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
   </head>
-  <body class="m-0 box-border w-full min-w-fit p-0">
+  <body class="m-0 box-border flex min-h-full w-full min-w-fit flex-col p-0">
     <Nav title={title} locale={locale} />
-    <main class="mx-auto w-full max-w-screen-xl px-4 sm:px-6 lg:px-8">
+    <main class="w-full flex-1">
       <slot />
     </main>
-    <Footer />
+    <Footer locale={locale} />
   </body>
 </html>

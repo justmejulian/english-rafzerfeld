@@ -8,13 +8,13 @@ const urls = {
   de: replaceLocaleInURL(url, 'de'),
   en: replaceLocaleInURL(url, 'en'),
 };
+
+const active = 'text-white font-semibold';
+const inactive = 'text-white/50 hover:text-white';
 ---
 
-<div>
-  <a class=`${locale === 'de' ? 'opacity-100' : 'opacity-30'}` href={urls.de}
-    >🇩🇪</a
-  >
-  <a class=`${locale === 'en' ? 'opacity-100' : 'opacity-30'}` href={urls.en}
-    >🇬🇧</a
-  >
+<div class="flex items-center gap-1 text-sm">
+  <a class={locale === 'de' ? active : inactive} href={urls.de}>DE</a>
+  <span class="text-white/30">/</span>
+  <a class={locale === 'en' ? active : inactive} href={urls.en}>EN</a>
 </div>

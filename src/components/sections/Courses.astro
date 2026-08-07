@@ -1,6 +1,10 @@
 ---
 import { z } from 'astro:content';
 
+import Section from '@components/Section.astro';
+import SectionHeading from '@components/SectionHeading.astro';
+import Tag from '@components/Tag.astro';
+
 import { multiLingualSchema } from '@utils/zod.ts';
 import { getLocaleData, getLocaleFromURL } from '@utils/locale.ts';
 
@@ -11,28 +15,19 @@ const locale = getLocaleFromURL(Astro.url);
 const contentSchema = multiLingualSchema(
   z.object({
     title: z.string(),
+    subtitle: z.string(),
+    levelNoteText: z.string(),
+    levelNoteLink: z.string(),
     days: z.array(
       z.object({
         name: z.string(),
+        note: z.string().optional(),
         lessons: z.array(
           z.object({
             time: z.string(),
             level: z.string(),
+            location: z.string().optional(),
             ceflevel: z.string(),
-          }),
-        ),
-      }),
-    ),
-    levelsTitle: z.string(),
-    levelsDescription: z.string(),
-    levels: z.array(
-      z.object({
-        name: z.string(),
-        description: z.string(),
-        subLevels: z.array(
-          z.object({
-            name: z.string(),
-            description: z.string(),
           }),
         ),
       }),
@@ -40,75 +35,52 @@ const contentSchema = multiLingualSchema(
   }),
 );
 
-const parsedData = contentSchema.parse(data);
+const content = getLocaleData(locale, contentSchema.parse(data));
 
-const content = getLocaleData(locale, parsedData);
+const classWord = (n: number) =>
+  locale === 'de'
+    ? `${n} ${n === 1 ? 'Kurs' : 'Kurse'}`
+    : `${n} ${n === 1 ? 'class' : 'classes'}`;
+
+const levelsHref = `/${locale}/#levels`;
 ---
 
-<div id="courses" class="mt-4 flex w-full flex-col">
-  <h1>{content.title}</h1>
-  {
-    content.days.map((day) => (
-      <table class="w-full max-w-3xl divide-y-2 divide-gray-200">
-        <thead>
-          <tr class="text-left *:text-gray-900 *:first:font-medium">
-            <th class="w-1/4 px-3 py-2 whitespace-nowrap">{day.name}</th>
-            <th />
-            <th class="px-3 py-2 text-left whitespace-nowrap">CEF Level</th>
-          </tr>
-        </thead>
-        <tbody class="divide-y divide-gray-200">
-          {day.lessons.map((lesson) => (
-            <tr class="*:font-medium *:text-gray-900">
-              <td class="w-1/8 px-3 py-2 whitespace-nowrap">{lesson.time}</td>
-              <td class="px-3 py-2 whitespace-nowrap">{lesson.level}</td>
-              <td class="w-1/8 px-3 py-2 whitespace-nowrap">
-                {lesson.ceflevel}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    ))
-  }
+<Section id="courses" bg="white">
+  <SectionHeading title={content.title} />
+  <p class="text-muted mt-2 max-w-2xl">{content.subtitle}</p>
+  <p class="text-muted mt-1 max-w-2xl text-sm">
+    {content.levelNoteText}{' '}
+    <a href={levelsHref} class="text-brand-700 font-semibold underline">
+      {content.levelNoteLink}
+    </a>
+  </p>
 
-  <details class="group [&_summary::-webkit-details-marker]:hidden">
-    <summary
-      class="flex items-center justify-between gap-1.5 rounded-md border border-gray-100 bg-gray-50 p-4 text-gray-900"
-    >
-      <div>
-        <h2 class="mt-4">{content.levelsTitle}</h2>
-        <p class="mb-2">{content.levelsDescription}</p>
-      </div>
-
-      <svg
-        class="size-5 shrink-0 transition-transform duration-300 group-open:-rotate-180"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M19 9l-7 7-7-7"></path>
-      </svg>
-    </summary>
-
+  <div class="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
     {
-      content.levels.map((level) => (
-        <div class="mb-4">
-          <h3 class="text-lg font-semibold">{level.name}</h3>
-          <p>{level.description}</p>
-          {level.subLevels.map((subLevel) => (
-            <div class="ml-4">
-              <h4 class="text-md font-medium">{subLevel.name}</h4>
-              <p>{subLevel.description}</p>
-            </div>
-          ))}
+      content.days.map((day) => (
+        <div class="bg-cream flex flex-col rounded-2xl border border-black/5 p-5">
+          <div class="mb-4 flex items-baseline justify-between border-b border-black/5 pb-3">
+            <h3 class="text-lg">{day.name}</h3>
+            <span class="text-muted text-xs font-medium">
+              {day.note ?? classWord(day.lessons.length)}
+            </span>
+          </div>
+          <ul class="flex flex-col gap-3">
+            {day.lessons.map((lesson) => (
+              <li class="flex items-center justify-between gap-3">
+                <div>
+                  <p class="text-ink text-sm font-semibold">{lesson.time}</p>
+                  <p class="text-muted text-sm">
+                    {lesson.level}
+                    {lesson.location && ` · ${lesson.location}`}
+                  </p>
+                </div>
+                <Tag variant="cefr">{lesson.ceflevel}</Tag>
+              </li>
+            ))}
+          </ul>
         </div>
       ))
     }
-  </details>
-</div>
+  </div>
+</Section>

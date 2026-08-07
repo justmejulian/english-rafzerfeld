@@ -1,17 +1,21 @@
 ---
 import { z } from 'astro:content';
 
+import Section from '@components/Section.astro';
+import SectionHeading from '@components/SectionHeading.astro';
+import Markdown from '@components/Markdown.astro';
+
 import { multiLingualSchema } from '@utils/zod.ts';
 import { getLocaleData, getLocaleFromURL } from '@utils/locale.ts';
 
 import data from '@content/fees.json';
-import Markdown from '@components/Markdown.astro';
 
 const locale = getLocaleFromURL(Astro.url);
 
 const contentSchema = multiLingualSchema(
   z.object({
     title: z.string(),
+    note: z.string(),
     groupCoursesTitle: z.string(),
     groupCoursesDescription: z.string(),
     groupCourses: z.array(
@@ -36,108 +40,103 @@ const contentSchema = multiLingualSchema(
   }),
 );
 
-const parsedData = contentSchema.parse(data);
+const content = getLocaleData(locale, contentSchema.parse(data));
 
-// todo improve crouse description stuff
-const content = getLocaleData(locale, parsedData);
+const labels = {
+  en: {
+    lesson: 'Lesson',
+    standard: 'Standard',
+    reduced: 'Reduced',
+    person: '1 person',
+    twoPeople: '2 people',
+    threePeople: '3 people',
+  },
+  de: {
+    lesson: 'Lektion',
+    standard: 'Normal',
+    reduced: 'Ermässigt',
+    person: '1 Person',
+    twoPeople: '2 Personen',
+    threePeople: '3 Personen',
+  },
+}[locale];
 
-// todo: move to translantions
-const titles = {
-  en: [
-    'Group Course',
-    'Normal Rate',
-    'Reduced Rate',
-    'Private Course',
-    'Person',
-    'Persons',
-  ],
-  de: [
-    'Gruppenunterricht',
-    'Normalpreis pro Semester',
-    'Ermässigter Preis pro Semester',
-    'Privatunterricht',
-    'Person',
-    'Personen',
-  ],
-};
+const thClass =
+  'px-3 py-2 text-left text-xs font-semibold text-muted uppercase tracking-wide';
+const tdClass = 'px-3 py-2 whitespace-nowrap text-sm font-medium text-ink';
 ---
 
-<div id="fees" class="mt-4 flex w-full flex-col justify-center">
-  <h1>{content.title}</h1>
-  <h2>{content.groupCoursesTitle}</h2>
-  <p>{content.groupCoursesDescription}</p>
-  <div class="mb-4">
-    <table class="my-2 w-full max-w-3xl divide-y-2 divide-gray-200">
-      <thead>
-        <tr class="text-left *:text-gray-900 *:first:font-medium">
-          <th class="w-1/4 px-3 py-2 whitespace-nowrap">
-            {titles[locale][0]}
-          </th>
-          <th class="px-3 py-2 text-left whitespace-nowrap">
-            {titles[locale][1]}
-          </th>
-          <th class="px-3 py-2 text-left whitespace-nowrap">
-            {titles[locale][2]}
-          </th>
-        </tr>
-      </thead>
-      <tbody class="divide-y divide-gray-200">
-        {
-          content.groupCourses.map((course) => (
-            <tr class="*:font-medium *:text-gray-900">
-              <td class="px-3 py-2 whitespace-nowrap">{course.length} min</td>
-              <td class="px-3 py-2 whitespace-nowrap">
-                {course.normalRate} CHF
-              </td>
-              <td class="px-3 py-2 whitespace-nowrap">
-                {course.reducedRate} CHF
-              </td>
+<Section id="fees" bg="white">
+  <SectionHeading title={content.title} />
+  <p class="text-muted mt-2">{content.note}</p>
+
+  <div class="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
+    <!-- Group courses -->
+    <div class="bg-cream flex flex-col rounded-2xl border border-black/5 p-6">
+      <h3 class="mb-1">{content.groupCoursesTitle}</h3>
+      <p class="text-muted mb-4 text-sm">{content.groupCoursesDescription}</p>
+
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse">
+          <thead>
+            <tr class="border-b border-black/10">
+              <th class={thClass}>{labels.lesson}</th>
+              <th class={thClass}>{labels.standard}</th>
+              <th class={thClass}>{labels.reduced}</th>
             </tr>
-          ))
-        }
-      </tbody>
-    </table>
-    <Markdown markdown={content.groupCourses[0].description} />
-  </div>
-  <h2>{content.privateCoursesTitle}</h2>
-  <p>{content.privateCoursesDescription}</p>
-  <div class="mb-4">
-    <table class="my-2 w-full max-w-3xl divide-y-2 divide-gray-200">
-      <thead>
-        <tr class="text-left *:text-gray-900 *:first:font-medium">
-          <th class="w-1/4 px-3 py-2 whitespace-nowrap">
-            {titles[locale][3]}
-          </th>
-          <th class="px-3 py-2 text-left whitespace-nowrap">
-            1{titles[locale][4]}
-          </th>
-          <th class="px-3 py-2 text-left whitespace-nowrap">
-            2{titles[locale][5]}
-          </th>
-          <th class="px-3 py-2 text-left whitespace-nowrap">
-            3{titles[locale][5]}
-          </th>
-        </tr>
-      </thead>
-      <tbody class="divide-y divide-gray-200">
-        {
-          content.privateCourses.map((course) => (
-            <tr class="*:font-medium *:text-gray-900">
-              <td class="px-3 py-2 whitespace-nowrap">{course.length} min</td>
-              <td class="px-3 py-2 whitespace-nowrap">
-                {course.onePersonRate} CHF
-              </td>
-              <td class="px-3 py-2 whitespace-nowrap">
-                {course.twoPersonsRate} CHF
-              </td>
-              <td class="px-3 py-2 whitespace-nowrap">
-                {course.threePersonsRate} CHF
-              </td>
+          </thead>
+          <tbody class="divide-y divide-black/5">
+            {
+              content.groupCourses.map((course) => (
+                <tr>
+                  <td class={tdClass}>{course.length} min</td>
+                  <td class={tdClass}>CHF {course.normalRate}</td>
+                  <td class={tdClass}>CHF {course.reducedRate}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <div class="markdown-notes text-muted mt-5 text-sm">
+        <Markdown markdown={content.groupCourses[0].description} />
+      </div>
+    </div>
+
+    <!-- Private courses -->
+    <div class="bg-cream flex flex-col rounded-2xl border border-black/5 p-6">
+      <h3 class="mb-1">{content.privateCoursesTitle}</h3>
+      <p class="text-muted mb-4 text-sm">{content.privateCoursesDescription}</p>
+
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse">
+          <thead>
+            <tr class="border-b border-black/10">
+              <th class={thClass}>{labels.lesson}</th>
+              <th class={thClass}>{labels.person}</th>
+              <th class={thClass}>{labels.twoPeople}</th>
+              <th class={thClass}>{labels.threePeople}</th>
             </tr>
-          ))
-        }
-      </tbody>
-    </table>
-    <Markdown markdown={content.privateCourses[0].description} />
+          </thead>
+          <tbody class="divide-y divide-black/5">
+            {
+              content.privateCourses.map((course) => (
+                <tr>
+                  <td class={tdClass}>{course.length} min</td>
+                  <td class={tdClass}>CHF {course.onePersonRate}</td>
+                  <td class={tdClass}>CHF {course.twoPersonsRate}</td>
+                  <td class={tdClass}>CHF {course.threePersonsRate}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <div class="markdown-notes text-muted mt-5 text-sm">
+        <Markdown markdown={content.privateCourses[0].description} />
+      </div>
+    </div>
   </div>
-</div>
+</Section>

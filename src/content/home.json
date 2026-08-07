@@ -1,20 +1,46 @@
 {
   "en": {
-    "title": "Welcome to english in the rafzerfeld",
-    "intro": "Our priority is to provide creative, enjoyable, and effective language courses for you. Learn with qualified teachers whose first language is English. Classes are offered in-person as well as online. Courses are offered for all levels, beginner to advanced.\n\nSmall groups (max 8 persons) mean personalised learning and a supportive, friendly environment. Private courses (1-3 persons) are designed to suit your individual needs and interests.\n\nWhether you need English for travel, work, or to communicate internationally, we look forward to hearing from you!",
+    "eyebrow": "English language courses · Rafz",
+    "title": "Welcome to English in the Rafzerfeld",
+    "intro": "Creative, enjoyable and effective courses with qualified teachers whose first language is English — for every level, beginner to advanced.",
+    "pills": [
+      "Small groups, max 8 people",
+      "In person or online",
+      "Private lessons for 1–3"
+    ],
+    "coursesCta": "Have a look at our courses",
+    "askCta": "Ask a question",
+    "teachers": {
+      "title": "Your teachers",
+      "tagline": "Qualified teacher, native English speaker",
+      "cta": "Meet our teacher"
+    },
     "banner": {
       "message": "New courses starting soon! Contact us for more information.",
-      "linkUrl": "/en/contact",
-      "linkText": "Contact"
+      "linkUrl": "/en/#contact",
+      "linkText": "Contact us"
     }
   },
   "de": {
-    "title": "Willkommen bei english in the rafzerfeld",
-    "intro": "Unsere Priorität ist es, für Sie kreativen, angenehmen und wirksamen Unterricht zu gestalten. Hier können Sie mit qualifizierten Lehrerinnen arbeiten, deren Muttersprache Englisch ist. Kurse werden für alle Lernstufen angeboten, von Anfänger bis Fortgeschrittene.\n\nDas Lernen in Kleingruppen (max. 8 Personen) ermöglicht ein persönliches, unterstützendes und freundliches Umfeld. Privatkurse (1-3 Personen) werden Ihren individuellen Bedürfnissen und Interessen angepasst.\n\nOb Sie Englisch für Reisen, Ihre Arbeit oder interkulturelle Kommunikation brauchen, wir freuen uns von Ihnen zu hören!",
+    "eyebrow": "Englischkurse · Rafz",
+    "title": "Willkommen bei English in the Rafzerfeld",
+    "intro": "Kreative, angenehme und wirksame Kurse mit qualifizierten Lehrerinnen, deren Muttersprache Englisch ist — für jedes Niveau, von Anfänger bis Fortgeschrittene.",
+    "pills": [
+      "Kleine Gruppen, max. 8 Personen",
+      "Vor Ort oder online",
+      "Privatunterricht für 1–3"
+    ],
+    "coursesCta": "Kurse ansehen",
+    "askCta": "Eine Frage stellen",
+    "teachers": {
+      "title": "Ihre Lehrerinnen",
+      "tagline": "Qualifizierte Lehrerin, englische Muttersprachlerin",
+      "cta": "Lehrerin kennenlernen"
+    },
     "banner": {
       "message": "Neue Kurse starten bald! Kontaktieren Sie uns für weitere Informationen.",
-      "linkUrl": "/de/contact",
-      "linkText": "Contact"
+      "linkUrl": "/de/#contact",
+      "linkText": "Kontakt"
     }
   }
 }

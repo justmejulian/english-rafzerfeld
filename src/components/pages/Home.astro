@@ -3,26 +3,40 @@ import { z } from 'astro:content';
 
 import Layout from '@layouts/Layout.astro';
 
-import Markdown from '@components/Markdown.astro';
 import Banner from '@components/Banner.astro';
-
-import vinyard from 'public/assets/bgVineyard.jpg';
+import Container from '@components/Container.astro';
+import Section from '@components/Section.astro';
+import SectionHeading from '@components/SectionHeading.astro';
+import Button from '@components/Button.astro';
+import Tag from '@components/Tag.astro';
+import TeacherCard from '@components/TeacherCard.astro';
 
 import { multiLingualSchema } from '@utils/zod.ts';
 import { getLocaleData, getLocaleFromURL } from '@utils/locale.ts';
 
 import Fees from '@components/sections/Fees.astro';
 import Courses from '@components/sections/Courses.astro';
+import Levels from '@components/sections/Levels.astro';
 import Contact from '@components/sections/Contact.astro';
 
 import data from '@content/home.json';
+import teamData from '@content/team.json';
 
 const locale = getLocaleFromURL(Astro.url);
 
 const contentSchema = multiLingualSchema(
   z.object({
+    eyebrow: z.string(),
     title: z.string(),
     intro: z.string(),
+    pills: z.array(z.string()),
+    coursesCta: z.string(),
+    askCta: z.string(),
+    teachers: z.object({
+      title: z.string(),
+      tagline: z.string(),
+      cta: z.string(),
+    }),
     banner: z
       .object({
         message: z.string(),
@@ -33,69 +47,77 @@ const contentSchema = multiLingualSchema(
   }),
 );
 
-const parsedData = contentSchema.parse(data);
-
-const content = getLocaleData(locale, parsedData);
+const content = getLocaleData(locale, contentSchema.parse(data));
+const teachers = teamData[locale].teachers;
+const teamHref = `/${locale}/team`;
 ---
 
 <Layout locale={locale}>
-  <div class="flex w-full justify-center">
-    <div class="mx-auto max-h-full">
-      {
-        content.banner && (
-          <Banner
-            message={content.banner.message}
-            linkText={content.banner.linkText}
-            linkUrl={content.banner.linkUrl ?? '#courses'}
-          />
-        )
-      }
-      <div class="flex max-h-full flex-col gap-4 md:flex-row">
-        <div class="relative max-w-full bg-black">
-          <img
-            src={vinyard.src}
-            alt="Vineyard background"
-            class="absolute inset-0 h-full w-full object-cover"
-          />
-          <div
-            class="relative flex h-full max-w-full items-center justify-center bg-black/40 p-4"
-          >
-            <div class="m-auto bg-black/40 p-3 text-left text-white">
-              <h1 class="text-white">{content.title}</h1>
+  {
+    content.banner && (
+      <Banner
+        message={content.banner.message}
+        linkText={content.banner.linkText}
+        linkUrl={content.banner.linkUrl}
+      />
+    )
+  }
 
-              <p class="sm:mt-4">
-                <Markdown markdown={content.intro} />
-              </p>
-
-              <a
-                href="#courses"
-                class="mt-4 inline-block bg-white p-3 text-black"
-              >
-                Have a look at our courses
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="flex max-h-40 min-w-1/2 flex-row gap-4 overflow-hidden md:max-h-full"
+  <!-- Hero -->
+  <section class="bg-brand-900 text-white">
+    <Container class="py-16 sm:py-24 lg:py-28">
+      <div class="max-w-2xl">
+        <p
+          class="text-accent mb-4 text-xs font-bold tracking-[0.18em] uppercase"
         >
-          <img
-            alt=""
-            src="/assets/angela.jpeg"
-            class="max-w-1/2 object-cover md:max-h-full"
-          />
+          {content.eyebrow}
+        </p>
+        <h1 class="text-white">{content.title}</h1>
+        <p class="mt-4 text-lg text-white/80">{content.intro}</p>
 
-          <img
-            alt=""
-            src="/assets/bev.jpeg"
-            class="max-h-full max-w-1/2 object-cover"
-          />
+        <ul class="mt-8 flex flex-wrap gap-3">
+          {
+            content.pills.map((pill) => (
+              <li>
+                <Tag variant="pill-light">{pill}</Tag>
+              </li>
+            ))
+          }
+        </ul>
+
+        <div class="mt-8 flex flex-wrap gap-3">
+          <Button href="#courses" variant="light">
+            {content.coursesCta}
+            <span aria-hidden="true">→</span>
+          </Button>
+          <Button href="#contact" variant="outline-light"
+            >{content.askCta}</Button
+          >
         </div>
       </div>
-      <Courses />
-      <Fees />
-      <Contact />
+    </Container>
+  </section>
+
+  <!-- Your teachers -->
+  <Section bg="cream">
+    <SectionHeading title={content.teachers.title} />
+    <div class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2">
+      {
+        teachers.map((teacher) => (
+          <TeacherCard
+            name={teacher.name}
+            image={teacher.image}
+            tagline={content.teachers.tagline}
+            cta={content.teachers.cta}
+            href={teamHref}
+          />
+        ))
+      }
     </div>
-  </div>
+  </Section>
+
+  <Courses />
+  <Levels />
+  <Fees />
+  <Contact />
 </Layout>
