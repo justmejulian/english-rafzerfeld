@@ -1,0 +1,15 @@
+---
+import Container from '@components/Container.astro';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<section class="bg-brand-900 text-white">
+  <Container class="py-16 sm:py-20">
+    <h1 class="text-white">{title}</h1>
+  </Container>
+</section>

@@ -1,39 +1,15 @@
 ---
 import Section from '@components/Section.astro';
 import SectionHeading from '@components/SectionHeading.astro';
-import Markdown from '@components/Markdown.astro';
+import FeeCard from '@components/FeeCard.astro';
 
-import { getLocaleData, getLocaleFromURL } from '@utils/locale.ts';
+import { getContent } from '@utils/locale.ts';
 
 import { feesSchema } from '@content/schemas.ts';
 import data from '@content/fees.json';
 
-const locale = getLocaleFromURL(Astro.url);
-
-const content = getLocaleData(locale, feesSchema.parse(data));
-
-const labels = {
-  en: {
-    lesson: 'Lesson',
-    standard: 'Standard',
-    reduced: 'Reduced',
-    person: '1 person',
-    twoPeople: '2 people',
-    threePeople: '3 people',
-  },
-  de: {
-    lesson: 'Lektion',
-    standard: 'Normal',
-    reduced: 'Ermässigt',
-    person: '1 Person',
-    twoPeople: '2 Personen',
-    threePeople: '3 Personen',
-  },
-}[locale];
-
-const thClass =
-  'px-3 py-2 text-left text-xs font-semibold text-muted uppercase tracking-wide';
-const tdClass = 'px-3 py-2 whitespace-nowrap text-sm font-medium text-ink';
+const { content } = getContent(Astro.url, feesSchema, data);
+const { labels } = content;
 ---
 
 <Section id="fees" bg="white">
@@ -41,72 +17,34 @@ const tdClass = 'px-3 py-2 whitespace-nowrap text-sm font-medium text-ink';
   <p class="text-muted mt-2">{content.note}</p>
 
   <div class="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
-    <!-- Group courses -->
-    <div class="bg-cream flex flex-col rounded-2xl border border-black/5 p-6">
-      <h3 class="mb-1">{content.groupCoursesTitle}</h3>
-      <p class="text-muted mb-4 text-sm">{content.groupCoursesDescription}</p>
+    <FeeCard
+      title={content.groupCoursesTitle}
+      description={content.groupCoursesDescription}
+      headers={[labels.lesson, labels.standard, labels.reduced]}
+      rows={content.groupCourses.map((course) => [
+        `${course.length} min`,
+        `CHF ${course.normalRate}`,
+        `CHF ${course.reducedRate}`,
+      ])}
+      notes={content.groupCoursesNotes}
+    />
 
-      <div class="overflow-x-auto">
-        <table class="w-full border-collapse">
-          <thead>
-            <tr class="border-b border-black/10">
-              <th class={thClass}>{labels.lesson}</th>
-              <th class={thClass}>{labels.standard}</th>
-              <th class={thClass}>{labels.reduced}</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-black/5">
-            {
-              content.groupCourses.map((course) => (
-                <tr>
-                  <td class={tdClass}>{course.length} min</td>
-                  <td class={tdClass}>CHF {course.normalRate}</td>
-                  <td class={tdClass}>CHF {course.reducedRate}</td>
-                </tr>
-              ))
-            }
-          </tbody>
-        </table>
-      </div>
-
-      <div class="markdown-notes text-muted mt-5 text-sm">
-        <Markdown markdown={content.groupCourses[0].description} />
-      </div>
-    </div>
-
-    <!-- Private courses -->
-    <div class="bg-cream flex flex-col rounded-2xl border border-black/5 p-6">
-      <h3 class="mb-1">{content.privateCoursesTitle}</h3>
-      <p class="text-muted mb-4 text-sm">{content.privateCoursesDescription}</p>
-
-      <div class="overflow-x-auto">
-        <table class="w-full border-collapse">
-          <thead>
-            <tr class="border-b border-black/10">
-              <th class={thClass}>{labels.lesson}</th>
-              <th class={thClass}>{labels.person}</th>
-              <th class={thClass}>{labels.twoPeople}</th>
-              <th class={thClass}>{labels.threePeople}</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-black/5">
-            {
-              content.privateCourses.map((course) => (
-                <tr>
-                  <td class={tdClass}>{course.length} min</td>
-                  <td class={tdClass}>CHF {course.onePersonRate}</td>
-                  <td class={tdClass}>CHF {course.twoPersonsRate}</td>
-                  <td class={tdClass}>CHF {course.threePersonsRate}</td>
-                </tr>
-              ))
-            }
-          </tbody>
-        </table>
-      </div>
-
-      <div class="markdown-notes text-muted mt-5 text-sm">
-        <Markdown markdown={content.privateCourses[0].description} />
-      </div>
-    </div>
+    <FeeCard
+      title={content.privateCoursesTitle}
+      description={content.privateCoursesDescription}
+      headers={[
+        labels.lesson,
+        labels.person,
+        labels.twoPeople,
+        labels.threePeople,
+      ]}
+      rows={content.privateCourses.map((course) => [
+        `${course.length} min`,
+        `CHF ${course.onePersonRate}`,
+        `CHF ${course.twoPersonsRate}`,
+        `CHF ${course.threePersonsRate}`,
+      ])}
+      notes={content.privateCoursesNotes}
+    />
   </div>
 </Section>

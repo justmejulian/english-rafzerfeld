@@ -5,14 +5,12 @@ import Button from '@components/Button.astro';
 import ContactCard from '@components/ContactCard.astro';
 import Map from '@components/Map.astro';
 
-import { getLocaleData, getLocaleFromURL } from '@utils/locale.ts';
+import { getContent } from '@utils/locale.ts';
 
 import { contactSchema } from '@content/schemas.ts';
 import data from '@content/contact.json';
 
-const locale = getLocaleFromURL(Astro.url);
-
-const content = getLocaleData(locale, contactSchema.parse(data));
+const { content } = getContent(Astro.url, contactSchema, data);
 
 const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(content.address)}`;
 ---

@@ -56,6 +56,18 @@ collections:
         i18n: true
         fields:
           - { label: Title, name: title, widget: string, i18n: true }
+          - {
+              label: 'Class Word (singular)',
+              name: classWordSingular,
+              widget: string,
+              i18n: true,
+            }
+          - {
+              label: 'Class Word (plural)',
+              name: classWordPlural,
+              widget: string,
+              i18n: true,
+            }
           # todo use select widget for days
           - label: Days
             name: days
@@ -150,6 +162,28 @@ collections:
         i18n: true
         fields:
           - { label: Title, name: title, widget: string, i18n: true }
+          - { label: Note, name: note, widget: string, i18n: true }
+          - label: 'Table Labels'
+            name: labels
+            widget: object
+            i18n: true
+            fields:
+              - { label: Lesson, name: lesson, widget: string, i18n: true }
+              - { label: Standard, name: standard, widget: string, i18n: true }
+              - { label: Reduced, name: reduced, widget: string, i18n: true }
+              - { label: '1 Person', name: person, widget: string, i18n: true }
+              - {
+                  label: '2 People',
+                  name: twoPeople,
+                  widget: string,
+                  i18n: true,
+                }
+              - {
+                  label: '3 People',
+                  name: threePeople,
+                  widget: string,
+                  i18n: true,
+                }
           - {
               label: 'Group Courses Title',
               name: groupCoursesTitle,
@@ -160,6 +194,12 @@ collections:
               label: 'Group Courses Description',
               name: groupCoursesDescription,
               widget: string,
+              i18n: true,
+            }
+          - {
+              label: 'Group Courses Notes',
+              name: groupCoursesNotes,
+              widget: markdown,
               i18n: true,
             }
           - label: 'Group Courses'
@@ -180,12 +220,6 @@ collections:
                   widget: number,
                   i18n: true,
                 }
-              - {
-                  label: 'Description',
-                  name: description,
-                  widget: markdown,
-                  i18n: true,
-                }
           - {
               label: 'Private Courses Title',
               name: privateCoursesTitle,
@@ -196,6 +230,12 @@ collections:
               label: 'Private Courses Description',
               name: privateCoursesDescription,
               widget: string,
+              i18n: true,
+            }
+          - {
+              label: 'Private Courses Notes',
+              name: privateCoursesNotes,
+              widget: markdown,
               i18n: true,
             }
           - label: 'Private Courses'
@@ -220,12 +260,6 @@ collections:
                   label: '3 Persons Rate',
                   name: threePersonsRate,
                   widget: number,
-                  i18n: true,
-                }
-              - {
-                  label: 'Description',
-                  name: description,
-                  widget: markdown,
                   i18n: true,
                 }
       - name: 'contact'

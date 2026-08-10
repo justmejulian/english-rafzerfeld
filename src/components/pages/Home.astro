@@ -2,14 +2,10 @@
 import Layout from '@layouts/Layout.astro';
 
 import Banner from '@components/Banner.astro';
-import Container from '@components/Container.astro';
-import Section from '@components/Section.astro';
-import SectionHeading from '@components/SectionHeading.astro';
-import Button from '@components/Button.astro';
-import Tag from '@components/Tag.astro';
-import TeacherCard from '@components/TeacherCard.astro';
+import Hero from '@components/Hero.astro';
+import TeachersSection from '@components/TeachersSection.astro';
 
-import { getLocaleData, getLocaleFromURL } from '@utils/locale.ts';
+import { getContent } from '@utils/locale.ts';
 
 import Fees from '@components/sections/Fees.astro';
 import Courses from '@components/sections/Courses.astro';
@@ -22,9 +18,7 @@ import teamData from '@content/team.json';
 
 import vinyard from 'public/assets/bgVineyard.jpg';
 
-const locale = getLocaleFromURL(Astro.url);
-
-const content = getLocaleData(locale, homeSchema.parse(data));
+const { locale, content } = getContent(Astro.url, homeSchema, data);
 const teachers = teamData[locale].teachers;
 const teamHref = `/${locale}/team`;
 ---
@@ -41,68 +35,23 @@ const teamHref = `/${locale}/team`;
     )
   }
 
-  <!-- Hero -->
-  <section class="bg-brand-900 relative overflow-hidden text-white">
-    <img
-      src={vinyard.src}
-      alt=""
-      aria-hidden="true"
-      class="absolute inset-0 h-full w-full object-cover"
-    />
-    <div
-      class="from-brand-950/90 via-brand-900/85 to-brand-900/60 absolute inset-0 bg-gradient-to-r"
-    >
-    </div>
-    <Container class="relative py-16 sm:py-24 lg:py-28">
-      <div class="max-w-2xl">
-        <p
-          class="text-accent mb-4 text-xs font-bold tracking-[0.18em] uppercase"
-        >
-          {content.eyebrow}
-        </p>
-        <h1 class="text-white">{content.title}</h1>
-        <p class="mt-4 text-lg text-white/80">{content.intro}</p>
+  <Hero
+    eyebrow={content.eyebrow}
+    title={content.title}
+    intro={content.intro}
+    pills={content.pills}
+    coursesCta={content.coursesCta}
+    askCta={content.askCta}
+    image={vinyard}
+  />
 
-        <ul class="mt-8 flex flex-wrap gap-3">
-          {
-            content.pills.map((pill) => (
-              <li>
-                <Tag variant="pill-light">{pill}</Tag>
-              </li>
-            ))
-          }
-        </ul>
-
-        <div class="mt-8 flex flex-wrap gap-3">
-          <Button href="#courses" variant="light">
-            {content.coursesCta}
-            <span aria-hidden="true">→</span>
-          </Button>
-          <Button href="#contact" variant="outline-light"
-            >{content.askCta}</Button
-          >
-        </div>
-      </div>
-    </Container>
-  </section>
-
-  <!-- Your teachers -->
-  <Section bg="cream">
-    <SectionHeading title={content.teachers.title} />
-    <div class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2">
-      {
-        teachers.map((teacher) => (
-          <TeacherCard
-            name={teacher.name}
-            image={teacher.image}
-            tagline={content.teachers.tagline}
-            cta={content.teachers.cta}
-            href={teamHref}
-          />
-        ))
-      }
-    </div>
-  </Section>
+  <TeachersSection
+    title={content.teachers.title}
+    teachers={teachers}
+    tagline={content.teachers.tagline}
+    cta={content.teachers.cta}
+    href={teamHref}
+  />
 
   <Courses />
   <Levels />

@@ -4,6 +4,8 @@
     "subtitle": "Semester times, 4–8 participants. All times are local.",
     "levelNoteText": "Levels follow the Common European Framework —",
     "levelNoteLink": "see the level guide",
+    "classWordSingular": "class",
+    "classWordPlural": "classes",
     "days": [
       {
         "name": "Monday",
@@ -141,6 +143,8 @@
     "subtitle": "Semesterzeiten, 4–8 Teilnehmende. Alle Zeiten sind Ortszeiten.",
     "levelNoteText": "Die Niveaus folgen dem Gemeinsamen Europäischen Referenzrahmen —",
     "levelNoteLink": "zur Niveau-Übersicht",
+    "classWordSingular": "Kurs",
+    "classWordPlural": "Kurse",
     "days": [
       {
         "name": "Montag",

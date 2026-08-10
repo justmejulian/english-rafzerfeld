@@ -4,6 +4,7 @@ import {
   getLocaleFromURL,
   replaceLocaleInURL,
   getLocaleData,
+  getContent,
 } from '@utils/locale.ts';
 
 describe('getLocaleFromURL', () => {
@@ -44,5 +45,34 @@ describe('getLocaleData', () => {
     const data = { en: 'english', de: 'deutsch' };
     expect(getLocaleData('en', data)).toBe('english');
     expect(getLocaleData('de', data)).toBe('deutsch');
+  });
+});
+
+describe('getContent', () => {
+  it('resolves the locale from the URL, parses the data, and picks the locale branch', () => {
+    const schema = {
+      parse: (data: unknown) => data as { en: string; de: string },
+    };
+    const raw = { en: 'english', de: 'deutsch' };
+
+    const { locale, content } = getContent(
+      new URL('http://x/de/team'),
+      schema,
+      raw,
+    );
+
+    expect(locale).toBe('de');
+    expect(content).toBe('deutsch');
+  });
+
+  it('runs the data through the schema before selecting the locale branch', () => {
+    const schema = {
+      parse: vi.fn((data: unknown) => data as { en: string; de: string }),
+    };
+    const raw = { en: 'english', de: 'deutsch' };
+
+    getContent(new URL('http://x/en/'), schema, raw);
+
+    expect(schema.parse).toHaveBeenCalledWith(raw);
   });
 });

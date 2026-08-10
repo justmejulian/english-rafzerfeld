@@ -3,19 +3,15 @@ import Section from '@components/Section.astro';
 import SectionHeading from '@components/SectionHeading.astro';
 import Tag from '@components/Tag.astro';
 
-import { getLocaleData, getLocaleFromURL } from '@utils/locale.ts';
+import { getContent } from '@utils/locale.ts';
 
 import { coursesSchema } from '@content/schemas.ts';
 import data from '@content/courses.json';
 
-const locale = getLocaleFromURL(Astro.url);
-
-const content = getLocaleData(locale, coursesSchema.parse(data));
+const { locale, content } = getContent(Astro.url, coursesSchema, data);
 
 const classWord = (n: number) =>
-  locale === 'de'
-    ? `${n} ${n === 1 ? 'Kurs' : 'Kurse'}`
-    : `${n} ${n === 1 ? 'class' : 'classes'}`;
+  `${n} ${n === 1 ? content.classWordSingular : content.classWordPlural}`;
 
 const levelsHref = `/${locale}/#levels`;
 ---

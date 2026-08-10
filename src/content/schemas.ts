@@ -37,6 +37,8 @@ export const coursesSchema = multiLingualSchema(
     subtitle: z.string(),
     levelNoteText: z.string(),
     levelNoteLink: z.string(),
+    classWordSingular: z.string(),
+    classWordPlural: z.string(),
     days: z.array(
       z.object({
         name: z.string(),
@@ -74,25 +76,33 @@ export const feesSchema = multiLingualSchema(
   z.object({
     title: z.string(),
     note: z.string(),
+    labels: z.object({
+      lesson: z.string(),
+      standard: z.string(),
+      reduced: z.string(),
+      person: z.string(),
+      twoPeople: z.string(),
+      threePeople: z.string(),
+    }),
     groupCoursesTitle: z.string(),
     groupCoursesDescription: z.string(),
+    groupCoursesNotes: z.string(),
     groupCourses: z.array(
       z.object({
         length: z.number(),
         normalRate: z.number(),
         reducedRate: z.number(),
-        description: z.string(),
       }),
     ),
     privateCoursesTitle: z.string(),
     privateCoursesDescription: z.string(),
+    privateCoursesNotes: z.string(),
     privateCourses: z.array(
       z.object({
         length: z.number(),
         onePersonRate: z.number(),
         twoPersonsRate: z.number(),
         threePersonsRate: z.number(),
-        description: z.string(),
       }),
     ),
   }),
