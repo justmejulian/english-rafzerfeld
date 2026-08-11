@@ -1,21 +1,52 @@
 @import 'tailwindcss';
 
 @theme {
-  --font-sans: 'Fira Sans', sans-serif;
+  --font-sans: 'Source Sans 3 Variable', system-ui, sans-serif;
+  --font-serif: 'Source Serif 4 Variable', Georgia, serif;
+
+  /* Brand greens */
+  --color-brand-950: #16261c;
+  --color-brand-900: #1d3a2b;
+  --color-brand-800: #23402f;
+  --color-brand-700: #2c5540;
+  --color-brand-600: #3d443f;
+
+  /* Lime accent */
+  --color-accent: #cbd300;
+  --color-accent-soft: #e2e482;
+
+  /* Warm neutrals */
+  --color-cream: #f8f7f3;
+  --color-cream-100: #eef2ee;
+  --color-sand: #e6e3db;
+  --color-ink: #2b322d;
+  --color-muted: #6b726c;
 }
 
 @layer base {
+  body {
+    @apply bg-cream text-ink font-sans;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply text-brand-900 font-serif;
+  }
   h1 {
-    @apply mb-4 text-2xl font-bold text-black sm:text-4xl;
+    @apply mb-4 text-3xl font-semibold sm:text-5xl;
   }
   h2 {
-    @apply mb-2 text-xl font-bold sm:text-3xl;
+    @apply mb-3 text-2xl font-semibold sm:text-4xl;
   }
   h3 {
-    @apply text-lg font-bold sm:text-2xl;
+    @apply text-xl font-semibold sm:text-2xl;
   }
   h4 {
-    @apply text-base font-bold sm:text-lg;
+    @apply text-base font-semibold sm:text-lg;
+  }
+  a {
+    @apply transition;
   }
 }
 
@@ -25,5 +56,20 @@
   }
   .bg-accent {
     background-color: #cbd300;
+  }
+}
+
+@layer components {
+  .markdown ul {
+    @apply list-disc space-y-1 pl-5;
+  }
+  .markdown ol {
+    @apply list-decimal space-y-1 pl-5;
+  }
+  .markdown p {
+    @apply mb-2;
+  }
+  .markdown a {
+    @apply underline;
   }
 }

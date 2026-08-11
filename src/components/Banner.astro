@@ -1,4 +1,6 @@
 ---
+import Container from '@components/Container.astro';
+
 interface Props {
   message: string;
   linkText: string;
@@ -8,11 +10,15 @@ interface Props {
 const { message, linkText, linkUrl } = Astro.props;
 ---
 
-<div class="bg-accent mb-2 px-4 py-2 text-gray-900">
-  <p class="text-center text-lg font-medium">
-    {message}
-    <a href={linkUrl} class="inline-block underline">
+<div class="bg-accent text-brand-950">
+  <Container class="py-2.5 text-center text-sm font-medium sm:text-base">
+    <span>{message}</span>
+    <a
+      href={linkUrl}
+      class="ml-1 inline-flex items-center gap-1 font-semibold underline"
+    >
       {linkText}
+      <span aria-hidden="true">→</span>
     </a>
-  </p>
+  </Container>
 </div>

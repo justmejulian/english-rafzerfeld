@@ -1,60 +1,72 @@
 ---
-import { z } from 'astro:content';
 import Layout from '@layouts/Layout.astro';
+import Section from '@components/Section.astro';
+import PageHeader from '@components/PageHeader.astro';
+import CtaSection from '@components/CtaSection.astro';
 
-import { multiLingualSchema } from '@utils/zod.ts';
-import { getLocaleData, getLocaleFromURL } from '@utils/locale.ts';
+import { getContent } from '@utils/locale.ts';
 
+import { teamSchema } from '@content/schemas.ts';
 import data from '@content/team.json';
 
-const locale = getLocaleFromURL(Astro.url);
+const { locale, content } = getContent(Astro.url, teamSchema, data);
 
-const contentSchema = multiLingualSchema(
-  z.object({
-    title: z.string(),
-    teachers: z.array(
-      z.object({
-        name: z.string(),
-        description: z.string(),
-        image: z.string(),
-        certificates: z.array(
-          z.object({
-            name: z.string(),
-          }),
-        ),
-      }),
-    ),
-  }),
-);
-
-const parsedData = contentSchema.parse(data);
-
-const content = getLocaleData(locale, parsedData);
+const contactHref = `/${locale}/#contact`;
+const coursesHref = `/${locale}/#courses`;
 ---
 
 <Layout locale={locale}>
-  <h1>{content.title}</h1>
-  <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-    {
-      content.teachers.map((teacher) => (
-        <div class="rounded-lg bg-white p-4 shadow-md">
-          <img
-            src={teacher.image}
-            alt={teacher.name}
-            class="h-120 w-full rounded-t-lg object-cover"
-          />
-          <h3 class="mt-2 text-xl font-bold">{teacher.name}</h3>
-          <p class="text-gray-700">{teacher.description}</p>
-          <h4 class="mt-4 text-lg font-semibold text-gray-800">
-            Certificates:
-          </h4>
-          <ul class="mt-2 list-disc space-y-1 pl-5 text-gray-600">
-            {teacher.certificates.map((cert) => (
-              <li class="text-sm font-medium">{cert.name}</li>
-            ))}
-          </ul>
-        </div>
-      ))
-    }
-  </div>
+  <PageHeader title={content.title} />
+
+  <Section bg="cream">
+    <div class="flex flex-col gap-16">
+      {
+        content.teachers.map((teacher, i) => (
+          <div class="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-12">
+            <div
+              class:list={[
+                'overflow-hidden rounded-2xl shadow-sm',
+                { 'md:order-2': i % 2 === 1 },
+              ]}
+            >
+              <img
+                src={teacher.image}
+                alt={teacher.name}
+                class="aspect-4/5 w-full object-cover"
+              />
+            </div>
+
+            <div>
+              <h2>{teacher.name}</h2>
+              <p class="text-brand-700 mb-4 text-sm font-semibold">
+                {teacher.tagline}
+              </p>
+              <p class="text-ink/80">{teacher.description}</p>
+
+              <h3 class="mt-6 mb-3 text-lg">{content.qualificationsTitle}</h3>
+              <ul class="flex flex-col gap-2">
+                {teacher.certificates.map((cert) => (
+                  <li class="text-ink/80 flex items-start gap-2 text-sm">
+                    <span class="text-accent mt-0.5" aria-hidden="true">
+                      ✓
+                    </span>
+                    {cert.name}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </Section>
+
+  <CtaSection
+    title={content.meet.title}
+    text={content.meet.text}
+    primaryHref={contactHref}
+    primaryLabel={content.meet.contactCta}
+    secondaryHref={coursesHref}
+    secondaryLabel={content.meet.coursesCta}
+  />
 </Layout>

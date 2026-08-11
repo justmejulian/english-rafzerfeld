@@ -1,4 +1,5 @@
 ---
+import Container from '@components/Container.astro';
 import LanguageButton from './LanguageButton.astro';
 import MobileNav from './preact/MobileNav.tsx';
 
@@ -8,65 +9,83 @@ interface Props {
 }
 
 const { title, locale } = Astro.props;
+
 const linksLocale = {
-  en: [
-    { href: '/en/', label: 'Home' },
-    { href: '/en/#courses', label: 'Courses' },
-    { href: '/en/team', label: 'Team' },
-    { href: '/en/#fees', label: 'Fees' },
-    { href: '/en/#contact', label: 'Contact' },
-  ],
-  de: [
-    { href: '/de/', label: 'Home' },
-    { href: '/de/#courses', label: 'Kurse' },
-    { href: '/de/team', label: 'Team' },
-    { href: '/de/#fees', label: 'Preise' },
-    { href: '/de/#contact', label: 'Kontakt' },
-  ],
+  en: {
+    home: '/en/',
+    links: [
+      { href: '/en/#courses', label: 'Courses' },
+      { href: '/en/#levels', label: 'Levels' },
+      { href: '/en/#fees', label: 'Fees' },
+      { href: '/en/team', label: 'Team' },
+    ],
+    contact: { href: '/en/#contact', label: 'Contact us' },
+    homeLabel: 'Home',
+  },
+  de: {
+    home: '/de/',
+    links: [
+      { href: '/de/#courses', label: 'Kurse' },
+      { href: '/de/#levels', label: 'Niveaus' },
+      { href: '/de/#fees', label: 'Preise' },
+      { href: '/de/team', label: 'Team' },
+    ],
+    contact: { href: '/de/#contact', label: 'Kontakt' },
+    homeLabel: 'Home',
+  },
 };
 
-const links = linksLocale[locale];
+const { home, links, contact, homeLabel } = linksLocale[locale];
+
+// Full list (incl. Home + Contact) for the mobile menu.
+const mobileLinks = [{ href: home, label: homeLabel }, ...links, contact];
 ---
 
-<div class="mx-auto mb-2 max-w-screen-xl px-4 sm:px-6 lg:px-8">
-  <div class="bg-gray-600 px-4 sm:px-6 lg:px-8">
-    <div class="flex h-16 items-center justify-between">
-      <div class="flex-1 md:flex md:items-center md:gap-12">
-        <!-- todo create logo component -->
-        <a
-          class="text-black transition hover:text-gray-500/75"
-          href={links[0].href}
-        >
-          <img class="h-10" src="assets/logo.png" alt={title} />
-        </a>
-      </div>
+<header class="bg-brand-900 sticky top-0 z-50 text-white">
+  <Container class="flex h-16 items-center justify-between">
+    <a
+      class="flex items-center transition hover:opacity-80"
+      href={home}
+      aria-label={title}
+    >
+      <img class="h-9 w-auto" src="/assets/logo.png" alt={title} />
+    </a>
 
-      <div class="md:flex md:items-center md:gap-12">
-        <nav aria-label="Global" class="hidden md:block">
-          <ul class="flex items-center gap-6 text-sm">
-            {
-              links.map((link) => (
-                <li>
-                  <a
-                    class="hover:text-accent text-white transition"
-                    href={link.href}
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))
-            }
-          </ul>
-        </nav>
+    <nav aria-label="Global" class="hidden md:block">
+      <ul class="flex items-center gap-7 text-sm font-medium">
+        <li>
+          <a class="hover:text-accent text-white transition" href={home}>
+            {homeLabel}
+          </a>
+        </li>
+        {
+          links.map((link) => (
+            <li>
+              <a
+                class="hover:text-accent text-white transition"
+                href={link.href}
+              >
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
 
-        <div class="flex items-center gap-4">
-          <LanguageButton />
+    <div class="flex items-center gap-4">
+      <LanguageButton />
 
-          <div class="block md:hidden">
-            <MobileNav links={links} client:visible />
-          </div>
-        </div>
+      <a
+        href={contact.href}
+        class="hover:bg-cream-100 text-brand-900 hidden rounded-full bg-white px-5 py-2 text-sm font-semibold transition md:inline-flex"
+      >
+        {contact.label}
+      </a>
+
+      <div class="block md:hidden">
+        <MobileNav links={mobileLinks} client:visible />
       </div>
     </div>
-  </div>
-</div>
+  </Container>
+</header>

@@ -1,0 +1,57 @@
+---
+import Container from '@components/Container.astro';
+import Button from '@components/Button.astro';
+import Tag from '@components/Tag.astro';
+
+interface Props {
+  eyebrow: string;
+  title: string;
+  intro: string;
+  pills: string[];
+  coursesCta: string;
+  askCta: string;
+  image: { src: string };
+}
+
+const { eyebrow, title, intro, pills, coursesCta, askCta, image } = Astro.props;
+---
+
+<section class="bg-brand-900 relative overflow-hidden text-white">
+  <img
+    src={image.src}
+    alt=""
+    aria-hidden="true"
+    class="absolute inset-0 h-full w-full object-cover"
+  />
+  <div
+    class="from-brand-950/90 via-brand-900/85 to-brand-900/60 absolute inset-0 bg-gradient-to-r"
+  >
+  </div>
+  <Container class="relative py-16 sm:py-24 lg:py-28">
+    <div class="max-w-2xl">
+      <p class="text-accent mb-4 text-xs font-bold tracking-[0.18em] uppercase">
+        {eyebrow}
+      </p>
+      <h1 class="text-white">{title}</h1>
+      <p class="mt-4 text-lg text-white/80">{intro}</p>
+
+      <ul class="mt-8 flex flex-wrap gap-3">
+        {
+          pills.map((pill) => (
+            <li>
+              <Tag variant="pill-light">{pill}</Tag>
+            </li>
+          ))
+        }
+      </ul>
+
+      <div class="mt-8 flex flex-wrap gap-3">
+        <Button href="#courses" variant="light">
+          {coursesCta}
+          <span aria-hidden="true">→</span>
+        </Button>
+        <Button href="#contact" variant="outline-light">{askCta}</Button>
+      </div>
+    </div>
+  </Container>
+</section>

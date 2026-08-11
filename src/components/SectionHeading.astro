@@ -1,0 +1,36 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  as?: 'h1' | 'h2';
+  align?: 'left' | 'center';
+  tone?: 'dark' | 'light';
+  class?: string;
+}
+
+const {
+  eyebrow,
+  title,
+  as: Heading = 'h2',
+  align = 'left',
+  tone = 'dark',
+  class: className = '',
+} = Astro.props;
+
+// tone describes the text: `light` text sits on a dark background.
+const eyebrowColor = tone === 'light' ? 'text-accent' : 'text-brand-700';
+const titleColor = tone === 'light' ? 'text-white' : '';
+---
+
+<div class={`${align === 'center' ? 'text-center' : ''} ${className}`}>
+  {
+    eyebrow && (
+      <p
+        class={`mb-2 text-xs font-bold tracking-[0.18em] uppercase ${eyebrowColor}`}
+      >
+        {eyebrow}
+      </p>
+    )
+  }
+  <Heading class={`mb-0 ${titleColor}`}>{title}</Heading>
+</div>

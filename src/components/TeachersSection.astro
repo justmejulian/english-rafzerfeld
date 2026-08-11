@@ -1,0 +1,32 @@
+---
+import Section from '@components/Section.astro';
+import SectionHeading from '@components/SectionHeading.astro';
+import TeacherCard from '@components/TeacherCard.astro';
+
+interface Props {
+  title: string;
+  teachers: { name: string; image: string }[];
+  tagline: string;
+  cta: string;
+  href: string;
+}
+
+const { title, teachers, tagline, cta, href } = Astro.props;
+---
+
+<Section bg="cream">
+  <SectionHeading title={title} />
+  <div class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2">
+    {
+      teachers.map((teacher) => (
+        <TeacherCard
+          name={teacher.name}
+          image={teacher.image}
+          tagline={tagline}
+          cta={cta}
+          href={href}
+        />
+      ))
+    }
+  </div>
+</Section>

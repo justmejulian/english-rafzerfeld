@@ -1,0 +1,21 @@
+---
+type Variant = 'pill' | 'pill-light' | 'cefr';
+
+interface Props {
+  variant?: Variant;
+  class?: string;
+}
+
+const { variant = 'pill', class: className = '' } = Astro.props;
+
+const variants: Record<Variant, string> = {
+  pill: 'rounded-full border border-brand-900/15 bg-white px-4 py-1.5 text-sm font-medium text-brand-700',
+  'pill-light':
+    'rounded-full border border-white/25 bg-white/5 px-4 py-1.5 text-sm font-medium text-white/90',
+  cefr: 'inline-flex min-w-9 items-center justify-center rounded-md bg-accent-soft px-2 py-0.5 text-xs font-bold text-brand-900',
+};
+---
+
+<span class={`inline-block ${variants[variant]} ${className}`}>
+  <slot />
+</span>

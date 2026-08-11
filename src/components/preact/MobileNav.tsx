@@ -1,4 +1,4 @@
-import { useState } from 'preact/hooks';
+import { useEffect, useRef, useState } from 'preact/hooks';
 
 type Link = {
   href: string;
@@ -11,12 +11,38 @@ interface Props {
 
 const Mobile = ({ links }: Props) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!isMenuOpen) return;
+
+    const handlePointerDown = (event: PointerEvent) => {
+      if (!containerRef.current?.contains(event.target as Node)) {
+        setIsMenuOpen(false);
+      }
+    };
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('pointerdown', handlePointerDown);
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('pointerdown', handlePointerDown);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isMenuOpen]);
 
   return (
-    <div>
+    <div ref={containerRef}>
       <button
         onClick={() => setIsMenuOpen(!isMenuOpen)}
-        class="rounded-sm bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
+        aria-label="Toggle menu"
+        aria-haspopup="true"
+        aria-expanded={isMenuOpen}
+        class="rounded-full border border-white/25 p-2 text-white transition hover:bg-white/10"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -35,21 +61,23 @@ const Mobile = ({ links }: Props) => {
       </button>
 
       {isMenuOpen && (
-        <div
-          role="menu"
-          class="absolute end-0 top-10 z-99 m-4 w-56 overflow-hidden rounded border border-gray-300 bg-white shadow-sm"
+        <nav
+          aria-label="Mobile"
+          class="absolute end-0 top-12 z-99 m-4 w-56 overflow-hidden rounded-xl border border-black/5 bg-white shadow-lg"
         >
-          {links.map((link: Link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              class="block px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-gray-900"
-              role="menuitem"
-            >
-              {link.label}
-            </a>
-          ))}
-        </div>
+          <ul>
+            {links.map((link: Link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  class="text-brand-900 hover:bg-cream-100 block px-4 py-3 text-sm font-medium transition-colors"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
       )}
     </div>
   );

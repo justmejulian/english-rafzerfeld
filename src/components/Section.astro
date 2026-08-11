@@ -1,0 +1,32 @@
+---
+import Container from '@components/Container.astro';
+
+type Bg = 'cream' | 'cream-100' | 'white' | 'brand';
+
+interface Props {
+  id?: string;
+  bg?: Bg;
+  class?: string;
+  containerClass?: string;
+}
+
+const {
+  id,
+  bg = 'cream',
+  class: className = '',
+  containerClass = '',
+} = Astro.props;
+
+const backgrounds: Record<Bg, string> = {
+  cream: 'bg-cream',
+  'cream-100': 'bg-cream-100',
+  white: 'bg-white',
+  brand: 'bg-brand-900 text-white',
+};
+---
+
+<section id={id} class={`${backgrounds[bg]} py-14 sm:py-20 ${className}`}>
+  <Container class={containerClass}>
+    <slot />
+  </Container>
+</section>

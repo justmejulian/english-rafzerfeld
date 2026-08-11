@@ -1,0 +1,25 @@
+---
+import Markdown from '@components/Markdown.astro';
+import RateTable from '@components/RateTable.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  headers: string[];
+  rows: (string | number)[][];
+  notes: string;
+}
+
+const { title, description, headers, rows, notes } = Astro.props;
+---
+
+<div class="bg-cream flex flex-col rounded-2xl border border-black/5 p-6">
+  <h3 class="mb-1">{title}</h3>
+  <p class="text-muted mb-4 text-sm">{description}</p>
+
+  <RateTable headers={headers} rows={rows} />
+
+  <div class="markdown-notes text-muted mt-5 text-sm">
+    <Markdown markdown={notes} />
+  </div>
+</div>
