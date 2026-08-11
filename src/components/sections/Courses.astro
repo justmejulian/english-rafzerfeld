@@ -32,9 +32,6 @@ const levelsHref = `/${locale}/#levels`;
         <div class="bg-cream flex flex-col rounded-2xl border border-black/5 p-5">
           <div class="mb-4 flex items-baseline justify-between border-b border-black/5 pb-3">
             <h3 class="text-lg">{day.name}</h3>
-            <span class="text-muted text-xs font-medium">
-              {day.note ?? classWord(day.lessons.length)}
-            </span>
           </div>
           <ul class="flex flex-col gap-3">
             {day.lessons.map((lesson) => (

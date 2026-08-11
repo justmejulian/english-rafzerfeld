@@ -30,7 +30,7 @@ const { content } = getContent(Astro.url, coursesSchema, data);
           </div>
           <p class="text-muted mb-5 text-sm">{level.description}</p>
 
-          <div class="mt-auto flex flex-col gap-4 border-t border-black/5 pt-5">
+          <div class="flex flex-col gap-4 border-t border-black/5 pt-5">
             {level.subLevels.map((sub) => (
               <div>
                 <p class="text-ink mb-1 flex items-center gap-2 text-sm font-semibold">
