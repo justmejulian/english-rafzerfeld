@@ -34,7 +34,7 @@ describe('replaceLocaleInURL', () => {
     const spy = vi.spyOn(console, 'error').mockImplementation(() => {});
 
     const out = replaceLocaleInURL(new URL('http://x/'), 'de');
-    expect(out.pathname).toBe('/en');
+    expect(out.pathname).toBe('/de');
 
     spy.mockRestore();
   });

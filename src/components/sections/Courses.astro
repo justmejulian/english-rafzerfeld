@@ -10,9 +10,6 @@ import data from '@content/courses.json';
 
 const { locale, content } = getContent(Astro.url, coursesSchema, data);
 
-const classWord = (n: number) =>
-  `${n} ${n === 1 ? content.classWordSingular : content.classWordPlural}`;
-
 const levelsHref = `/${locale}/#levels`;
 ---
 
