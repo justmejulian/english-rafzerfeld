@@ -21,6 +21,7 @@ const linksLocale = {
     ],
     contact: { href: '/en/#contact', label: 'Contact us' },
     homeLabel: 'Home',
+    menuLabel: 'Toggle menu',
   },
   de: {
     home: '/de/',
@@ -31,11 +32,12 @@ const linksLocale = {
       { href: '/de/team', label: 'Team' },
     ],
     contact: { href: '/de/#contact', label: 'Kontakt' },
-    homeLabel: 'Home',
+    homeLabel: 'Startseite',
+    menuLabel: 'Menü öffnen oder schließen',
   },
 };
 
-const { home, links, contact, homeLabel } = linksLocale[locale];
+const { home, links, contact, homeLabel, menuLabel } = linksLocale[locale];
 
 // Full list (incl. Home + Contact) for the mobile menu.
 const mobileLinks = [{ href: home, label: homeLabel }, ...links, contact];
@@ -84,7 +86,7 @@ const mobileLinks = [{ href: home, label: homeLabel }, ...links, contact];
       </a>
 
       <div class="block md:hidden">
-        <MobileNav links={mobileLinks} client:visible />
+        <MobileNav links={mobileLinks} menuLabel={menuLabel} client:visible />
       </div>
     </div>
   </Container>

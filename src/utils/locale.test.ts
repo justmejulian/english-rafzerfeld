@@ -13,14 +13,9 @@ describe('getLocaleFromURL', () => {
     expect(getLocaleFromURL(new URL('http://x/de/'))).toBe('de');
   });
 
-  it('falls back to "en" (and logs) for a missing or unknown locale', () => {
-    const spy = vi.spyOn(console, 'error').mockImplementation(() => {});
-
+  it('falls back to "en" for a missing or unknown locale', () => {
     expect(getLocaleFromURL(new URL('http://x/'))).toBe('en');
     expect(getLocaleFromURL(new URL('http://x/fr/x'))).toBe('en');
-    expect(spy).toHaveBeenCalled();
-
-    spy.mockRestore();
   });
 });
 
@@ -30,13 +25,22 @@ describe('replaceLocaleInURL', () => {
     expect(out.pathname).toBe('/de/team');
   });
 
-  it('falls back to the /en root when the path has no current locale', () => {
-    const spy = vi.spyOn(console, 'error').mockImplementation(() => {});
-
+  it('uses the requested locale root when the path has no current locale', () => {
     const out = replaceLocaleInURL(new URL('http://x/'), 'de');
-    expect(out.pathname).toBe('/de');
+    expect(out.pathname).toBe('/de/');
+  });
 
-    spy.mockRestore();
+  it('preserves the path, query, and fragment', () => {
+    const out = replaceLocaleInURL(
+      new URL('http://x/en/team?source=nav#contact'),
+      'de',
+    );
+    expect(out.href).toBe('http://x/de/team?source=nav#contact');
+  });
+
+  it('replaces only a complete locale path segment', () => {
+    const out = replaceLocaleInURL(new URL('http://x/enormous/team'), 'de');
+    expect(out.pathname).toBe('/de/');
   });
 });
 

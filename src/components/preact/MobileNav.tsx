@@ -7,9 +7,10 @@ type Link = {
 
 interface Props {
   links: Link[];
+  menuLabel: string;
 }
 
-const Mobile = ({ links }: Props) => {
+const Mobile = ({ links, menuLabel }: Props) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -39,7 +40,7 @@ const Mobile = ({ links }: Props) => {
     <div ref={containerRef}>
       <button
         onClick={() => setIsMenuOpen(!isMenuOpen)}
-        aria-label="Toggle menu"
+        aria-label={menuLabel}
         aria-haspopup="true"
         aria-expanded={isMenuOpen}
         class="rounded-full border border-white/25 p-2 text-white transition hover:bg-white/10"
@@ -70,6 +71,7 @@ const Mobile = ({ links }: Props) => {
               <li key={link.href}>
                 <a
                   href={link.href}
+                  onClick={() => setIsMenuOpen(false)}
                   class="text-brand-900 hover:bg-cream-100 block px-4 py-3 text-sm font-medium transition-colors"
                 >
                   {link.label}

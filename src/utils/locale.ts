@@ -1,27 +1,17 @@
 export type Locale = 'en' | 'de';
 
-// todo: store in localStorage
-
 export function getLocaleFromURL(url: URL): Locale {
   const locale = url.pathname.split('/')[1];
 
-  if (!locale || (locale !== 'en' && locale !== 'de')) {
-    console.error('Invalid locale in URL:', locale);
-    return 'en';
-  }
-  return locale;
+  return locale === 'de' ? 'de' : 'en';
 }
 
 export function replaceLocaleInURL(url: URL, newLocale: Locale): URL {
-  const locale = getLocaleFromURL(url);
-  const urlOrDefault = url.pathname.includes(`/${locale}`)
-    ? url
-    : new URL(url.origin + '/en');
-  const newPathname = urlOrDefault.pathname.replace(
-    `/${locale}`,
-    `/${newLocale}`,
-  );
-  const newUrl = new URL(url.origin + newPathname);
+  const newUrl = new URL(url);
+  const localePrefix = /^\/(?:en|de)(?=\/|$)/;
+  newUrl.pathname = localePrefix.test(url.pathname)
+    ? url.pathname.replace(localePrefix, `/${newLocale}`)
+    : `/${newLocale}/`;
   return newUrl;
 }
 
