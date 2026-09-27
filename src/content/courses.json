@@ -1,92 +1,7 @@
 {
   "en": {
-    "title": "Group courses",
-    "subtitle": "Semester times, 4–8 participants. All times are local.",
     "levelNoteText": "Levels follow the Common European Framework —",
-    "levelNoteLink": "see the level guide",
-    "classWordSingular": "class",
     "classWordPlural": "classes",
-    "days": [
-      {
-        "name": "Monday",
-        "lessons": [
-          { "time": "16:00 – 17:00", "level": "New class", "ceflevel": "A2" },
-          {
-            "time": "17:00 – 18:00",
-            "level": "Pre-Intermediate",
-            "ceflevel": "B1"
-          },
-          {
-            "time": "19:00 – 20:00",
-            "level": "Conversation",
-            "location": "Eglisau",
-            "ceflevel": "B2"
-          }
-        ]
-      },
-      {
-        "name": "Tuesday",
-        "lessons": [
-          { "time": "17:30 – 18:30", "level": "Elementary", "ceflevel": "A2" },
-          {
-            "time": "19:15 – 20:45",
-            "level": "Pre-Intermediate",
-            "ceflevel": "B1"
-          }
-        ]
-      },
-      {
-        "name": "Wednesday",
-        "lessons": [
-          {
-            "time": "08:00 – 09:15",
-            "level": "Intermediate",
-            "ceflevel": "B1"
-          },
-          { "time": "09:30 – 10:30", "level": "Advanced", "ceflevel": "C1" },
-          { "time": "19:00 – 20:30", "level": "Intermediate", "ceflevel": "B2" }
-        ]
-      },
-      {
-        "name": "Thursday",
-        "lessons": [
-          {
-            "time": "08:30 – 09:45",
-            "level": "Pre-Intermediate",
-            "ceflevel": "B2"
-          },
-          {
-            "time": "10:00 – 11:00",
-            "level": "Upper Intermediate",
-            "ceflevel": "B2"
-          },
-          {
-            "time": "19:00 – 20:00",
-            "level": "Conversation",
-            "location": "online",
-            "ceflevel": "B2"
-          }
-        ]
-      },
-      {
-        "name": "Friday",
-        "lessons": [
-          { "time": "08:30 – 09:30", "level": "New class", "ceflevel": "A2" },
-          { "time": "09:30 – 10:30", "level": "Elementary", "ceflevel": "A2" }
-        ]
-      },
-      {
-        "name": "Saturday",
-        "note": "Coming soon",
-        "lessons": [
-          {
-            "time": "09:00 – 10:00",
-            "level": "Pre-Intermediate",
-            "ceflevel": "A2/B1"
-          }
-        ]
-      }
-    ],
     "levelsTitle": "A guide to the levels",
     "levelsDescription": "A short summary to help you assess your own English level before you get in touch.",
     "levels": [
@@ -136,22 +51,19 @@
           }
         ]
       }
-    ]
-  },
-  "de": {
-    "title": "Gruppenkurse",
-    "subtitle": "Semesterzeiten, 4–8 Teilnehmende. Alle Zeiten sind Ortszeiten.",
-    "levelNoteText": "Die Niveaus folgen dem Gemeinsamen Europäischen Referenzrahmen —",
-    "levelNoteLink": "zur Niveau-Übersicht",
-    "classWordSingular": "Kurs",
-    "classWordPlural": "Kurse",
+    ],
+    "levelNoteLink": "see the level guide",
     "days": [
       {
-        "name": "Montag",
+        "name": "Monday",
         "lessons": [
-          { "time": "16:00 – 17:00", "level": "Neue Gruppe", "ceflevel": "A2" },
           {
-            "time": "17:00 – 18:00",
+            "time": "16:30 – 17:30",
+            "level": "Private",
+            "ceflevel": "B1"
+          },
+          {
+            "time": "17:30 – 18:30",
             "level": "Pre-Intermediate",
             "ceflevel": "B1"
           },
@@ -164,30 +76,42 @@
         ]
       },
       {
-        "name": "Dienstag",
+        "name": "Tuesday",
         "lessons": [
-          { "time": "17:30 – 18:30", "level": "Elementary", "ceflevel": "A2" },
           {
-            "time": "19:15 – 20:45",
+            "time": "17:30 – 18:30",
+            "level": "Elementary",
+            "ceflevel": "A2"
+          },
+          {
+            "time": "19:00 – 20:30",
             "level": "Pre-Intermediate",
             "ceflevel": "B1"
           }
         ]
       },
       {
-        "name": "Mittwoch",
+        "name": "Wednesday",
         "lessons": [
           {
             "time": "08:00 – 09:15",
             "level": "Intermediate",
             "ceflevel": "B1"
           },
-          { "time": "09:30 – 10:30", "level": "Advanced", "ceflevel": "C1" },
-          { "time": "19:00 – 20:30", "level": "Intermediate", "ceflevel": "B2" }
+          {
+            "time": "09:30 – 10:30",
+            "level": "Advanced",
+            "ceflevel": "C1"
+          },
+          {
+            "time": "19:00 – 20:30",
+            "level": "Intermediate",
+            "ceflevel": "B2"
+          }
         ]
       },
       {
-        "name": "Donnerstag",
+        "name": "Thursday",
         "lessons": [
           {
             "time": "08:30 – 09:45",
@@ -208,15 +132,23 @@
         ]
       },
       {
-        "name": "Freitag",
+        "name": "Friday",
         "lessons": [
-          { "time": "08:30 – 09:30", "level": "Neue Gruppe", "ceflevel": "A2" },
-          { "time": "09:30 – 10:30", "level": "Elementary", "ceflevel": "A2" }
+          {
+            "time": "08:30 – 09:30",
+            "level": "New class",
+            "ceflevel": "A2"
+          },
+          {
+            "time": "09:30 – 10:30",
+            "level": "Elementary",
+            "ceflevel": "A2"
+          }
         ]
       },
       {
-        "name": "Samstag",
-        "note": "Demnächst",
+        "name": "Saturday",
+        "note": "Coming soon",
         "lessons": [
           {
             "time": "09:00 – 10:00",
@@ -226,6 +158,13 @@
         ]
       }
     ],
+    "subtitle": "Semester times, 4–8 participants. All times are local.",
+    "title": "Group courses",
+    "classWordSingular": "class"
+  },
+  "de": {
+    "levelNoteText": "Die Niveaus folgen dem Gemeinsamen Europäischen Referenzrahmen —",
+    "classWordPlural": "Kurse",
     "levelsTitle": "Eine Übersicht der Niveaus",
     "levelsDescription": "Eine kurze Zusammenfassung, damit Sie Ihr Englischniveau einschätzen können, bevor Sie sich melden.",
     "levels": [
@@ -275,6 +214,115 @@
           }
         ]
       }
-    ]
+    ],
+    "levelNoteLink": "zur Niveau-Übersicht",
+    "days": [
+      {
+        "name": "Montag",
+        "lessons": [
+          {
+            "time": "16:30 – 17:30",
+            "level": "Privat",
+            "ceflevel": "B1"
+          },
+          {
+            "time": "17:30 – 18:30",
+            "level": "Pre-Intermediate",
+            "ceflevel": "B1"
+          },
+          {
+            "time": "19:00 – 20:00",
+            "level": "Conversation",
+            "location": "Eglisau",
+            "ceflevel": "B2"
+          }
+        ]
+      },
+      {
+        "name": "Dienstag",
+        "lessons": [
+          {
+            "time": "17:30 – 18:30",
+            "level": "Elementary",
+            "ceflevel": "A2"
+          },
+          {
+            "time": "19:00 – 20:30",
+            "level": "Pre-Intermediate",
+            "ceflevel": "B1"
+          }
+        ]
+      },
+      {
+        "name": "Mittwoch",
+        "lessons": [
+          {
+            "time": "08:00 – 09:15",
+            "level": "Intermediate",
+            "ceflevel": "B1"
+          },
+          {
+            "time": "09:30 – 10:30",
+            "level": "Advanced",
+            "ceflevel": "C1"
+          },
+          {
+            "time": "19:00 – 20:30",
+            "level": "Intermediate",
+            "ceflevel": "B2"
+          }
+        ]
+      },
+      {
+        "name": "Donnerstag",
+        "lessons": [
+          {
+            "time": "08:30 – 09:45",
+            "level": "Pre-Intermediate",
+            "ceflevel": "B2"
+          },
+          {
+            "time": "10:00 – 11:00",
+            "level": "Upper Intermediate",
+            "ceflevel": "B2"
+          },
+          {
+            "time": "19:00 – 20:00",
+            "level": "Conversation",
+            "location": "online",
+            "ceflevel": "B2"
+          }
+        ]
+      },
+      {
+        "name": "Freitag",
+        "lessons": [
+          {
+            "time": "08:30 – 09:30",
+            "level": "Neue Gruppe",
+            "ceflevel": "A2"
+          },
+          {
+            "time": "09:30 – 10:30",
+            "level": "Elementary",
+            "ceflevel": "A2"
+          }
+        ]
+      },
+      {
+        "name": "Samstag",
+        "note": "Demnächst",
+        "lessons": [
+          {
+            "time": "09:00 – 10:00",
+            "level": "Pre-Intermediate",
+            "ceflevel": "A2/B1"
+          }
+        ]
+      }
+    ],
+    "subtitle": "Semesterzeiten, 4–8 Teilnehmende. Alle Zeiten sind Ortszeiten.",
+    "title": "Gruppenkurse",
+    "classWordSingular": "Kurs"
   }
 }
